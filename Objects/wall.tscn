@@ -1,0 +1,101 @@
+[gd_scene load_steps=11 format=3 uid="uid://beqi1cysmhdlg"]
+
+[ext_resource type="Script" path="res://Objects/wall.gd" id="1_j7pno"]
+[ext_resource type="Texture2D" uid="uid://43pyj4by5c42" path="res://Assets/Art/Dinker Tileset.png" id="2_cb8ar"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_30l2u"]
+atlas = ExtResource("2_cb8ar")
+region = Rect2(0, 60, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6st20"]
+atlas = ExtResource("2_cb8ar")
+region = Rect2(15, 60, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dk0qj"]
+atlas = ExtResource("2_cb8ar")
+region = Rect2(30, 60, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y4ds0"]
+atlas = ExtResource("2_cb8ar")
+region = Rect2(45, 60, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3k5xq"]
+atlas = ExtResource("2_cb8ar")
+region = Rect2(45, 45, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l0gdh"]
+atlas = ExtResource("2_cb8ar")
+region = Rect2(45, 30, 15, 15)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pbdyf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_30l2u")
+}],
+"loop": true,
+"name": &"HLeft",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6st20")
+}],
+"loop": true,
+"name": &"HMid",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dk0qj")
+}],
+"loop": true,
+"name": &"HRight",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y4ds0")
+}],
+"loop": true,
+"name": &"VBottom",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3k5xq")
+}],
+"loop": true,
+"name": &"VMiddle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l0gdh")
+}],
+"loop": true,
+"name": &"VTop",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_65n13"]
+size = Vector2(12, 12)
+
+[node name="Wall" type="Node2D"]
+script = ExtResource("1_j7pno")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_pbdyf")
+animation = &"VMiddle"
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="LaserBlock" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LaserBlock"]
+shape = SubResource("RectangleShape2D_65n13")

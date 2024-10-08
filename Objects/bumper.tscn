@@ -1,0 +1,79 @@
+[gd_scene load_steps=8 format=3 uid="uid://c05cdko4pf5i1"]
+
+[ext_resource type="Script" path="res://Objects/bumper.gd" id="1_ns73x"]
+[ext_resource type="Texture2D" uid="uid://43pyj4by5c42" path="res://Assets/Art/Dinker Tileset.png" id="2_147ac"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4iscd"]
+atlas = ExtResource("2_147ac")
+region = Rect2(0, 0, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h1xac"]
+atlas = ExtResource("2_147ac")
+region = Rect2(0, 15, 15, 15)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j4x5e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4iscd")
+}],
+"loop": true,
+"name": &"Blue",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h1xac")
+}],
+"loop": true,
+"name": &"Red",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b1ano"]
+size = Vector2(0.75, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p0uy1"]
+size = Vector2(5, 5)
+
+[node name="Bumper" type="Node2D"]
+script = ExtResource("1_ns73x")
+
+[node name="spr" type="Node2D" parent="."]
+
+[node name="sprite" type="AnimatedSprite2D" parent="spr"]
+sprite_frames = SubResource("SpriteFrames_j4x5e")
+animation = &"Blue"
+
+[node name="Colliders" type="Node2D" parent="."]
+
+[node name="Angled Collider" type="Area2D" parent="Colliders"]
+position = Vector2(2, 1)
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/Angled Collider"]
+position = Vector2(-1.73483, -0.734835)
+rotation = 0.785398
+shape = SubResource("RectangleShape2D_b1ano")
+
+[node name="Delete Collider" type="Area2D" parent="Colliders"]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Colliders/Delete Collider"]
+polygon = PackedVector2Array(6, -4, 6, 6, -4, 6, 3, 3)
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="rotator Collider" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rotator Collider"]
+shape = SubResource("RectangleShape2D_p0uy1")
+
+[connection signal="area_entered" from="Colliders/Angled Collider" to="." method="_on_angled_collider_area_entered"]
+[connection signal="area_exited" from="Colliders/Angled Collider" to="." method="_on_angled_collider_area_exited"]

@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://bp75whmfa4006"]
+
+[ext_resource type="Script" path="res://Levels/player.gd" id="1_ff1do"]
+[ext_resource type="PackedScene" uid="uid://bta3duvifuqxg" path="res://Objects/Laser/laser.tscn" id="2_gujyo"]
+[ext_resource type="Texture2D" uid="uid://43pyj4by5c42" path="res://Assets/Art/Dinker Tileset.png" id="3_ffpuo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mmyka"]
+atlas = ExtResource("3_ffpuo")
+region = Rect2(30, 45, 15, 15)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r2fca"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mmyka")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Player" type="Node2D"]
+position = Vector2(142.5, 127)
+script = ExtResource("1_ff1do")
+laser = ExtResource("2_gujyo")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_r2fca")

@@ -1,0 +1,73 @@
+[gd_scene load_steps=9 format=3 uid="uid://b1u4rok5q2dgu"]
+
+[ext_resource type="Script" path="res://Objects/button.gd" id="1_d8nst"]
+[ext_resource type="Texture2D" uid="uid://43pyj4by5c42" path="res://Assets/Art/Dinker Tileset.png" id="2_yys2w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0b2n"]
+atlas = ExtResource("2_yys2w")
+region = Rect2(30, 75, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3wja"]
+atlas = ExtResource("2_yys2w")
+region = Rect2(15, 75, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wdbtb"]
+atlas = ExtResource("2_yys2w")
+region = Rect2(0, 75, 15, 15)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kg7k5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m0b2n")
+}],
+"loop": true,
+"name": &"Blue",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v3wja")
+}],
+"loop": true,
+"name": &"Red",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wdbtb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oel4l"]
+size = Vector2(7, 7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lmsjo"]
+size = Vector2(5, 5)
+
+[node name="Button" type="Node2D"]
+script = ExtResource("1_d8nst")
+pressedColor = Color(0.654232, 0.654232, 0.654232, 1)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_kg7k5")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_oel4l")
+
+[node name="Connection" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Connection"]
+shape = SubResource("RectangleShape2D_lmsjo")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_area_2d_area_exited"]

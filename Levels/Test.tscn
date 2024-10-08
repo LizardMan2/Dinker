@@ -1,0 +1,132 @@
+[gd_scene load_steps=21 format=4 uid="uid://b4ieydrsr34mt"]
+
+[ext_resource type="Texture2D" uid="uid://43pyj4by5c42" path="res://Assets/Art/Dinker Tileset.png" id="1_1ulhx"]
+[ext_resource type="Texture2D" uid="uid://c6d4l47d8v7lm" path="res://Assets/Art/Conection Tileset.png" id="1_b50jd"]
+[ext_resource type="Script" path="res://Levels/level_spawner.gd" id="1_u5yxq"]
+[ext_resource type="Script" path="res://Levels/SpawnObjects.gd" id="2_fnkbb"]
+[ext_resource type="Script" path="res://Levels/connectionBuilder.gd" id="3_dakvb"]
+[ext_resource type="PackedScene" uid="uid://c05cdko4pf5i1" path="res://Objects/bumper.tscn" id="3_dww0a"]
+[ext_resource type="PackedScene" uid="uid://bmcigu6bxbxt1" path="res://Objects/Connection/connection_layer.tscn" id="3_j81sp"]
+[ext_resource type="PackedScene" uid="uid://bp75whmfa4006" path="res://Objects/Player/player.tscn" id="4_ytsnj"]
+[ext_resource type="PackedScene" uid="uid://beqi1cysmhdlg" path="res://Objects/wall.tscn" id="5_5ofm8"]
+[ext_resource type="PackedScene" uid="uid://w1f4ijrsqbrj" path="res://Objects/key.tscn" id="6_55xpg"]
+[ext_resource type="PackedScene" uid="uid://b1u4rok5q2dgu" path="res://Objects/button.tscn" id="7_8frpd"]
+[ext_resource type="Texture2D" uid="uid://otptghnkg6j2" path="res://Assets/Art/Moving Tileset.png" id="9_w1j21"]
+[ext_resource type="PackedScene" uid="uid://clo7mfhmkyr4n" path="res://Objects/rotator.tscn" id="10_4krfk"]
+[ext_resource type="Script" path="res://Levels/SpawnMovingObjects.gd" id="10_wf6hj"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1x6rr"]
+texture = ExtResource("1_b50jd")
+texture_region_size = Vector2i(15, 15)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_h27o7"]
+tile_size = Vector2i(15, 15)
+sources/0 = SubResource("TileSetAtlasSource_1x6rr")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0g4ng"]
+texture = ExtResource("1_1ulhx")
+texture_region_size = Vector2i(15, 15)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+2:5/0 = 0
+1:5/0 = 0
+0:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_labl6"]
+tile_size = Vector2i(15, 15)
+sources/2 = SubResource("TileSetAtlasSource_0g4ng")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e776m"]
+texture = ExtResource("9_w1j21")
+texture_region_size = Vector2i(15, 15)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_p2nll"]
+tile_size = Vector2i(15, 15)
+sources/0 = SubResource("TileSetAtlasSource_e776m")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(142.5, 81)
+zoom = Vector2(4, 4)
+
+[node name="Boundaries" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Boundaries"]
+visible = false
+polygon = PackedVector2Array(104, 136, 184, 136, 184, 8, 104, 8, 104, 136, 88, 152, 88, -8, 200, -8, 200, 152, 88, 152)
+
+[node name="Level Spawner" type="Node2D" parent="." node_paths=PackedStringArray("layers")]
+script = ExtResource("1_u5yxq")
+layers = [NodePath("map Layer"), NodePath("Motion Layer")]
+
+[node name="Connection Layer" type="TileMapLayer" parent="Level Spawner"]
+tile_map_data = PackedByteArray("AAAHAAIAAAADAAEAAAAHAAQAAAADAAEAAAAJAAIAAAADAAEAAAA=")
+tile_set = SubResource("TileSet_h27o7")
+script = ExtResource("3_dakvb")
+
+[node name="Connection Layer" parent="Level Spawner/Connection Layer" instance=ExtResource("3_j81sp")]
+
+[node name="Connection Layer2" parent="Level Spawner/Connection Layer" instance=ExtResource("3_j81sp")]
+
+[node name="Connection Layer3" parent="Level Spawner/Connection Layer" instance=ExtResource("3_j81sp")]
+
+[node name="Connection Layer4" parent="Level Spawner/Connection Layer" instance=ExtResource("3_j81sp")]
+
+[node name="Connection Layer5" parent="Level Spawner/Connection Layer" instance=ExtResource("3_j81sp")]
+
+[node name="Connection Layer6" parent="Level Spawner/Connection Layer" instance=ExtResource("3_j81sp")]
+
+[node name="Connection Layer7" parent="Level Spawner/Connection Layer" instance=ExtResource("3_j81sp")]
+
+[node name="Connection Layer8" parent="Level Spawner/Connection Layer" instance=ExtResource("3_j81sp")]
+
+[node name="map Layer" type="TileMapLayer" parent="Level Spawner"]
+tile_map_data = PackedByteArray("AAAHAAEAAgAAAAIAAAAHAAQAAgABAAUAAAAIAAUAAgAAAAAAAAAKAAUAAgABAAAAAAAHAAIAAgACAAEAAAAHAAUAAgACAAAAAAAHAAgAAgABAAAAAAAIAAIAAgADAAAAAAAIAAYAAgAAAAQAAAAJAAYAAgABAAQAAAAJAAgAAgACAAMAAAAKAAMAAgACAAAAAAAKAAYAAgACAAQAAAALAAEAAgAAAAMAAAALAAMAAgAAAAAAAAALAAUAAgADAAAAAAALAAgAAgAAAAAAAAAJAAEAAgADAAMAAAAJAAIAAgADAAQAAAAJAAAAAgABAAQAAAAGAAAAAgADAAIAAAAGAAEAAgADAAMAAAAGAAIAAgADAAMAAAAGAAMAAgADAAMAAAAGAAQAAgADAAMAAAAGAAUAAgADAAMAAAAGAAYAAgADAAMAAAAGAAcAAgADAAMAAAAGAAgAAgADAAMAAAAGAAkAAgADAAQAAAAMAAAAAgADAAIAAAAMAAEAAgADAAMAAAAMAAIAAgADAAMAAAAMAAMAAgADAAMAAAAMAAQAAgADAAMAAAAMAAUAAgADAAMAAAAMAAYAAgADAAMAAAAMAAcAAgADAAMAAAAMAAgAAgADAAMAAAAMAAkAAgADAAQAAAAIAAkAAgABAAQAAAAJAAkAAgABAAQAAAAKAAkAAgABAAQAAAAKAAAAAgABAAQAAAAIAAAAAgABAAQAAAAHAAAAAgAAAAQAAAALAAAAAgACAAQAAAALAAkAAgACAAQAAAAHAAkAAgAAAAQAAAA=")
+tile_set = SubResource("TileSet_labl6")
+script = ExtResource("2_fnkbb")
+objects = Array[PackedScene]([ExtResource("3_dww0a"), ExtResource("4_ytsnj"), ExtResource("5_5ofm8"), ExtResource("6_55xpg"), ExtResource("7_8frpd")])
+
+[node name="Motion Layer" type="TileMapLayer" parent="Level Spawner"]
+tile_map_data = PackedByteArray("AAAHAAIAAAAAAAEAAAAJAAIAAAABAAAAAAAKAAIAAAAEAAAAAAALAAIAAAAEAAAAAAA=")
+tile_set = SubResource("TileSet_p2nll")
+script = ExtResource("10_wf6hj")
+objects = Array[PackedScene]([ExtResource("10_4krfk")])

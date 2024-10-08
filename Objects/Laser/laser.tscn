@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bta3duvifuqxg"]
+
+[ext_resource type="Script" path="res://Levels/laser.gd" id="1_y4fn3"]
+[ext_resource type="PackedScene" uid="uid://mo0teleipul5" path="res://Objects/Laser/laser_piece.tscn" id="2_uwybi"]
+[ext_resource type="PackedScene" uid="uid://dbm4kue8ovnyg" path="res://Objects/Laser/laser_head.tscn" id="3_bfxok"]
+
+[node name="Laser" type="Node2D" node_paths=PackedStringArray("laser")]
+z_index = -1
+script = ExtResource("1_y4fn3")
+laserPiece = ExtResource("2_uwybi")
+laser = [NodePath("LaserHead")]
+
+[node name="LaserHead" parent="." instance=ExtResource("3_bfxok")]
+
+[node name="Label" type="Label" parent="."]
+visible = false
+offset_right = 40.0
+offset_bottom = 23.0

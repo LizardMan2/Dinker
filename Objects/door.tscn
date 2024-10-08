@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://dk6egibmgpx5w"]
+
+[ext_resource type="Script" path="res://door.gd" id="1_mhh8u"]
+[ext_resource type="Texture2D" uid="uid://43pyj4by5c42" path="res://Assets/Art/Dinker Tileset.png" id="2_7sdwh"]
+[ext_resource type="Texture2D" uid="uid://0mdrmpwis0mw" path="res://Assets/Art/Puzzle Elements/Door Hinge.png" id="3_6lw5e"]
+[ext_resource type="Texture2D" uid="uid://c0gnoxopd0x1t" path="res://Assets/Art/Puzzle Elements/Door.png" id="4_kuhls"]
+
+[node name="Door" type="Node2D"]
+script = ExtResource("1_mhh8u")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(15, -8)
+texture = ExtResource("2_7sdwh")
+
+[node name="DoorHinge" type="Sprite2D" parent="."]
+texture = ExtResource("3_6lw5e")
+
+[node name="Door" type="Sprite2D" parent="."]
+texture_repeat = 2
+position = Vector2(0, -7.5)
+rotation = 1.5708
+texture = ExtResource("4_kuhls")
+region_enabled = true
+region_rect = Rect2(0, 1, 1, 9)

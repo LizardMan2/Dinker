@@ -20,11 +20,11 @@ func _process(delta: float) -> void:
 				var b = objects[0].instantiate()
 				get_parent().add_child(b)
 				b.position = (Vector2(i.x, i.y) * 15) + Vector2(7.5, 7.5)
-				match coords.y:
+				match coords.x:
 					0:
-						b.state = 1
-					1:
 						b.state = -1
+					1:
+						b.state = 1
 					2:
 						b.state = 2
 		visible = false

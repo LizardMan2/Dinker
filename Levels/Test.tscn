@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://b4ieydrsr34mt"]
+[gd_scene load_steps=22 format=4 uid="uid://b4ieydrsr34mt"]
 
 [ext_resource type="Texture2D" uid="uid://43pyj4by5c42" path="res://Assets/Art/Dinker Tileset.png" id="1_1ulhx"]
 [ext_resource type="Texture2D" uid="uid://c6d4l47d8v7lm" path="res://Assets/Art/Conection Tileset.png" id="1_b50jd"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://Levels/connectionBuilder.gd" id="3_dakvb"]
 [ext_resource type="PackedScene" uid="uid://c05cdko4pf5i1" path="res://Objects/bumper.tscn" id="3_dww0a"]
 [ext_resource type="PackedScene" uid="uid://bmcigu6bxbxt1" path="res://Objects/Connection/connection_layer.tscn" id="3_j81sp"]
+[ext_resource type="PackedScene" uid="uid://c1l540knp2od" path="res://Objects/Connection/connector.tscn" id="4_yt2vy"]
 [ext_resource type="PackedScene" uid="uid://bp75whmfa4006" path="res://Objects/Player/player.tscn" id="4_ytsnj"]
 [ext_resource type="PackedScene" uid="uid://beqi1cysmhdlg" path="res://Objects/wall.tscn" id="5_5ofm8"]
 [ext_resource type="PackedScene" uid="uid://w1f4ijrsqbrj" path="res://Objects/key.tscn" id="6_55xpg"]
@@ -96,14 +97,17 @@ polygon = PackedVector2Array(104, 136, 184, 136, 184, 8, 104, 8, 104, 136, 88, 1
 
 [node name="Level Spawner" type="Node2D" parent="." node_paths=PackedStringArray("layers")]
 script = ExtResource("1_u5yxq")
-layers = [NodePath("map Layer"), NodePath("Motion Layer")]
+layers = [NodePath("map Layer"), NodePath("Motion Layer"), NodePath("Connection Layer")]
 
-[node name="Connection Layer" type="TileMapLayer" parent="Level Spawner"]
+[node name="Connection Layer" type="TileMapLayer" parent="Level Spawner" node_paths=PackedStringArray("channels")]
 tile_map_data = PackedByteArray("AAAHAAIAAAADAAEAAAAHAAQAAAADAAEAAAAJAAIAAAADAAEAAAA=")
 tile_set = SubResource("TileSet_h27o7")
 script = ExtResource("3_dakvb")
+objects = Array[PackedScene]([ExtResource("4_yt2vy")])
+channels = [NodePath("Connection Layer"), NodePath("Connection Layer2"), NodePath("Connection Layer3"), NodePath("Connection Layer4"), NodePath("Connection Layer5"), NodePath("Connection Layer6"), NodePath("Connection Layer7"), NodePath("Connection Layer8")]
 
 [node name="Connection Layer" parent="Level Spawner/Connection Layer" instance=ExtResource("3_j81sp")]
+visible = false
 
 [node name="Connection Layer2" parent="Level Spawner/Connection Layer" instance=ExtResource("3_j81sp")]
 
@@ -126,7 +130,7 @@ script = ExtResource("2_fnkbb")
 objects = Array[PackedScene]([ExtResource("3_dww0a"), ExtResource("4_ytsnj"), ExtResource("5_5ofm8"), ExtResource("6_55xpg"), ExtResource("7_8frpd")])
 
 [node name="Motion Layer" type="TileMapLayer" parent="Level Spawner"]
-tile_map_data = PackedByteArray("AAAHAAIAAAAAAAEAAAAJAAIAAAABAAAAAAAKAAIAAAAEAAAAAAALAAIAAAAEAAAAAAA=")
+tile_map_data = PackedByteArray("AAAHAAIAAAAAAAEAAAAKAAIAAAAEAAAAAAALAAIAAAAEAAAAAAA=")
 tile_set = SubResource("TileSet_p2nll")
 script = ExtResource("10_wf6hj")
 objects = Array[PackedScene]([ExtResource("10_4krfk")])

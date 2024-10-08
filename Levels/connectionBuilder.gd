@@ -3,6 +3,7 @@ extends TileMapLayer
 var canSpawn = false
 
 @export var objects: Array[PackedScene]
+@export var channels: Array[Node2D]
 var wallCoords = [Vector2i(0, 4), Vector2i(1, 4), Vector2i(2, 4), 
 					Vector2i(3, 2), Vector2i(3, 3), Vector2i(3, 4)]
 var spawned = false
@@ -19,11 +20,10 @@ func _process(delta: float) -> void:
 		var mapPos = map_to_local(Vector2(0,0)) + Vector2(7 * 15, 15)
 		for i in get_used_cells_by_id():
 			var coords = get_cell_atlas_coords(i)
-			
-			
-			
-			
-			
-			
+			var channel = coords.x + (coords.y * 4)
+			var b = objects[0].instantiate()
+			channels[channel].add_child(b)
+			b.position = (Vector2(i.x, i.y) * 15) + Vector2(7.5, 7.5)
+
 		visible = false
 		spawned = true

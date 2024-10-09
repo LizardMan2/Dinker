@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://b4ieydrsr34mt"]
+[gd_scene load_steps=28 format=4 uid="uid://b4ieydrsr34mt"]
 
 [ext_resource type="Texture2D" uid="uid://43pyj4by5c42" path="res://Assets/Art/Dinker Tileset.png" id="1_1ulhx"]
 [ext_resource type="Texture2D" uid="uid://c6d4l47d8v7lm" path="res://Assets/Art/Conection Tileset.png" id="1_b50jd"]
@@ -15,6 +15,10 @@
 [ext_resource type="Texture2D" uid="uid://otptghnkg6j2" path="res://Assets/Art/Moving Tileset.png" id="9_w1j21"]
 [ext_resource type="PackedScene" uid="uid://clo7mfhmkyr4n" path="res://Objects/rotator.tscn" id="10_4krfk"]
 [ext_resource type="Script" path="res://Levels/SpawnMovingObjects.gd" id="10_wf6hj"]
+[ext_resource type="PackedScene" uid="uid://dk6egibmgpx5w" path="res://Objects/door.tscn" id="16_37uj2"]
+[ext_resource type="Texture2D" uid="uid://dlpxc21ckfs4h" path="res://Assets/Art/Logic Tileset.png" id="17_mtijq"]
+[ext_resource type="Script" path="res://Levels/logic_layer.gd" id="18_3fyam"]
+[ext_resource type="PackedScene" uid="uid://dv4xk7rwt3ey4" path="res://Objects/Logic/toggle.tscn" id="19_8sn7t"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1x6rr"]
 texture = ExtResource("1_b50jd")
@@ -81,6 +85,15 @@ texture_region_size = Vector2i(15, 15)
 tile_size = Vector2i(15, 15)
 sources/0 = SubResource("TileSetAtlasSource_e776m")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3q5am"]
+texture = ExtResource("17_mtijq")
+texture_region_size = Vector2i(15, 15)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_sfeuo"]
+tile_size = Vector2i(15, 15)
+sources/0 = SubResource("TileSetAtlasSource_3q5am")
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -97,7 +110,7 @@ polygon = PackedVector2Array(104, 136, 184, 136, 184, 8, 104, 8, 104, 136, 88, 1
 
 [node name="Level Spawner" type="Node2D" parent="." node_paths=PackedStringArray("layers")]
 script = ExtResource("1_u5yxq")
-layers = [NodePath("map Layer"), NodePath("Motion Layer"), NodePath("Connection Layer")]
+layers = [NodePath("Map Layer"), NodePath("Motion Layer"), NodePath("Connection Layer"), NodePath("Logic Layer")]
 
 [node name="Connection Layer" type="TileMapLayer" parent="Level Spawner" node_paths=PackedStringArray("channels")]
 tile_map_data = PackedByteArray("AAAHAAIAAAADAAEAAAAHAAQAAAADAAEAAAAJAAIAAAADAAEAAAA=")
@@ -123,14 +136,20 @@ visible = false
 
 [node name="Connection Layer8" parent="Level Spawner/Connection Layer" instance=ExtResource("3_j81sp")]
 
-[node name="map Layer" type="TileMapLayer" parent="Level Spawner"]
+[node name="Map Layer" type="TileMapLayer" parent="Level Spawner"]
 tile_map_data = PackedByteArray("AAAHAAEAAgAAAAIAAAAHAAQAAgABAAUAAAAIAAUAAgAAAAAAAAAKAAUAAgABAAAAAAAHAAIAAgACAAEAAAAHAAUAAgACAAAAAAAHAAgAAgABAAAAAAAIAAIAAgADAAAAAAAIAAYAAgAAAAQAAAAJAAYAAgABAAQAAAAJAAgAAgACAAMAAAAKAAMAAgACAAAAAAAKAAYAAgACAAQAAAALAAEAAgAAAAMAAAALAAMAAgAAAAAAAAALAAUAAgADAAAAAAALAAgAAgAAAAAAAAAJAAEAAgADAAMAAAAJAAIAAgADAAQAAAAJAAAAAgABAAQAAAAGAAAAAgADAAIAAAAGAAEAAgADAAMAAAAGAAIAAgADAAMAAAAGAAMAAgADAAMAAAAGAAQAAgADAAMAAAAGAAUAAgADAAMAAAAGAAYAAgADAAMAAAAGAAcAAgADAAMAAAAGAAgAAgADAAMAAAAGAAkAAgADAAQAAAAMAAAAAgADAAIAAAAMAAEAAgADAAMAAAAMAAIAAgADAAMAAAAMAAMAAgADAAMAAAAMAAQAAgADAAMAAAAMAAUAAgADAAMAAAAMAAYAAgADAAMAAAAMAAcAAgADAAMAAAAMAAgAAgADAAMAAAAMAAkAAgADAAQAAAAIAAkAAgABAAQAAAAJAAkAAgABAAQAAAAKAAkAAgABAAQAAAAKAAAAAgABAAQAAAAIAAAAAgABAAQAAAAHAAAAAgAAAAQAAAALAAAAAgACAAQAAAALAAkAAgACAAQAAAAHAAkAAgAAAAQAAAA=")
 tile_set = SubResource("TileSet_labl6")
 script = ExtResource("2_fnkbb")
 objects = Array[PackedScene]([ExtResource("3_dww0a"), ExtResource("4_ytsnj"), ExtResource("5_5ofm8"), ExtResource("6_55xpg"), ExtResource("7_8frpd")])
 
 [node name="Motion Layer" type="TileMapLayer" parent="Level Spawner"]
-tile_map_data = PackedByteArray("AAAHAAIAAAAAAAEAAAAKAAIAAAAEAAAAAAALAAIAAAAEAAAAAAA=")
+tile_map_data = PackedByteArray("AAAHAAIAAAAAAAEAAAAKAAIAAAAEAAAAAAALAAIAAAAEAAAAAAAJAAIAAAABAAAAAAA=")
 tile_set = SubResource("TileSet_p2nll")
 script = ExtResource("10_wf6hj")
-objects = Array[PackedScene]([ExtResource("10_4krfk")])
+objects = Array[PackedScene]([ExtResource("10_4krfk"), ExtResource("16_37uj2")])
+
+[node name="Logic Layer" type="TileMapLayer" parent="Level Spawner"]
+tile_map_data = PackedByteArray("AAAJAAIAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_sfeuo")
+script = ExtResource("18_3fyam")
+objects = Array[PackedScene]([ExtResource("19_8sn7t")])

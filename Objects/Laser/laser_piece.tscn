@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://mo0teleipul5"]
 
 [ext_resource type="Texture2D" uid="uid://8nh4ooiwd3ip" path="res://Assets/Art/Puzzle Elements/laser.png" id="1_sc3mh"]
-[ext_resource type="Script" path="res://Levels/laser_piece.gd" id="2_u00v8"]
+[ext_resource type="Script" path="res://Objects/Laser/laser_piece.gd" id="2_u00v8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_24dqt"]
 atlas = ExtResource("1_sc3mh")

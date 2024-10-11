@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://eu4cuxf80f3e"]
+
+[ext_resource type="Script" path="res://Objects/Level Building/level_spawner.gd" id="1_0mjdx"]
+
+[node name="Level Spawner" type="Node2D" node_paths=PackedStringArray("layers")]
+script = ExtResource("1_0mjdx")
+layers = [NodePath(""), NodePath(""), NodePath(""), NodePath("")]

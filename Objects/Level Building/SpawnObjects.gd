@@ -37,7 +37,8 @@ func _process(delta: float) -> void:
 				get_parent().add_child(b)
 				b.position = (Vector2(i.x, i.y) * 15) + Vector2(7.5, 7.5)
 				b.state = wallType
-			elif coords == Vector2i(0, 3):
+			elif coords == Vector2i(0, 3): #Keys
+				Globals.keys = 0
 				var b = objects[3].instantiate()
 				get_parent().add_child(b)
 				b.position = (Vector2(i.x, i.y) * 15) + Vector2(7.5, 7.5)
@@ -46,6 +47,14 @@ func _process(delta: float) -> void:
 				get_parent().add_child(b)
 				b.position = (Vector2(i.x, i.y) * 15) + Vector2(7.5, 7.5)
 				b.type = coords.x
+			elif coords == Vector2i(0, 2):
+				var b = objects[5].instantiate()
+				get_parent().add_child(b)
+				b.position = (Vector2(i.x, i.y) * 15) + Vector2(7.5, 7.5)
+			elif coords == Vector2i(0, 6):
+				var b = objects[6].instantiate()
+				get_parent().add_child(b)
+				b.position = (Vector2(i.x, i.y) * 15) + Vector2(7.5, 7.5)
 		visible = false
 		spawned = true
 		

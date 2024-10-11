@@ -1,0 +1,96 @@
+[gd_scene load_steps=7 format=3 uid="uid://wboynvwymknx"]
+
+[ext_resource type="Script" path="res://Objects/four_point.gd" id="1_yn1xb"]
+[ext_resource type="Texture2D" uid="uid://cvdhd8qvdt4w7" path="res://Assets/Art/Puzzle Elements/4 Point.png" id="2_c2a26"]
+[ext_resource type="Texture2D" uid="uid://bah2n7fwlgotn" path="res://Assets/Art/Puzzle Elements/4 Point Full Cover.png" id="3_8dj8e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_500rh"]
+size = Vector2(6, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gnvhv"]
+size = Vector2(6, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jqdnj"]
+size = Vector2(5, 5)
+
+[node name="FourPoint" type="Node2D"]
+script = ExtResource("1_yn1xb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_c2a26")
+
+[node name="Up" type="Sprite2D" parent="Sprite2D"]
+visible = false
+position = Vector2(0, -4)
+texture = ExtResource("3_8dj8e")
+
+[node name="Right" type="Sprite2D" parent="Sprite2D"]
+visible = false
+position = Vector2(4, 0)
+rotation = 1.5708
+texture = ExtResource("3_8dj8e")
+
+[node name="Down" type="Sprite2D" parent="Sprite2D"]
+visible = false
+position = Vector2(0, 4)
+texture = ExtResource("3_8dj8e")
+
+[node name="Left" type="Sprite2D" parent="Sprite2D"]
+visible = false
+position = Vector2(-4, 0)
+rotation = 1.5708
+texture = ExtResource("3_8dj8e")
+
+[node name="Up" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Up"]
+position = Vector2(0, -5)
+shape = SubResource("RectangleShape2D_500rh")
+
+[node name="Right" type="Area2D" parent="."]
+rotation = 1.5708
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Right"]
+position = Vector2(0, -5)
+shape = SubResource("RectangleShape2D_500rh")
+
+[node name="Down" type="Area2D" parent="."]
+rotation = 3.14159
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Down"]
+position = Vector2(0, -5)
+shape = SubResource("RectangleShape2D_500rh")
+
+[node name="Left" type="Area2D" parent="."]
+rotation = -1.5708
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Left"]
+position = Vector2(0, -5)
+shape = SubResource("RectangleShape2D_500rh")
+
+[node name="Laser Remove" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Laser Remove"]
+shape = SubResource("RectangleShape2D_gnvhv")
+
+[node name="Win Collider" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Win Collider"]
+shape = SubResource("RectangleShape2D_jqdnj")
+
+[connection signal="area_entered" from="Up" to="." method="_on_up_area_entered"]
+[connection signal="area_entered" from="Right" to="." method="_on_right_area_entered"]
+[connection signal="area_entered" from="Down" to="." method="_on_down_area_entered"]
+[connection signal="area_entered" from="Left" to="." method="_on_left_area_entered"]

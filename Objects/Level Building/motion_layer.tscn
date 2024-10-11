@@ -1,0 +1,28 @@
+[gd_scene load_steps=7 format=3 uid="uid://c71cevy4p4v4h"]
+
+[ext_resource type="Texture2D" uid="uid://otptghnkg6j2" path="res://Assets/Art/Moving Tileset.png" id="1_4xxng"]
+[ext_resource type="Script" path="res://Objects/Level Building/SpawnMovingObjects.gd" id="2_3mwbo"]
+[ext_resource type="PackedScene" uid="uid://clo7mfhmkyr4n" path="res://Objects/rotator.tscn" id="3_tmyw8"]
+[ext_resource type="PackedScene" uid="uid://dk6egibmgpx5w" path="res://Objects/door.tscn" id="4_yk455"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e776m"]
+texture = ExtResource("1_4xxng")
+texture_region_size = Vector2i(15, 15)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_p2nll"]
+tile_size = Vector2i(15, 15)
+sources/0 = SubResource("TileSetAtlasSource_e776m")
+
+[node name="Motion Layer" type="TileMapLayer"]
+tile_set = SubResource("TileSet_p2nll")
+script = ExtResource("2_3mwbo")
+objects = Array[PackedScene]([ExtResource("3_tmyw8"), ExtResource("4_yk455")])

@@ -1,0 +1,48 @@
+[gd_scene load_steps=12 format=3 uid="uid://dle8webbmjtr3"]
+
+[ext_resource type="Texture2D" uid="uid://43pyj4by5c42" path="res://Assets/Art/Dinker Tileset.png" id="1_ttu6o"]
+[ext_resource type="Script" path="res://Objects/Level Building/SpawnObjects.gd" id="2_4b5xr"]
+[ext_resource type="PackedScene" uid="uid://c05cdko4pf5i1" path="res://Objects/bumper.tscn" id="3_ckbbu"]
+[ext_resource type="PackedScene" uid="uid://bp75whmfa4006" path="res://Objects/Player/player.tscn" id="4_a73lc"]
+[ext_resource type="PackedScene" uid="uid://beqi1cysmhdlg" path="res://Objects/wall.tscn" id="5_4uyxj"]
+[ext_resource type="PackedScene" uid="uid://w1f4ijrsqbrj" path="res://Objects/key.tscn" id="6_j0qaf"]
+[ext_resource type="PackedScene" uid="uid://b1u4rok5q2dgu" path="res://Objects/button.tscn" id="7_b2872"]
+[ext_resource type="PackedScene" uid="uid://dyq8wcu4dgk55" path="res://Objects/lock.tscn" id="8_4vk24"]
+[ext_resource type="PackedScene" uid="uid://wboynvwymknx" path="res://Objects/four_point.tscn" id="9_6qvpe"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0g4ng"]
+texture = ExtResource("1_ttu6o")
+texture_region_size = Vector2i(15, 15)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+3:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+2:5/0 = 0
+1:5/0 = 0
+0:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_labl6"]
+tile_size = Vector2i(15, 15)
+sources/2 = SubResource("TileSetAtlasSource_0g4ng")
+
+[node name="Map Layer" type="TileMapLayer"]
+tile_set = SubResource("TileSet_labl6")
+script = ExtResource("2_4b5xr")
+objects = Array[PackedScene]([ExtResource("3_ckbbu"), ExtResource("4_a73lc"), ExtResource("5_4uyxj"), ExtResource("6_j0qaf"), ExtResource("7_b2872"), ExtResource("8_4vk24"), ExtResource("9_6qvpe")])

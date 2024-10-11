@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dk6egibmgpx5w"]
 
-[ext_resource type="Script" path="res://door.gd" id="1_mhh8u"]
+[ext_resource type="Script" path="res://Objects/door.gd" id="1_mhh8u"]
 [ext_resource type="Texture2D" uid="uid://0mdrmpwis0mw" path="res://Assets/Art/Puzzle Elements/Door Hinge.png" id="3_6lw5e"]
 [ext_resource type="Texture2D" uid="uid://c0gnoxopd0x1t" path="res://Assets/Art/Puzzle Elements/Door.png" id="4_kuhls"]
 

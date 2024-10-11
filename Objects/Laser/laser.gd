@@ -47,14 +47,15 @@ func _process(delta: float) -> void:
 			if len(laser) == 3:
 				queue_free()
 		var i = len(laser) - 1
-		while i > 1:
+		while i > 0:
 			if laser[i].delete:
 				laser[i].queue_free()
 				laser.pop_at(i)
 			else:
-				laser[i-1].position = laser[i-2].position
+				laser[i].position = laser[i-1].position
 				
 			i -= 1
 				
-		
+		if $LaserHead.delete and len(laser) == 1:
+			queue_free()
 		timer = 0

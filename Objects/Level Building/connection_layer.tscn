@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://b755sv1a1l82l"]
+
+[ext_resource type="Texture2D" uid="uid://c6d4l47d8v7lm" path="res://Assets/Art/Conection Tileset.png" id="1_4xi42"]
+[ext_resource type="Script" path="res://Objects/Level Building/connectionBuilder.gd" id="2_cq2ti"]
+[ext_resource type="PackedScene" uid="uid://c1l540knp2od" path="res://Objects/Connection/connector.tscn" id="3_8d2uc"]
+[ext_resource type="PackedScene" uid="uid://bmcigu6bxbxt1" path="res://Objects/Connection/connection_layer.tscn" id="4_qrypi"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1x6rr"]
+texture = ExtResource("1_4xi42")
+texture_region_size = Vector2i(15, 15)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_h27o7"]
+tile_size = Vector2i(15, 15)
+sources/0 = SubResource("TileSetAtlasSource_1x6rr")
+
+[node name="Connection Layer" type="TileMapLayer" node_paths=PackedStringArray("channels")]
+tile_set = SubResource("TileSet_h27o7")
+script = ExtResource("2_cq2ti")
+objects = Array[PackedScene]([ExtResource("3_8d2uc")])
+channels = [NodePath("Connection Layer"), NodePath("Connection Layer2"), NodePath("Connection Layer3"), NodePath("Connection Layer4"), NodePath("Connection Layer5"), NodePath("Connection Layer6"), NodePath("Connection Layer7"), NodePath("Connection Layer8")]
+
+[node name="Connection Layer" parent="." instance=ExtResource("4_qrypi")]
+visible = false
+
+[node name="Connection Layer2" parent="." instance=ExtResource("4_qrypi")]
+
+[node name="Connection Layer3" parent="." instance=ExtResource("4_qrypi")]
+
+[node name="Connection Layer4" parent="." instance=ExtResource("4_qrypi")]
+
+[node name="Connection Layer5" parent="." instance=ExtResource("4_qrypi")]
+
+[node name="Connection Layer6" parent="." instance=ExtResource("4_qrypi")]
+
+[node name="Connection Layer7" parent="." instance=ExtResource("4_qrypi")]
+
+[node name="Connection Layer8" parent="." instance=ExtResource("4_qrypi")]

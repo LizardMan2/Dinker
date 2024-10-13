@@ -19,7 +19,7 @@ func _process(delta: float) -> void:
 		var rect = get_used_rect().size
 		for i in get_used_cells_by_id():
 			var coords = get_cell_atlas_coords(i)
-			if coords.y == 1 and coords.x < 3:
+			if coords.y == 1 and coords.x < 6:
 				var b = objects[0].instantiate()
 				get_parent().add_child(b)
 				b.position = (Vector2(i.x, i.y) * 15) + Vector2(7.5, 7.5)
@@ -30,6 +30,16 @@ func _process(delta: float) -> void:
 						b.state = 1
 					2:
 						b.state = 2
+					3:
+						b.state = -1
+						b.back = false
+					4:
+						b.state = 1
+						b.back = false
+					5:
+						b.state = 2
+						b.back = false
+						
 			if coords.y == 0 and coords.x in [0, 1, 2, 3]:
 				var b = objects[1].instantiate()
 				get_parent().add_child(b)

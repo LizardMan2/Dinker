@@ -21,10 +21,15 @@ func _process(delta: float) -> void:
 				var b = objects[0].instantiate()
 				get_parent().add_child(b)
 				b.position = (Vector2(i.x, i.y) * 15) + Vector2(7.5, 7.5)
-			if coords.y == 1 and coords.y < 4: #Laser
+			if coords.y == 1 and coords.x < 4: #Laser
 				var b = objects[1].instantiate()
 				get_parent().add_child(b)
 				b.position = (Vector2(i.x, i.y) * 15) + Vector2(7.5, 7.5)
 				b.defaultDir = coords.x
+			if coords.y == 2 and coords.x < 4: #Logic Mover
+				var b = objects[2].instantiate()
+				get_parent().add_child(b)
+				b.position = (Vector2(i.x, i.y) * 15) + Vector2(7.5, 7.5)
+				b.dir = coords.x
 		visible = false
 		spawned = true

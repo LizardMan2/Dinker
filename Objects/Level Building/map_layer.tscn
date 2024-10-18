@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dle8webbmjtr3"]
+[gd_scene load_steps=13 format=3 uid="uid://dle8webbmjtr3"]
 
 [ext_resource type="Texture2D" uid="uid://43pyj4by5c42" path="res://Assets/Art/Dinker Tileset.png" id="1_ttu6o"]
 [ext_resource type="Script" path="res://Objects/Level Building/SpawnObjects.gd" id="2_4b5xr"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b1u4rok5q2dgu" path="res://Objects/button.tscn" id="7_b2872"]
 [ext_resource type="PackedScene" uid="uid://dyq8wcu4dgk55" path="res://Objects/lock.tscn" id="8_4vk24"]
 [ext_resource type="PackedScene" uid="uid://wboynvwymknx" path="res://Objects/four_point.tscn" id="9_6qvpe"]
+[ext_resource type="PackedScene" uid="uid://be3xhxdlu7v1a" path="res://Objects/crotator.tscn" id="10_hoeeu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0g4ng"]
 texture = ExtResource("1_ttu6o")
@@ -45,4 +46,4 @@ sources/2 = SubResource("TileSetAtlasSource_0g4ng")
 [node name="Map Layer" type="TileMapLayer"]
 tile_set = SubResource("TileSet_labl6")
 script = ExtResource("2_4b5xr")
-objects = Array[PackedScene]([ExtResource("3_ckbbu"), ExtResource("4_a73lc"), ExtResource("5_4uyxj"), ExtResource("6_j0qaf"), ExtResource("7_b2872"), ExtResource("8_4vk24"), ExtResource("9_6qvpe")])
+objects = Array[PackedScene]([ExtResource("3_ckbbu"), ExtResource("4_a73lc"), ExtResource("5_4uyxj"), ExtResource("6_j0qaf"), ExtResource("7_b2872"), ExtResource("8_4vk24"), ExtResource("9_6qvpe"), ExtResource("10_hoeeu")])

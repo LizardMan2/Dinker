@@ -42,19 +42,24 @@ func _process(delta: float) -> void:
 				var b = objects[3].instantiate()
 				get_parent().add_child(b)
 				b.position = (Vector2(i.x, i.y) * 15) + Vector2(7.5, 7.5)
-			elif coords in [Vector2i(0, 5),Vector2i(1, 5), Vector2i(2, 5)]:
+			elif coords in [Vector2i(0, 5),Vector2i(1, 5), Vector2i(2, 5)]: #Buttons
 				var b = objects[4].instantiate()
 				get_parent().add_child(b)
 				b.position = (Vector2(i.x, i.y) * 15) + Vector2(7.5, 7.5)
 				b.type = coords.x
-			elif coords == Vector2i(0, 2):
+			elif coords == Vector2i(0, 2): #Lock
 				var b = objects[5].instantiate()
 				get_parent().add_child(b)
 				b.position = (Vector2(i.x, i.y) * 15) + Vector2(7.5, 7.5)
-			elif coords == Vector2i(0, 6):
+			elif coords == Vector2i(0, 6): #4 point
 				var b = objects[6].instantiate()
 				get_parent().add_child(b)
 				b.position = (Vector2(i.x, i.y) * 15) + Vector2(7.5, 7.5)
+			elif coords == Vector2i(1, 6): #Crotator
+				var b = objects[7].instantiate()
+				get_parent().add_child(b)
+				b.position = (Vector2(i.x, i.y) * 15) + Vector2(7.5, 7.5)
+			
 		visible = false
 		spawned = true
 		

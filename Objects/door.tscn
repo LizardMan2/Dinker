@@ -32,11 +32,11 @@ collision_mask = 0
 position = Vector2(0, -7)
 shape = SubResource("RectangleShape2D_k8k5k")
 
-[node name="Connectioni" type="Area2D" parent="."]
+[node name="Connection" type="Area2D" parent="."]
 collision_layer = 16
 collision_mask = 0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Connectioni"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Connection"]
 shape = SubResource("RectangleShape2D_dju4d")
 
 [node name="Label" type="Label" parent="."]

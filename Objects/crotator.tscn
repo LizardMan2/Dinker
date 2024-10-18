@@ -1,0 +1,71 @@
+[gd_scene load_steps=10 format=3 uid="uid://be3xhxdlu7v1a"]
+
+[ext_resource type="Script" path="res://Objects/crotator.gd" id="1_o6fwv"]
+[ext_resource type="PackedScene" uid="uid://bta3duvifuqxg" path="res://Objects/Laser/laser.tscn" id="2_bhoj0"]
+[ext_resource type="Texture2D" uid="uid://bdha2lfnmmvj4" path="res://Assets/Art/Puzzle Elements/Crotator Full.png" id="2_y33uy"]
+[ext_resource type="Texture2D" uid="uid://40y5o02ykqot" path="res://Assets/Art/Puzzle Elements/Crotator.png" id="3_t8ol6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hynpn"]
+atlas = ExtResource("2_y33uy")
+region = Rect2(0, 0, 13, 13)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b55ri"]
+atlas = ExtResource("3_t8ol6")
+region = Rect2(0, 0, 13, 13)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8mhwp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hynpn")
+}],
+"loop": true,
+"name": &"active",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b55ri")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u46lf"]
+size = Vector2(4, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ggaw1"]
+size = Vector2(5, 5)
+
+[node name="Crotator" type="Node2D"]
+script = ExtResource("1_o6fwv")
+laser = ExtResource("2_bhoj0")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8mhwp")
+
+[node name="Colliders" type="Node2D" parent="."]
+
+[node name="Collector Collider" type="Area2D" parent="Colliders"]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/Collector Collider"]
+shape = SubResource("RectangleShape2D_u46lf")
+
+[node name="Delete Collider" type="Area2D" parent="Colliders"]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Colliders/Delete Collider"]
+polygon = PackedVector2Array(6, -6, 6, 6, -6, 6, -6, -6, -3, -6, -3, 2, 3, 2, 3, -6)
+
+[node name="Connection" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Connection"]
+shape = SubResource("RectangleShape2D_ggaw1")
+
+[connection signal="area_entered" from="Colliders/Collector Collider" to="." method="_on_collector_collider_area_entered"]

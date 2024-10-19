@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bm8dk8j86fvmc"]
+[gd_scene load_steps=8 format=3 uid="uid://bm8dk8j86fvmc"]
 
 [ext_resource type="Texture2D" uid="uid://dlpxc21ckfs4h" path="res://Assets/Art/Logic Tileset.png" id="1_2fyru"]
 [ext_resource type="Script" path="res://Objects/Level Building/logic_layer.gd" id="2_lv3qs"]
 [ext_resource type="PackedScene" uid="uid://dv4xk7rwt3ey4" path="res://Objects/Logic/toggle.tscn" id="3_lfqpd"]
 [ext_resource type="PackedScene" uid="uid://bta3duvifuqxg" path="res://Objects/Laser/laser.tscn" id="4_4fktl"]
+[ext_resource type="PackedScene" uid="uid://b23d2nw16ash7" path="res://Objects/logic_mover.tscn" id="5_qq3m2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3q5am"]
 texture = ExtResource("1_2fyru")
@@ -25,4 +26,4 @@ sources/0 = SubResource("TileSetAtlasSource_3q5am")
 [node name="Logic Layer" type="TileMapLayer"]
 tile_set = SubResource("TileSet_sfeuo")
 script = ExtResource("2_lv3qs")
-objects = Array[PackedScene]([ExtResource("3_lfqpd"), ExtResource("4_4fktl")])
+objects = Array[PackedScene]([ExtResource("3_lfqpd"), ExtResource("4_4fktl"), ExtResource("5_qq3m2")])

@@ -22,11 +22,11 @@ func _process(delta: float) -> void:
 		for i in get_used_cells_by_id():
 			var coords = get_cell_atlas_coords(i)
 			var wallType = wallCoords.find(coords)
-			if coords.y in [0, 1] and coords.x < 4: #Bumpers
+			if coords.y in [0, 1, 2] and coords.x > 3: #Bumpers
 				var b = objects[0].instantiate()
 				get_parent().add_child(b)
 				b.position = (Vector2(i.x, i.y) * 15) + Vector2(7.5, 7.5)
-				b.dir = coords.x
+				b.dir = coords.x - 4
 				b.col = coords.y
 			elif coords == Vector2i(2, 3): #Player
 				var b = objects[1].instantiate()

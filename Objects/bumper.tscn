@@ -1,32 +1,34 @@
-[gd_scene load_steps=8 format=3 uid="uid://c05cdko4pf5i1"]
+[gd_scene load_steps=9 format=3 uid="uid://c05cdko4pf5i1"]
 
 [ext_resource type="Script" path="res://Objects/bumper.gd" id="1_ns73x"]
 [ext_resource type="Texture2D" uid="uid://43pyj4by5c42" path="res://Assets/Art/Dinker Tileset.png" id="2_147ac"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4iscd"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_v20ev"]
 atlas = ExtResource("2_147ac")
-region = Rect2(0, 0, 15, 15)
+region = Rect2(60, 0, 15, 15)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_h1xac"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_n5pbc"]
 atlas = ExtResource("2_147ac")
-region = Rect2(0, 15, 15, 15)
+region = Rect2(60, 15, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x6ou8"]
+atlas = ExtResource("2_147ac")
+region = Rect2(60, 30, 15, 15)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_j4x5e"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4iscd")
-}],
-"loop": true,
-"name": &"Blue",
-"speed": 5.0
+"texture": SubResource("AtlasTexture_v20ev")
 }, {
-"frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_h1xac")
+"texture": SubResource("AtlasTexture_n5pbc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x6ou8")
 }],
 "loop": true,
-"name": &"Red",
+"name": &"Colors",
 "speed": 5.0
 }]
 
@@ -43,7 +45,7 @@ script = ExtResource("1_ns73x")
 
 [node name="sprite" type="AnimatedSprite2D" parent="spr"]
 sprite_frames = SubResource("SpriteFrames_j4x5e")
-animation = &"Blue"
+animation = &"Colors"
 
 [node name="Colliders" type="Node2D" parent="."]
 
@@ -64,6 +66,7 @@ collision_mask = 0
 polygon = PackedVector2Array(6, -4, 6, 6, -4, 6, 3, 3)
 
 [node name="Label" type="Label" parent="."]
+visible = false
 offset_right = 40.0
 offset_bottom = 23.0
 

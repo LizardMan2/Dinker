@@ -49,5 +49,13 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bumping"]
 shape = SubResource("RectangleShape2D_vwfuk")
 
+[node name="LaserHeadCollision" type="Area2D" parent="."]
+z_index = -1
+collision_layer = 64
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LaserHeadCollision"]
+shape = SubResource("RectangleShape2D_vwfuk")
+
 [connection signal="area_entered" from="Redirect" to="." method="_on_redirect_area_entered"]
 [connection signal="area_entered" from="Delete" to="." method="_on_delete_area_entered"]

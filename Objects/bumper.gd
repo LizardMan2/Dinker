@@ -15,8 +15,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if col == 1:
-		$spr/sprite.play("Red")
+	$spr/sprite.frame = col
 	#Properly rotate the bumper's sprite in accordance with dir
 	targetDeg = 90 * dir
 	if targetDeg != currentDeg:

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Dinker"
-run/main_scene="res://Levels/Test.tscn"
+run/main_scene="res://Levels/Lvl bl_cro.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
@@ -27,6 +27,7 @@ Globals="*res://Objects/Global.gd"
 2d_physics/layer_4="Rotator Collide"
 2d_physics/layer_5="Connection"
 2d_physics/layer_6="Win Detect"
+2d_physics/layer_7="Laser Head"
 
 [rendering]
 

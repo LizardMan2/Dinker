@@ -12,10 +12,9 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-
 func _on_redirect_area_entered(area: Area2D) -> void:
+	global_position = area.get_parent().get_parent().position
 	var bounce = area.get_parent().get_parent().trueDir
-	print(area.get_parent().get_parent().trueDir)
 	if bounce == 0:
 		if dir == 2:
 			dir = 3
@@ -40,3 +39,4 @@ func _on_redirect_area_entered(area: Area2D) -> void:
 
 func _on_delete_area_entered(area: Area2D) -> void:
 	delete = true
+	print("delete")

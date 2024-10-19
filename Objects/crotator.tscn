@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://be3xhxdlu7v1a"]
+[gd_scene load_steps=11 format=3 uid="uid://be3xhxdlu7v1a"]
 
 [ext_resource type="Script" path="res://Objects/crotator.gd" id="1_o6fwv"]
 [ext_resource type="PackedScene" uid="uid://bta3duvifuqxg" path="res://Objects/Laser/laser.tscn" id="2_bhoj0"]
@@ -33,9 +33,12 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u46lf"]
-size = Vector2(4, 2)
+size = Vector2(2, 2)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ggaw1"]
+size = Vector2(5, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gwoue"]
 size = Vector2(5, 5)
 
 [node name="Crotator" type="Node2D"]
@@ -49,17 +52,17 @@ sprite_frames = SubResource("SpriteFrames_8mhwp")
 
 [node name="Collector Collider" type="Area2D" parent="Colliders"]
 collision_layer = 0
-collision_mask = 4
+collision_mask = 64
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/Collector Collider"]
 shape = SubResource("RectangleShape2D_u46lf")
 
 [node name="Delete Collider" type="Area2D" parent="Colliders"]
-collision_layer = 0
+collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Colliders/Delete Collider"]
-polygon = PackedVector2Array(6, -6, 6, 6, -6, 6, -6, -6, -3, -6, -3, 2, 3, 2, 3, -6)
+polygon = PackedVector2Array(6, -6, 6, 6, -6, 6, -6, -6, -1, -6, -1, 2, 1, 2, 1, -6)
 
 [node name="Connection" type="Area2D" parent="."]
 collision_layer = 16
@@ -67,5 +70,12 @@ collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Connection"]
 shape = SubResource("RectangleShape2D_ggaw1")
+
+[node name="rotator Collider" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="rotator Collider"]
+shape = SubResource("RectangleShape2D_gwoue")
 
 [connection signal="area_entered" from="Colliders/Collector Collider" to="." method="_on_collector_collider_area_entered"]

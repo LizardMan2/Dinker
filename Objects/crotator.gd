@@ -13,6 +13,8 @@ var trigger = false
 var input = false
 var timer = 0
 
+var prevDir = 0
+
 @export var laser: PackedScene
 
 # Called when the node enters the scene tree for the first time.
@@ -39,19 +41,29 @@ func _process(delta: float) -> void:
 			currentDeg -= 5
 		$Sprite2D.rotation_degrees = currentDeg
 		$Colliders.rotation_degrees = dir * 90
-		trueDir = dir % 4
-	
-	if Input.is_action_just_pressed("ui_accept"):
-		dir += 1
+		trueDir = dir
+		while trueDir < 0:
+			trueDir += 4
+		trueDir = trueDir % 4
+		
+	if dir != prevDir:
+		trigger = true
+		prevDir = dir
+		
 	if trigger and active:
+		$"Colliders/Collector Collider".position.y = 3
+		timer = .5
 		var b = laser.instantiate()
 		get_parent().add_child(b)
 		b.position = position
 		b.defaultDir = trueDir
 		active = false
+	elif trigger:
+		trigger = false
+		
+		
 func _on_collector_collider_area_entered(area: Area2D) -> void:
 	if not active:
 		active = true
 		$"Colliders/Collector Collider".position.y = 3
 		timer = .5
-		

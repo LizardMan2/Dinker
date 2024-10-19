@@ -78,11 +78,13 @@ text = "Continue"
 layers = [NodePath("Map Layer2"), NodePath("Motion Layer2"), NodePath("Logic Layer2"), NodePath("Connection Layer2")]
 
 [node name="Connection Layer2" parent="Level Spawner" instance=ExtResource("3_6rgyq")]
+tile_map_data = PackedByteArray("AAALAAYAAAAAAAAAAAAHAAIAAAAAAAAAAAALAAIAAAAAAAAAAAALAAgAAAABAAEAAAAJAAYAAAABAAEAAAAHAAYAAAABAAEAAAAKAAgAAAAAAAAAAAAIAAgAAAABAAEAAAA=")
 
 [node name="Map Layer2" parent="Level Spawner" instance=ExtResource("4_rxd8m")]
-tile_map_data = PackedByteArray("AAAJAAgAAgACAAMAAAAJAAQAAgAAAAIAAAAJAAYAAgAAAAMAAAAIAAMAAgAAAAQAAAAJAAMAAgABAAQAAAAKAAMAAgACAAQAAAA=")
+tile_map_data = PackedByteArray("AAAJAAgAAgACAAMAAAAJAAYAAgACAAEAAAALAAYAAgAAAAAAAAAHAAIAAgABAAAAAAAJAAIAAgAAAAYAAAAIAAgAAgABAAUAAAAKAAgAAgACAAUAAAALAAgAAgAAAAEAAAALAAIAAgADAAAAAAAHAAYAAgABAAEAAAA=")
 
 [node name="Motion Layer2" parent="Level Spawner" instance=ExtResource("5_0577o")]
+tile_map_data = PackedByteArray("AAALAAYAAAAAAAEAAAALAAgAAAAAAAEAAAAJAAYAAAABAAEAAAAHAAYAAAABAAEAAAAHAAIAAAABAAEAAAALAAIAAAAAAAEAAAA=")
 
 [node name="Logic Layer2" parent="Level Spawner" instance=ExtResource("6_kb1py")]
 

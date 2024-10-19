@@ -15,6 +15,7 @@ func _process(delta: float) -> void:
 
 func _on_redirect_area_entered(area: Area2D) -> void:
 	var bounce = area.get_parent().get_parent().trueDir
+	print(area.get_parent().get_parent().trueDir)
 	if bounce == 0:
 		if dir == 2:
 			dir = 3

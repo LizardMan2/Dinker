@@ -26,7 +26,10 @@ func _process(delta: float) -> void:
 			currentDeg -= 5
 		$spr.rotation_degrees = currentDeg
 		$Colliders.rotation_degrees = dir * 90
-		trueDir = dir % 4
+		trueDir = dir
+		while trueDir < 0:
+			trueDir += 4
+		trueDir = trueDir % 4
 	$Label.text = str(trueDir)
 	
 	knockTime -= delta

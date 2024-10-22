@@ -38,5 +38,5 @@ func _process(delta: float) -> void:
 		get_parent().add_child(b)
 		b.position = position
 		b.defaultDir = direction
-		cooldown = 0#.8     
+		cooldown = .8     
 		

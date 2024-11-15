@@ -1,0 +1,87 @@
+[gd_scene load_steps=10 format=3 uid="uid://wokh2e0i2p7e"]
+
+[ext_resource type="Script" path="res://Level Editor/Scripts/cursor_controls.gd" id="1_i7bmi"]
+[ext_resource type="Texture2D" uid="uid://55uy2c8r261p" path="res://Level Editor/Assets/Icons/Bumper_Purple_0.png" id="2_72b5j"]
+[ext_resource type="Script" path="res://Level Editor/Scripts/itemSelector.gd" id="2_ks5go"]
+[ext_resource type="Script" path="res://Level Editor/Scripts/LE_Object_Data.gd" id="2_yxadh"]
+[ext_resource type="Resource" uid="uid://blwkrotn6gql2" path="res://Level Editor/Resources/Purple_Bumper.tres" id="3_wpn6r"]
+[ext_resource type="Resource" uid="uid://uqyvt725gm46" path="res://Level Editor/Resources/Blue_Bumper.tres" id="4_60kxc"]
+[ext_resource type="Texture2D" uid="uid://coiut36qf8vh1" path="res://Level Editor/Assets/Icons/Bumper_Blue_0.png" id="4_wnrgl"]
+[ext_resource type="Resource" uid="uid://ddjsvgejg10pm" path="res://Level Editor/Resources/Red_Bumper.tres" id="5_jm0ae"]
+[ext_resource type="Texture2D" uid="uid://cxi5ykk5qqn7l" path="res://Level Editor/Assets/Icons/Bumper_Red_0.png" id="5_tjwc6"]
+
+[node name="Level Editor" type="Node2D"]
+
+[node name="EditorControls" type="Node2D" parent="."]
+script = ExtResource("1_i7bmi")
+Data = Array[ExtResource("2_yxadh")]([ExtResource("3_wpn6r"), ExtResource("4_60kxc"), ExtResource("5_jm0ae")])
+
+[node name="Ghost" type="Sprite2D" parent="EditorControls"]
+modulate = Color(1, 1, 1, 0.388235)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TabContainer" type="TabContainer" parent="CanvasLayer/Control"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 13.0
+offset_top = -293.0
+offset_right = 248.0
+offset_bottom = 294.0
+grow_vertical = 2
+current_tab = 0
+
+[node name="Objects" type="Control" parent="CanvasLayer/Control/TabContainer"]
+layout_mode = 2
+metadata/_tab_index = 0
+
+[node name="Objects" type="GridContainer" parent="CanvasLayer/Control/TabContainer/Objects"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 4.0
+offset_top = 4.0
+offset_right = -4.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 5
+theme_override_constants/v_separation = 5
+columns = 4
+
+[node name="Item" type="TextureButton" parent="CanvasLayer/Control/TabContainer/Objects/Objects"]
+layout_mode = 2
+texture_normal = ExtResource("2_72b5j")
+script = ExtResource("2_ks5go")
+
+[node name="Item2" type="TextureButton" parent="CanvasLayer/Control/TabContainer/Objects/Objects"]
+layout_mode = 2
+texture_normal = ExtResource("4_wnrgl")
+script = ExtResource("2_ks5go")
+itemNumber = 1
+
+[node name="Item3" type="TextureButton" parent="CanvasLayer/Control/TabContainer/Objects/Objects"]
+layout_mode = 2
+texture_normal = ExtResource("5_tjwc6")
+script = ExtResource("2_ks5go")
+itemNumber = 2
+
+[node name="Settings" type="VSplitContainer" parent="CanvasLayer/Control/TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[connection signal="pressed" from="CanvasLayer/Control/TabContainer/Objects/Objects/Item" to="CanvasLayer/Control/TabContainer/Objects/Objects/Item" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/TabContainer/Objects/Objects/Item2" to="CanvasLayer/Control/TabContainer/Objects/Objects/Item2" method="_on_pressed"]
+[connection signal="pressed" from="CanvasLayer/Control/TabContainer/Objects/Objects/Item3" to="CanvasLayer/Control/TabContainer/Objects/Objects/Item3" method="_on_pressed"]

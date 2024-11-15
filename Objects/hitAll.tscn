@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://clqxj4xof5i48"]
+
+[ext_resource type="Script" path="res://Objects/hit_all.gd" id="1_mwexv"]
+[ext_resource type="Texture2D" uid="uid://cmmdt076ha4ce" path="res://Assets/Art/Puzzle Elements/CollectAll.png" id="2_fc6lb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hc2me"]
+size = Vector2(5, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5fhhs"]
+size = Vector2(7, 7)
+
+[node name="Lock" type="Node2D"]
+script = ExtResource("1_mwexv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_fc6lb")
+
+[node name="Win Collider" type="Area2D" parent="."]
+collision_layer = 32
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Win Collider"]
+shape = SubResource("RectangleShape2D_hc2me")
+
+[node name="Laser Collision" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Laser Collision"]
+shape = SubResource("RectangleShape2D_5fhhs")
+
+[connection signal="area_entered" from="Laser Collision" to="." method="_on_laser_collision_area_entered"]

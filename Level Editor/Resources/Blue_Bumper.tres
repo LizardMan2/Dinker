@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="Object_Data" load_steps=6 format=3 uid="uid://uqyvt725gm46"]
+
+[ext_resource type="Script" path="res://Level Editor/Scripts/LE_Object_Data.gd" id="1_vjxwc"]
+[ext_resource type="Texture2D" uid="uid://coiut36qf8vh1" path="res://Level Editor/Assets/Icons/Bumper_Blue_0.png" id="2_2xevr"]
+[ext_resource type="Texture2D" uid="uid://dis1gimub2xwx" path="res://Level Editor/Assets/Icons/Bumper_Blue_1.png" id="3_pfbc3"]
+[ext_resource type="Texture2D" uid="uid://hwefaqwk5vaa" path="res://Level Editor/Assets/Icons/Bumper_Blue_2.png" id="4_drolc"]
+[ext_resource type="Texture2D" uid="uid://cts6r03ybb6n8" path="res://Level Editor/Assets/Icons/Bumper_Blue_3.png" id="5_y2l6b"]
+
+[resource]
+script = ExtResource("1_vjxwc")
+canBeRotated = true
+texture_0 = ExtResource("2_2xevr")
+texture_1 = ExtResource("3_pfbc3")
+texture_2 = ExtResource("4_drolc")
+texture_3 = ExtResource("5_y2l6b")

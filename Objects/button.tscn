@@ -54,6 +54,7 @@ pressedColor = Color(0.654232, 0.654232, 0.654232, 1)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_kg7k5")
+animation = &"Blue"
 
 [node name="Area2D" type="Area2D" parent="."]
 collision_layer = 0

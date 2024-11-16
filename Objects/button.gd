@@ -1,5 +1,6 @@
 extends Node2D
 
+var data = PuzzleData.new()
 var input = true
 
 var type = 0
@@ -18,8 +19,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
+	
 	if !done:
-		$AnimatedSprite2D.animation = types[type]
+		$AnimatedSprite2D.animation = types[data.color + 1]
 		done = true
 	if collisions:
 		$AnimatedSprite2D.scale = Vector2(.9, .9)
@@ -33,6 +36,10 @@ func _process(delta: float) -> void:
 		$AnimatedSprite2D.modulate = Color.WHITE
 		state = false
 		triggered = false
+	if trigger:
+		get_parent().layers[data.color] = !get_parent().layers[data.color]
+		print(get_parent().layers[data.color])
+		trigger = false
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:

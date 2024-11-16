@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://c05cdko4pf5i1"]
+[gd_scene load_steps=11 format=3 uid="uid://c05cdko4pf5i1"]
 
 [ext_resource type="Script" path="res://Objects/bumper.gd" id="1_ns73x"]
 [ext_resource type="Texture2D" uid="uid://43pyj4by5c42" path="res://Assets/Art/Dinker Tileset.png" id="2_147ac"]
+[ext_resource type="Texture2D" uid="uid://bp4vog8p20e02" path="res://Assets/Art/Obstacles/Yellow Bumper.png" id="3_wg240"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v20ev"]
 atlas = ExtResource("2_147ac")
@@ -15,6 +16,10 @@ region = Rect2(60, 15, 15, 15)
 atlas = ExtResource("2_147ac")
 region = Rect2(60, 30, 15, 15)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_gen86"]
+atlas = ExtResource("3_wg240")
+region = Rect2(0, 0, 15, 15)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_j4x5e"]
 animations = [{
 "frames": [{
@@ -26,6 +31,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_x6ou8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gen86")
 }],
 "loop": true,
 "name": &"Colors",

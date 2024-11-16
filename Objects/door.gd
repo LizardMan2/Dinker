@@ -1,5 +1,7 @@
 extends Node2D
 
+var data = PuzzleData.new()
+
 var input = false
 
 var open = true
@@ -16,6 +18,8 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	$Label.text = str(length)
+	$DoorHinge.frame = data.color
+	rotation_degrees = data.startDirection * 90
 	timer -= delta
 	if trigger and timer < 0:
 		if open: #If open, close

@@ -1,10 +1,12 @@
 extends Node2D
+
+var data = PuzzleData.new()
 var dir = 0
 var trueDir = 0
 var targetDeg = 0
 var currentDeg = 0
-var col = 0
 var knockTime = 0
+var activated = false
 
 
 
@@ -15,7 +17,13 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	$spr/sprite.frame = col
+	if data.color in range(1, 3):
+		activated = get_parent().layers[data.color - 1]
+	if activated:
+		dir = data.endDirection
+	else:
+		dir = data.startDirection
+	$spr/sprite.frame = data.color
 	#Properly rotate the bumper's sprite in accordance with dir
 	targetDeg = 90 * dir
 	if targetDeg != currentDeg:

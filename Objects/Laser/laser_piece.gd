@@ -13,3 +13,4 @@ func _process(delta: float) -> void:
 
 func _on_delete_area_entered(area: Area2D) -> void:
 	delete = true
+	print("Piece Delete")

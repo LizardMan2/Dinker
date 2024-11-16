@@ -7,7 +7,7 @@ var type = 0
 var collisions = 0
 @export var pressedColor: Color
 var done = false
-var types = ["default", "Red", "Blue"]
+var types = ["Blue", "Red"]
 var state = false
 var trigger = false
 var triggered = false
@@ -22,7 +22,7 @@ func _process(delta: float) -> void:
 	
 	
 	if !done:
-		$AnimatedSprite2D.animation = types[data.color + 1]
+		$AnimatedSprite2D.animation = types[data.color]
 		done = true
 	if collisions:
 		$AnimatedSprite2D.scale = Vector2(.9, .9)
@@ -38,7 +38,6 @@ func _process(delta: float) -> void:
 		triggered = false
 	if trigger:
 		get_parent().layers[data.color] = !get_parent().layers[data.color]
-		print(get_parent().layers[data.color])
 		trigger = false
 
 

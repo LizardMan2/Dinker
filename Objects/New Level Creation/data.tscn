@@ -1,15 +1,8 @@
 [gd_scene load_steps=3 format=3 uid="uid://dp8p2mhxgiqkf"]
 
 [ext_resource type="Script" path="res://Objects/New Level Creation/data.gd" id="1_h2chk"]
+[ext_resource type="Texture2D" uid="uid://bvejk0futirf" path="res://Assets/Art/Characters-Gunners/Gunner.png" id="1_r3yv0"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_w8rv5"]
-size = Vector2(5, 5)
-
-[node name="Data" type="Area2D"]
-collision_layer = 128
-collision_mask = 0
-monitoring = false
+[node name="Data" type="Sprite2D"]
+texture = ExtResource("1_r3yv0")
 script = ExtResource("1_h2chk")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_w8rv5")

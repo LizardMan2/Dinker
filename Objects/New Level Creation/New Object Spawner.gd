@@ -1,8 +1,9 @@
 extends TileMapLayer
 
+@export var dataObj: Array[puzzleDataNode]
 @export var objects: Array[ObjectSpawner]
 
-@export var scanner: Area2D
+
 var dataStorage = null
 
 var spawned = false
@@ -21,13 +22,17 @@ func _process(delta: float) -> void:
 		var y = 0
 		for i in get_used_cells_by_id():
 			var coords = get_cell_atlas_coords(i)
-			scanner.position = (Vector2(i.x, i.y) * 15) + Vector2(7.5, 7.5)
-			
 			for j in objects:
 				if coords.x in range(j.corner1.x, j.corner2.x + 1) and coords.y in range(j.corner1.y, j.corner2.y + 1):
 					var b = j.object.instantiate()
 					get_parent().add_child(b)
 					b.position = (Vector2(i.x, i.y) * 15) + Vector2(7.5, 7.5)
+					for d in dataObj:
+						print(d.pos)
+						print(coords)
+						if d.pos.x == coords.x and d.pos.y == coords.y:
+							dataStorage = d
+					print(dataStorage)
 					if dataStorage:
 						print("should not print")
 						if j.startDirection:
@@ -49,15 +54,11 @@ func _process(delta: float) -> void:
 					if coords.x in range(0, 4) and coords.y in range(0, 4): #Remove after level editor done
 						b.data.color = coords.y
 						b.data.startDirection = coords.x
-						print("Data Edited")
 					if coords.x in range(4, 8) and coords.y in range(0, 2):
 						b.data.color = coords.y
 						b.data.startDirection = coords.x - 4
+					if coords.x in range(0, 2) and coords.y in range(6, 7):
+						b.data.color = coords.x
 				data = null
 		visible = false
 		spawned = true
-
-
-func _on_data_scanner_area_entered(area: Area2D) -> void:
-	dataStorage = area
-	print("entered area")

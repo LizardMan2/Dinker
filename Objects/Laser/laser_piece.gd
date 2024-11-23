@@ -13,4 +13,7 @@ func _process(delta: float) -> void:
 
 func _on_delete_area_entered(area: Area2D) -> void:
 	delete = true
-	print("Piece Delete")
+
+
+func _on_delete_body_shape_entered(body_rid: RID, body: Node2D, body_shape_index: int, local_shape_index: int) -> void:
+	delete = true

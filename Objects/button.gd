@@ -22,7 +22,7 @@ func _process(delta: float) -> void:
 	
 	
 	if !done:
-		$AnimatedSprite2D.animation = types[data.color]
+		$AnimatedSprite2D.animation = types[data.color - 1]
 		done = true
 	if collisions:
 		$AnimatedSprite2D.scale = Vector2(.9, .9)
@@ -37,7 +37,7 @@ func _process(delta: float) -> void:
 		state = false
 		triggered = false
 	if trigger:
-		get_parent().layers[data.color] = !get_parent().layers[data.color]
+		get_parent().layers[data.color - 1] = !get_parent().layers[data.color - 1]
 		trigger = false
 
 

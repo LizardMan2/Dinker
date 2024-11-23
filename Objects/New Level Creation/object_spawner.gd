@@ -2,6 +2,8 @@ extends Resource
 
 class_name ObjectSpawner
 
+@export var name = "EMPTY"
+
 @export var object: PackedScene
 
 ##Object's location on parent tilemap top left corner

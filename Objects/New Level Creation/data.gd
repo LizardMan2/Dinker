@@ -6,7 +6,7 @@ class_name puzzleDataNode
 @export var inEditor = true
 
 @export_category("In Editor")
-
+enum types{Bumper, Door, Player, Btn, FourPoint, hitAll, Lock, Key, Crotator}
 enum direction{Up, Right, Down, Left}
 enum col{Purple, Blue, Red, Yellow}
 
@@ -26,7 +26,7 @@ enum col{Purple, Blue, Red, Yellow}
 
 @export_category("Auto")
 
-@export var type: int
+@export var type: types
 
 @export var color: col
 

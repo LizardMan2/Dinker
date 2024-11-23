@@ -6,7 +6,7 @@ extends TileMapLayer
 
 var dataStorage = null
 
-var spawned = false
+var spawned = true
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -24,19 +24,21 @@ func _process(delta: float) -> void:
 			var coords = get_cell_atlas_coords(i)
 			for j in objects:
 				if coords.x in range(j.corner1.x, j.corner2.x + 1) and coords.y in range(j.corner1.y, j.corner2.y + 1):
+					print(j.name)
 					var b = j.object.instantiate()
 					get_parent().add_child(b)
 					b.position = (Vector2(i.x, i.y) * 15) + Vector2(7.5, 7.5)
 					for d in dataObj:
 						print(d.pos)
-						print(coords)
-						if d.pos.x == coords.x and d.pos.y == coords.y:
+						print(Vector2(i.x, i.y))
+						dataStorage = null
+						if d.pos.x == i.x and d.pos.y == i.y:
 							dataStorage = d
-					print(dataStorage)
 					if dataStorage:
-						print("should not print")
+						print(j.startDirection)
 						if j.startDirection:
 							b.data.startDirection = dataStorage.startDirection
+							print(b.data.startDirection)
 						if j.endDirection:
 							b.data.endDirection = dataStorage.endDirection
 						if j.speed:
@@ -51,14 +53,14 @@ func _process(delta: float) -> void:
 							b.data.color = dataStorage.color
 							
 					#Data for tile map only
-					if coords.x in range(0, 4) and coords.y in range(0, 4): #Remove after level editor done
-						b.data.color = coords.y
-						b.data.startDirection = coords.x
-					if coords.x in range(4, 8) and coords.y in range(0, 2):
-						b.data.color = coords.y
-						b.data.startDirection = coords.x - 4
-					if coords.x in range(0, 2) and coords.y in range(6, 7):
-						b.data.color = coords.x
+					#if coords.x in range(0, 4) and coords.y in range(0, 4): #Remove after level editor done
+						#b.data.color = coords.y
+						#b.data.startDirection = coords.x
+					#if coords.x in range(4, 8) and coords.y in range(0, 2):
+						#b.data.color = coords.y
+						#b.data.startDirection = coords.x - 4
+					#if coords.x in range(0, 2) and coords.y in range(6, 7):
+						#b.data.color = coords.x
 				data = null
 		visible = false
 		spawned = true

@@ -39,4 +39,7 @@ func _on_redirect_area_entered(area: Area2D) -> void:
 
 func _on_delete_area_entered(area: Area2D) -> void:
 	delete = true
-	print("delete")
+
+
+func _on_delete_body_entered(body: Node2D) -> void:
+	delete = true

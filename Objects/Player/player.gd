@@ -1,5 +1,5 @@
 extends Node2D
-
+var data = PuzzleData.new()
 @export var laser:PackedScene
 var dir = 0
 var direction = 0

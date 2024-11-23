@@ -7,7 +7,7 @@ var targetDeg = 0
 var currentDeg = 0
 var knockTime = 0
 var activated = false
-
+var startRot = true
 
 
 # Called when the node enters the scene tree for the first time.
@@ -17,12 +17,30 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if data.color == 3 and startRot:
+		dir = data.startDirection
+		startRot = false
+		
 	if data.color in range(1, 3):
 		activated = get_parent().layers[data.color - 1]
-	if activated:
-		dir = data.endDirection
+	
+	
+	if data.color == 3:
+		if Input.is_action_just_pressed("ui_right"):
+			dir += 1
+			print("Right")
+			print(dir)
+		if Input.is_action_just_pressed("ui_left"):
+			dir -= 1
+			print("Left")
+			print(dir)
 	else:
-		dir = data.startDirection
+		if activated:
+			dir = data.endDirection
+		else:
+			dir = data.startDirection
+	
+	
 	$spr/sprite.frame = data.color
 	#Properly rotate the bumper's sprite in accordance with dir
 	targetDeg = 90 * dir

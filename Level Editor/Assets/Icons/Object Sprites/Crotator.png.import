@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cxi5ykk5qqn7l"
-path="res://.godot/imported/Bumper_Red_0.png-d11c4576c66fc7af361061c4050627e8.ctex"
+uid="uid://b1qjjimrt24jb"
+path="res://.godot/imported/Crotator.png-62b7bd77d222c1a8420f4ffdf2e56332.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Level Editor/Assets/Icons/Bumper_Red_0.png"
-dest_files=["res://.godot/imported/Bumper_Red_0.png-d11c4576c66fc7af361061c4050627e8.ctex"]
+source_file="res://Level Editor/Assets/Icons/Object Sprites/Crotator.png"
+dest_files=["res://.godot/imported/Crotator.png-62b7bd77d222c1a8420f4ffdf2e56332.ctex"]
 
 [params]
 

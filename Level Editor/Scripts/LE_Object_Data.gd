@@ -6,6 +6,7 @@ class_name Object_Data
 @export var texture_1: CompressedTexture2D
 @export var texture_2: CompressedTexture2D
 @export var texture_3: CompressedTexture2D
+@export var object_sprite: CompressedTexture2D
 
 func texture(i):
 	match i:

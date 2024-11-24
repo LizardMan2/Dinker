@@ -1,10 +1,11 @@
-[gd_resource type="Resource" script_class="Object_Data" load_steps=6 format=3 uid="uid://blwkrotn6gql2"]
+[gd_resource type="Resource" script_class="Object_Data" load_steps=7 format=3 uid="uid://blwkrotn6gql2"]
 
+[ext_resource type="Texture2D" uid="uid://2immnavaowka" path="res://Level Editor/Assets/Icons/Object Sprites/Bumper_Purple.png" id="1_34o8b"]
 [ext_resource type="Script" path="res://Level Editor/Scripts/LE_Object_Data.gd" id="1_pvl6n"]
-[ext_resource type="Texture2D" uid="uid://55uy2c8r261p" path="res://Level Editor/Assets/Icons/Bumper_Purple_0.png" id="2_uy2mr"]
-[ext_resource type="Texture2D" uid="uid://ckmaunx45wkj5" path="res://Level Editor/Assets/Icons/Bumper_Purple_1.png" id="3_7nfeg"]
-[ext_resource type="Texture2D" uid="uid://ciw3sise5guen" path="res://Level Editor/Assets/Icons/Bumper_Purple_2.png" id="4_r8vyb"]
-[ext_resource type="Texture2D" uid="uid://bihkve86yifph" path="res://Level Editor/Assets/Icons/Bumper_Purple_3.png" id="5_dbku8"]
+[ext_resource type="Texture2D" uid="uid://55uy2c8r261p" path="res://Level Editor/Assets/Icons/Mouse Cursors/Bumper_Purple_0.png" id="2_uy2mr"]
+[ext_resource type="Texture2D" uid="uid://ckmaunx45wkj5" path="res://Level Editor/Assets/Icons/Mouse Cursors/Bumper_Purple_1.png" id="3_7nfeg"]
+[ext_resource type="Texture2D" uid="uid://ciw3sise5guen" path="res://Level Editor/Assets/Icons/Mouse Cursors/Bumper_Purple_2.png" id="4_r8vyb"]
+[ext_resource type="Texture2D" uid="uid://bihkve86yifph" path="res://Level Editor/Assets/Icons/Mouse Cursors/Bumper_Purple_3.png" id="5_dbku8"]
 
 [resource]
 script = ExtResource("1_pvl6n")
@@ -13,3 +14,4 @@ texture_0 = ExtResource("2_uy2mr")
 texture_1 = ExtResource("3_7nfeg")
 texture_2 = ExtResource("4_r8vyb")
 texture_3 = ExtResource("5_dbku8")
+object_sprite = ExtResource("1_34o8b")

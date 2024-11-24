@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bihkve86yifph"
-path="res://.godot/imported/Bumper_Purple_3.png-5bdde39309cf5f38a0c95078c7c5724d.ctex"
+uid="uid://cxi5ykk5qqn7l"
+path="res://.godot/imported/Bumper_Red_0.png-2031304a695e9303b27a7963f89fc1f1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Level Editor/Assets/Icons/Bumper_Purple_3.png"
-dest_files=["res://.godot/imported/Bumper_Purple_3.png-5bdde39309cf5f38a0c95078c7c5724d.ctex"]
+source_file="res://Level Editor/Assets/Icons/Mouse Cursors/Bumper_Red_0.png"
+dest_files=["res://.godot/imported/Bumper_Red_0.png-2031304a695e9303b27a7963f89fc1f1.ctex"]
 
 [params]
 

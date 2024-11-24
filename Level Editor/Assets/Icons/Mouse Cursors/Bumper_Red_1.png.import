@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dp5qiu5tmam5b"
-path="res://.godot/imported/Bumper_Red_1.png-312a5411048c42d8dd6cdc161cb6f9e4.ctex"
+path="res://.godot/imported/Bumper_Red_1.png-f9d70b028a6cc4156b28634693e3fd99.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Level Editor/Assets/Icons/Bumper_Red_1.png"
-dest_files=["res://.godot/imported/Bumper_Red_1.png-312a5411048c42d8dd6cdc161cb6f9e4.ctex"]
+source_file="res://Level Editor/Assets/Icons/Mouse Cursors/Bumper_Red_1.png"
+dest_files=["res://.godot/imported/Bumper_Red_1.png-f9d70b028a6cc4156b28634693e3fd99.ctex"]
 
 [params]
 

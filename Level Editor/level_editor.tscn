@@ -1,31 +1,37 @@
-[gd_scene load_steps=10 format=3 uid="uid://wokh2e0i2p7e"]
+[gd_scene load_steps=11 format=3 uid="uid://wokh2e0i2p7e"]
 
 [ext_resource type="Script" path="res://Level Editor/Scripts/cursor_controls.gd" id="1_i7bmi"]
-[ext_resource type="Texture2D" uid="uid://55uy2c8r261p" path="res://Level Editor/Assets/Icons/Bumper_Purple_0.png" id="2_72b5j"]
+[ext_resource type="Texture2D" uid="uid://55uy2c8r261p" path="res://Level Editor/Assets/Icons/Mouse Cursors/Bumper_Purple_0.png" id="2_72b5j"]
 [ext_resource type="Script" path="res://Level Editor/Scripts/itemSelector.gd" id="2_ks5go"]
 [ext_resource type="Script" path="res://Level Editor/Scripts/LE_Object_Data.gd" id="2_yxadh"]
 [ext_resource type="Resource" uid="uid://blwkrotn6gql2" path="res://Level Editor/Resources/Purple_Bumper.tres" id="3_wpn6r"]
 [ext_resource type="Resource" uid="uid://uqyvt725gm46" path="res://Level Editor/Resources/Blue_Bumper.tres" id="4_60kxc"]
-[ext_resource type="Texture2D" uid="uid://coiut36qf8vh1" path="res://Level Editor/Assets/Icons/Bumper_Blue_0.png" id="4_wnrgl"]
+[ext_resource type="Texture2D" uid="uid://coiut36qf8vh1" path="res://Level Editor/Assets/Icons/Mouse Cursors/Bumper_Blue_0.png" id="4_wnrgl"]
 [ext_resource type="Resource" uid="uid://ddjsvgejg10pm" path="res://Level Editor/Resources/Red_Bumper.tres" id="5_jm0ae"]
-[ext_resource type="Texture2D" uid="uid://cxi5ykk5qqn7l" path="res://Level Editor/Assets/Icons/Bumper_Red_0.png" id="5_tjwc6"]
+[ext_resource type="Texture2D" uid="uid://cxi5ykk5qqn7l" path="res://Level Editor/Assets/Icons/Mouse Cursors/Bumper_Red_0.png" id="5_tjwc6"]
+[ext_resource type="PackedScene" uid="uid://ccg1vo23tjaa2" path="res://Level Editor/Objects/object_button.tscn" id="10_qts0i"]
 
 [node name="Level Editor" type="Node2D"]
 
 [node name="EditorControls" type="Node2D" parent="."]
 script = ExtResource("1_i7bmi")
+objectButton = ExtResource("10_qts0i")
 Data = Array[ExtResource("2_yxadh")]([ExtResource("3_wpn6r"), ExtResource("4_60kxc"), ExtResource("5_jm0ae")])
 
 [node name="Ghost" type="Sprite2D" parent="EditorControls"]
 modulate = Color(1, 1, 1, 0.388235)
 
+[node name="Objects" type="CanvasLayer" parent="EditorControls"]
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 2
 
 [node name="Control" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_right = -901.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -81,6 +87,9 @@ itemNumber = 2
 visible = false
 layout_mode = 2
 metadata/_tab_index = 1
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
 
 [connection signal="pressed" from="CanvasLayer/Control/TabContainer/Objects/Objects/Item" to="CanvasLayer/Control/TabContainer/Objects/Objects/Item" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/TabContainer/Objects/Objects/Item2" to="CanvasLayer/Control/TabContainer/Objects/Objects/Item2" method="_on_pressed"]

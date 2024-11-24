@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5qk2d8yncp2h"
-path="res://.godot/imported/Bumper_Red_2.png-ea9f9d4df676813902ee3dd6de169893.ctex"
+uid="uid://dryn1iqkri0cb"
+path="res://.godot/imported/FourPoint.png-15fa1840f31b38c8696fb9b014c052fd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Level Editor/Assets/Icons/Bumper_Red_2.png"
-dest_files=["res://.godot/imported/Bumper_Red_2.png-ea9f9d4df676813902ee3dd6de169893.ctex"]
+source_file="res://Level Editor/Assets/Icons/Object Sprites/FourPoint.png"
+dest_files=["res://.godot/imported/FourPoint.png-15fa1840f31b38c8696fb9b014c052fd.ctex"]
 
 [params]
 

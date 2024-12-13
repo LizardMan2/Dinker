@@ -1,6 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://wokh2e0i2p7e"]
+[gd_scene load_steps=13 format=3 uid="uid://wokh2e0i2p7e"]
 
 [ext_resource type="Script" path="res://Level Editor/Scripts/cursor_controls.gd" id="1_i7bmi"]
+[ext_resource type="Script" path="res://Level Editor/levelGrid.gd" id="1_ye06y"]
 [ext_resource type="Texture2D" uid="uid://55uy2c8r261p" path="res://Level Editor/Assets/Icons/Mouse Cursors/Bumper_Purple_0.png" id="2_72b5j"]
 [ext_resource type="Script" path="res://Level Editor/Scripts/itemSelector.gd" id="2_ks5go"]
 [ext_resource type="Script" path="res://Level Editor/Scripts/LE_Object_Data.gd" id="2_yxadh"]
@@ -10,8 +11,20 @@
 [ext_resource type="Resource" uid="uid://ddjsvgejg10pm" path="res://Level Editor/Resources/Red_Bumper.tres" id="5_jm0ae"]
 [ext_resource type="Texture2D" uid="uid://cxi5ykk5qqn7l" path="res://Level Editor/Assets/Icons/Mouse Cursors/Bumper_Red_0.png" id="5_tjwc6"]
 [ext_resource type="PackedScene" uid="uid://ccg1vo23tjaa2" path="res://Level Editor/Objects/object_button.tscn" id="10_qts0i"]
+[ext_resource type="Script" path="res://Level Editor/Scripts/size_controller.gd" id="11_kreyt"]
 
 [node name="Level Editor" type="Node2D"]
+
+[node name="LevelGrid" type="Panel" parent="."]
+script = ExtResource("1_ye06y")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="LevelGrid"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="EditorControls" type="Node2D" parent="."]
 script = ExtResource("1_i7bmi")
@@ -45,9 +58,10 @@ offset_top = -293.0
 offset_right = 248.0
 offset_bottom = 294.0
 grow_vertical = 2
-current_tab = 0
+current_tab = 1
 
 [node name="Objects" type="Control" parent="CanvasLayer/Control/TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -83,10 +97,59 @@ texture_normal = ExtResource("5_tjwc6")
 script = ExtResource("2_ks5go")
 itemNumber = 2
 
-[node name="Settings" type="VSplitContainer" parent="CanvasLayer/Control/TabContainer"]
-visible = false
+[node name="Settings" type="VBoxContainer" parent="CanvasLayer/Control/TabContainer"]
 layout_mode = 2
 metadata/_tab_index = 1
+
+[node name="Size" type="VBoxContainer" parent="CanvasLayer/Control/TabContainer/Settings"]
+layout_mode = 2
+alignment = 1
+script = ExtResource("11_kreyt")
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/TabContainer/Settings/Size"]
+layout_mode = 2
+text = "SIZE"
+horizontal_alignment = 1
+
+[node name="X" type="HBoxContainer" parent="CanvasLayer/Control/TabContainer/Settings/Size"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/TabContainer/Settings/Size/X"]
+layout_mode = 2
+text = "X"
+
+[node name="LineEdit" type="LineEdit" parent="CanvasLayer/Control/TabContainer/Settings/Size/X"]
+layout_mode = 2
+text = "0"
+
+[node name="XPlus" type="Button" parent="CanvasLayer/Control/TabContainer/Settings/Size/X"]
+layout_mode = 2
+text = "  +  "
+
+[node name="XMinus" type="Button" parent="CanvasLayer/Control/TabContainer/Settings/Size/X"]
+layout_mode = 2
+text = "   -   "
+
+[node name="Y" type="HBoxContainer" parent="CanvasLayer/Control/TabContainer/Settings/Size"]
+layout_mode = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer/Control/TabContainer/Settings/Size/Y"]
+layout_mode = 2
+text = "Y"
+
+[node name="LineEdit" type="LineEdit" parent="CanvasLayer/Control/TabContainer/Settings/Size/Y"]
+layout_mode = 2
+text = "0"
+
+[node name="YPlus" type="Button" parent="CanvasLayer/Control/TabContainer/Settings/Size/Y"]
+layout_mode = 2
+text = "  +  "
+
+[node name="YMinus" type="Button" parent="CanvasLayer/Control/TabContainer/Settings/Size/Y"]
+layout_mode = 2
+text = "   -   "
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 324)
@@ -94,3 +157,7 @@ position = Vector2(576, 324)
 [connection signal="pressed" from="CanvasLayer/Control/TabContainer/Objects/Objects/Item" to="CanvasLayer/Control/TabContainer/Objects/Objects/Item" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/TabContainer/Objects/Objects/Item2" to="CanvasLayer/Control/TabContainer/Objects/Objects/Item2" method="_on_pressed"]
 [connection signal="pressed" from="CanvasLayer/Control/TabContainer/Objects/Objects/Item3" to="CanvasLayer/Control/TabContainer/Objects/Objects/Item3" method="_on_pressed"]
+[connection signal="button_down" from="CanvasLayer/Control/TabContainer/Settings/Size/X/XPlus" to="CanvasLayer/Control/TabContainer/Settings/Size" method="_on_x_plus_button_down"]
+[connection signal="button_down" from="CanvasLayer/Control/TabContainer/Settings/Size/X/XMinus" to="CanvasLayer/Control/TabContainer/Settings/Size" method="_on_x_minus_button_down"]
+[connection signal="button_down" from="CanvasLayer/Control/TabContainer/Settings/Size/Y/YPlus" to="CanvasLayer/Control/TabContainer/Settings/Size" method="_on_y_plus_button_down"]
+[connection signal="button_down" from="CanvasLayer/Control/TabContainer/Settings/Size/Y/YMinus" to="CanvasLayer/Control/TabContainer/Settings/Size" method="_on_y_minus_button_down"]

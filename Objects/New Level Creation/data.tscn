@@ -1,8 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://dp8p2mhxgiqkf"]
+[gd_scene load_steps=4 format=3 uid="uid://dp8p2mhxgiqkf"]
 
 [ext_resource type="Script" path="res://Objects/New Level Creation/data.gd" id="1_h2chk"]
-[ext_resource type="Texture2D" uid="uid://bvejk0futirf" path="res://Assets/Art/Characters-Gunners/Gunner.png" id="1_r3yv0"]
+[ext_resource type="Texture2D" uid="uid://dh7omwfesl7nh" path="res://Assets/Art/Dinker Object Tileset.png" id="3_0tcpd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tlpds"]
+resource_local_to_scene = true
+atlas = ExtResource("3_0tcpd")
+region = Rect2(0, 0, 15, 15)
 
 [node name="Data" type="Sprite2D"]
-texture = ExtResource("1_r3yv0")
+position = Vector2(7.5, 7.5)
+texture = SubResource("AtlasTexture_tlpds")
 script = ExtResource("1_h2chk")

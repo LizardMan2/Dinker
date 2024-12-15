@@ -33,10 +33,11 @@ func _process(delta: float) -> void:
 		$Sprite2D.rotation_degrees = currentDeg
 	
 	
-	if Input.is_action_pressed("ui_accept") and cooldown <= 0:
+	if Input.is_action_pressed("ui_accept") and cooldown <= 0 and get_parent().shots != 0:
 		var b = laser.instantiate()
 		get_parent().add_child(b)
 		b.position = position
 		b.defaultDir = direction
-		cooldown = .8     
+		cooldown = .8
+		get_parent().shots -= 1
 		

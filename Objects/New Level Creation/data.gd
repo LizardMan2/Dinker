@@ -38,7 +38,6 @@ func _process(delta: float) -> void:
 		var current = [pos, startDirection, endDirection, speed, length, inverted, type, color]
 		if previous != current:
 			previous = current
-			print("Changed")
 			position = (Vector2(pos.x, pos.y) * 15) + Vector2(7.5, 7.5)
 			match type:
 				0: #"Bumper"

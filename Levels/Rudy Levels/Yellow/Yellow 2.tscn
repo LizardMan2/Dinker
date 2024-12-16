@@ -1,24 +1,24 @@
-[gd_scene load_steps=30 format=4 uid="uid://ch4qcyjfd6c02"]
+[gd_scene load_steps=40 format=4 uid="uid://cjvn2jl3f8ehu"]
 
-[ext_resource type="Script" path="res://Objects/New Level Creation/levelData.gd" id="1_yk5ih"]
-[ext_resource type="Texture2D" uid="uid://duoo8bgli8jij" path="res://Assets/Art/Obstacles/Dinker Wallset full.png" id="2_r17y4"]
-[ext_resource type="Script" path="res://Objects/New Level Creation/level_spawner_from_data.gd" id="3_rpkvu"]
-[ext_resource type="Script" path="res://Objects/New Level Creation/object_spawner.gd" id="4_ypolw"]
-[ext_resource type="PackedScene" uid="uid://c05cdko4pf5i1" path="res://Objects/bumper.tscn" id="5_b4ipw"]
-[ext_resource type="PackedScene" uid="uid://dk6egibmgpx5w" path="res://Objects/door.tscn" id="6_622gq"]
-[ext_resource type="PackedScene" uid="uid://bp75whmfa4006" path="res://Objects/Player/player.tscn" id="7_3ylaj"]
-[ext_resource type="PackedScene" uid="uid://b1u4rok5q2dgu" path="res://Objects/button.tscn" id="8_vrgs7"]
-[ext_resource type="PackedScene" uid="uid://wboynvwymknx" path="res://Objects/four_point.tscn" id="9_edkl2"]
-[ext_resource type="PackedScene" uid="uid://clqxj4xof5i48" path="res://Objects/hitAll.tscn" id="10_qacbx"]
-[ext_resource type="PackedScene" uid="uid://dyq8wcu4dgk55" path="res://Objects/lock.tscn" id="11_mf5ml"]
-[ext_resource type="PackedScene" uid="uid://w1f4ijrsqbrj" path="res://Objects/key.tscn" id="12_yewdt"]
-[ext_resource type="PackedScene" uid="uid://be3xhxdlu7v1a" path="res://Objects/crotator.tscn" id="13_4e3jj"]
-[ext_resource type="PackedScene" uid="uid://dp8p2mhxgiqkf" path="res://Objects/New Level Creation/data.tscn" id="14_1ghro"]
-[ext_resource type="Texture2D" uid="uid://dh7omwfesl7nh" path="res://Assets/Art/Dinker Object Tileset.png" id="15_fbl7g"]
-[ext_resource type="Script" path="res://Objects/Level Building/win_detection.gd" id="16_km1gu"]
+[ext_resource type="Script" path="res://Objects/New Level Creation/levelData.gd" id="1_t3ph6"]
+[ext_resource type="Texture2D" uid="uid://duoo8bgli8jij" path="res://Assets/Art/Obstacles/Dinker Wallset full.png" id="2_carhy"]
+[ext_resource type="Script" path="res://Objects/New Level Creation/level_spawner_from_data.gd" id="3_et181"]
+[ext_resource type="Script" path="res://Objects/New Level Creation/object_spawner.gd" id="4_5io63"]
+[ext_resource type="PackedScene" uid="uid://c05cdko4pf5i1" path="res://Objects/bumper.tscn" id="5_jbqny"]
+[ext_resource type="PackedScene" uid="uid://dk6egibmgpx5w" path="res://Objects/door.tscn" id="6_tb5bi"]
+[ext_resource type="PackedScene" uid="uid://bp75whmfa4006" path="res://Objects/Player/player.tscn" id="7_3j3u2"]
+[ext_resource type="PackedScene" uid="uid://b1u4rok5q2dgu" path="res://Objects/button.tscn" id="8_ift14"]
+[ext_resource type="PackedScene" uid="uid://wboynvwymknx" path="res://Objects/four_point.tscn" id="9_7teiu"]
+[ext_resource type="PackedScene" uid="uid://clqxj4xof5i48" path="res://Objects/hitAll.tscn" id="10_w2qkh"]
+[ext_resource type="PackedScene" uid="uid://dyq8wcu4dgk55" path="res://Objects/lock.tscn" id="11_jgwl3"]
+[ext_resource type="PackedScene" uid="uid://w1f4ijrsqbrj" path="res://Objects/key.tscn" id="12_ticx5"]
+[ext_resource type="PackedScene" uid="uid://be3xhxdlu7v1a" path="res://Objects/crotator.tscn" id="13_aff2b"]
+[ext_resource type="PackedScene" uid="uid://dp8p2mhxgiqkf" path="res://Objects/New Level Creation/data.tscn" id="14_wl3ja"]
+[ext_resource type="Texture2D" uid="uid://dh7omwfesl7nh" path="res://Assets/Art/Dinker Object Tileset.png" id="15_chrf3"]
+[ext_resource type="Script" path="res://Objects/Level Building/win_detection.gd" id="16_273l5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e0jge"]
-texture = ExtResource("2_r17y4")
+texture = ExtResource("2_carhy")
 texture_region_size = Vector2i(15, 15)
 0:0/0 = 0
 0:0/0/terrain_set = 0
@@ -407,9 +407,9 @@ terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/3 = SubResource("TileSetAtlasSource_e0jge")
 
 [sub_resource type="Resource" id="Resource_xy5tn"]
-script = ExtResource("4_ypolw")
+script = ExtResource("4_5io63")
 name = "Bumper"
-object = ExtResource("5_b4ipw")
+object = ExtResource("5_jbqny")
 corner1 = Vector2i(0, 0)
 corner2 = Vector2i(3, 3)
 startDirection = true
@@ -421,9 +421,9 @@ instructions = false
 color = true
 
 [sub_resource type="Resource" id="Resource_7pexs"]
-script = ExtResource("4_ypolw")
+script = ExtResource("4_5io63")
 name = "Door"
-object = ExtResource("6_622gq")
+object = ExtResource("6_tb5bi")
 corner1 = Vector2i(4, 0)
 corner2 = Vector2i(7, 1)
 startDirection = true
@@ -435,9 +435,9 @@ instructions = false
 color = true
 
 [sub_resource type="Resource" id="Resource_7a7nu"]
-script = ExtResource("4_ypolw")
+script = ExtResource("4_5io63")
 name = "Player"
-object = ExtResource("7_3ylaj")
+object = ExtResource("7_3j3u2")
 corner1 = Vector2i(0, 4)
 corner2 = Vector2i(0, 4)
 startDirection = true
@@ -449,9 +449,9 @@ instructions = false
 color = false
 
 [sub_resource type="Resource" id="Resource_1wken"]
-script = ExtResource("4_ypolw")
+script = ExtResource("4_5io63")
 name = "Button"
-object = ExtResource("8_vrgs7")
+object = ExtResource("8_ift14")
 corner1 = Vector2i(0, 6)
 corner2 = Vector2i(1, 6)
 startDirection = false
@@ -463,9 +463,9 @@ instructions = false
 color = true
 
 [sub_resource type="Resource" id="Resource_ee1ng"]
-script = ExtResource("4_ypolw")
+script = ExtResource("4_5io63")
 name = "Four Point"
-object = ExtResource("9_edkl2")
+object = ExtResource("9_7teiu")
 corner1 = Vector2i(0, 7)
 corner2 = Vector2i(0, 7)
 startDirection = false
@@ -477,9 +477,9 @@ instructions = false
 color = false
 
 [sub_resource type="Resource" id="Resource_x6g8v"]
-script = ExtResource("4_ypolw")
+script = ExtResource("4_5io63")
 name = "CollectAll"
-object = ExtResource("10_qacbx")
+object = ExtResource("10_w2qkh")
 corner1 = Vector2i(1, 7)
 corner2 = Vector2i(1, 7)
 startDirection = false
@@ -491,9 +491,9 @@ instructions = false
 color = false
 
 [sub_resource type="Resource" id="Resource_3kwg8"]
-script = ExtResource("4_ypolw")
+script = ExtResource("4_5io63")
 name = "Lock"
-object = ExtResource("11_mf5ml")
+object = ExtResource("11_jgwl3")
 corner1 = Vector2i(2, 7)
 corner2 = Vector2i(2, 7)
 startDirection = false
@@ -505,9 +505,9 @@ instructions = false
 color = false
 
 [sub_resource type="Resource" id="Resource_1wa13"]
-script = ExtResource("4_ypolw")
+script = ExtResource("4_5io63")
 name = "Key"
-object = ExtResource("12_yewdt")
+object = ExtResource("12_ticx5")
 corner1 = Vector2i(3, 7)
 corner2 = Vector2i(3, 7)
 startDirection = false
@@ -519,9 +519,9 @@ instructions = false
 color = false
 
 [sub_resource type="Resource" id="Resource_wa350"]
-script = ExtResource("4_ypolw")
+script = ExtResource("4_5io63")
 name = "Crotator"
-object = ExtResource("13_4e3jj")
+object = ExtResource("13_aff2b")
 corner1 = Vector2i(4, 7)
 corner2 = Vector2i(7, 7)
 startDirection = true
@@ -534,8 +534,58 @@ color = false
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0merw"]
 resource_local_to_scene = true
-atlas = ExtResource("15_fbl7g")
+atlas = ExtResource("15_chrf3")
 region = Rect2(0, 60, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ot8j"]
+resource_local_to_scene = true
+atlas = ExtResource("15_chrf3")
+region = Rect2(30, 45, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ts3t4"]
+resource_local_to_scene = true
+atlas = ExtResource("15_chrf3")
+region = Rect2(0, 45, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ybxnh"]
+resource_local_to_scene = true
+atlas = ExtResource("15_chrf3")
+region = Rect2(15, 45, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_igk3g"]
+resource_local_to_scene = true
+atlas = ExtResource("15_chrf3")
+region = Rect2(15, 0, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xdiee"]
+resource_local_to_scene = true
+atlas = ExtResource("15_chrf3")
+region = Rect2(0, 0, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uki73"]
+resource_local_to_scene = true
+atlas = ExtResource("15_chrf3")
+region = Rect2(15, 105, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7xaxo"]
+resource_local_to_scene = true
+atlas = ExtResource("15_chrf3")
+region = Rect2(15, 105, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajni7"]
+resource_local_to_scene = true
+atlas = ExtResource("15_chrf3")
+region = Rect2(15, 105, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6qyqx"]
+resource_local_to_scene = true
+atlas = ExtResource("15_chrf3")
+region = Rect2(15, 105, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y0njb"]
+resource_local_to_scene = true
+atlas = ExtResource("15_chrf3")
+region = Rect2(15, 105, 15, 15)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pjhtg"]
 size = Vector2(305, 182)
@@ -543,7 +593,7 @@ size = Vector2(305, 182)
 [node name="EditorCompatableLevel" type="Node2D"]
 
 [node name="Level Layers" type="Node2D" parent="."]
-script = ExtResource("1_yk5ih")
+script = ExtResource("1_t3ph6")
 
 [node name="Walls" type="TileMapLayer" parent="Level Layers"]
 tile_map_data = PackedByteArray("AAAGAAAAAwAGAAIAAAAGAAkAAwAGAAEAAAAHAAAAAwAJAAMAAAAHAAkAAwAKAAAAAAAIAAAAAwAJAAMAAAAIAAkAAwAKAAAAAAAJAAAAAwAJAAMAAAAJAAkAAwAKAAAAAAAKAAAAAwAJAAMAAAAKAAkAAwAKAAAAAAALAAAAAwAJAAMAAAALAAkAAwAKAAAAAAAGAAEAAwALAAIAAAAGAAIAAwALAAIAAAAGAAMAAwALAAIAAAAGAAQAAwALAAIAAAAGAAUAAwALAAIAAAAGAAYAAwALAAIAAAAGAAcAAwALAAIAAAAGAAgAAwALAAIAAAAMAAAAAwAFAAIAAAAMAAEAAwAIAAEAAAAMAAIAAwAIAAEAAAAMAAMAAwAIAAEAAAAMAAQAAwAIAAEAAAAMAAUAAwAIAAEAAAAMAAYAAwAIAAEAAAAMAAcAAwAIAAEAAAAMAAgAAwAIAAEAAAAMAAkAAwAFAAEAAAAMAP//AwAKAAAAAAALAP//AwAKAAAAAAAKAP//AwAKAAAAAAAJAP//AwAKAAAAAAAIAP//AwAKAAAAAAAHAP//AwAKAAAAAAAGAP//AwAKAAAAAAAFAP//AwAKAAAAAAAFAAAAAwAJAAIAAAAFAAEAAwAJAAIAAAAFAAIAAwAJAAIAAAAFAAMAAwAJAAIAAAAFAAQAAwAJAAIAAAAFAAUAAwAJAAIAAAAFAAYAAwAJAAIAAAAFAAcAAwAJAAIAAAAFAAgAAwAJAAIAAAAFAAkAAwAJAAIAAAAFAAoAAwAJAAMAAAAGAAoAAwAJAAMAAAAHAAoAAwAJAAMAAAAIAAoAAwAJAAMAAAAJAAoAAwAJAAMAAAAKAAoAAwAJAAMAAAALAAoAAwAJAAMAAAAMAAoAAwAJAAMAAAANAP//AwAKAAAAAAAOAP//AwAKAAAAAAAPAP//AwAKAAAAAAAQAP//AwAKAAAAAAARAP//AwAKAAAAAAASAP//AwAKAAAAAAASAAAAAwAJAAIAAAASAAEAAwAJAAIAAAASAAIAAwAJAAIAAAASAAMAAwAJAAIAAAASAAQAAwAJAAIAAAASAAYAAwAJAAIAAAASAAcAAwAJAAIAAAASAAgAAwAJAAIAAAASAAkAAwAJAAIAAAASAAoAAwAJAAMAAAARAAoAAwAJAAMAAAAQAAoAAwAJAAMAAAAPAAoAAwAJAAMAAAAOAAoAAwAJAAMAAAANAAoAAwAJAAMAAAATAAoAAwALAAMAAAATAAkAAwALAAIAAAATAAgAAwALAAIAAAATAAcAAwALAAIAAAATAAYAAwALAAIAAAATAP//AwALAAAAAAATAAAAAwALAAIAAAATAAEAAwALAAIAAAATAAIAAwALAAIAAAATAAMAAwALAAIAAAATAAQAAwALAAIAAAARAAAAAwAJAAIAAAAQAAAAAwAJAAIAAAAPAAAAAwAJAAIAAAAOAAAAAwAJAAIAAAANAAAAAwAJAAIAAAANAAMAAwAJAAIAAAANAAQAAwAJAAIAAAANAAUAAwAJAAIAAAANAAYAAwAJAAIAAAANAAcAAwAJAAIAAAANAAgAAwAJAAIAAAANAAkAAwAJAAIAAAANAAIAAwAJAAIAAAANAAEAAwAJAAIAAAAOAAQAAwAJAAIAAAAOAAUAAwAJAAIAAAAOAAYAAwAJAAIAAAAOAAcAAwAJAAIAAAAPAAcAAwAJAAIAAAAPAAgAAwAJAAIAAAAPAAkAAwAJAAIAAAAPAAYAAwAJAAIAAAAPAAUAAwAJAAIAAAAPAAQAAwAJAAIAAAAPAAMAAwAJAAIAAAAPAAIAAwAJAAIAAAAPAAEAAwAJAAIAAAAOAAEAAwAJAAIAAAAOAAIAAwAJAAIAAAAOAAMAAwAJAAIAAAAQAAcAAwAJAAIAAAAQAAYAAwAJAAIAAAARAAQAAwAJAAIAAAARAAMAAwAJAAIAAAARAAIAAwAJAAIAAAAQAAEAAwAJAAIAAAAQAAIAAwAJAAIAAAAQAAgAAwAJAAIAAAARAAEAAwAJAAIAAAAQAAMAAwAJAAIAAAAQAAQAAwAJAAIAAAAQAAkAAwAJAAIAAAARAAcAAwAJAAIAAAARAAYAAwAJAAIAAAARAAgAAwAJAAIAAAARAAkAAwAJAAIAAAAOAAgAAwAJAAIAAAAOAAkAAwAJAAIAAAAEAP//AwAKAAAAAAADAP//AwAKAAAAAAACAP//AwAKAAAAAAABAP//AwAKAAAAAAAAAP//AwAKAAAAAAD/////AwAIAAAAAAD//wAAAwAIAAEAAAD//wEAAwAIAAEAAAD//wIAAwAIAAEAAAD//wMAAwAIAAEAAAD//wQAAwAIAAEAAAD//wUAAwAIAAEAAAD//wYAAwAIAAEAAAD//wcAAwAIAAEAAAD//wgAAwAIAAEAAAD//wkAAwAIAAEAAAD//woAAwAIAAMAAAAAAAoAAwAJAAMAAAABAAoAAwAJAAMAAAACAAoAAwAJAAMAAAADAAoAAwAJAAMAAAAEAAoAAwAJAAMAAAAAAAAAAwAJAAIAAAAAAAEAAwAJAAIAAAAAAAIAAwAJAAIAAAAAAAMAAwAJAAIAAAAAAAQAAwAJAAIAAAAAAAUAAwAJAAIAAAAAAAYAAwAJAAIAAAAAAAcAAwAJAAIAAAAAAAgAAwAJAAIAAAAAAAkAAwAJAAIAAAABAAkAAwAJAAIAAAACAAkAAwAJAAIAAAADAAkAAwAJAAIAAAAEAAkAAwAJAAIAAAAEAAgAAwAJAAIAAAAEAAcAAwAJAAIAAAAEAAYAAwAJAAIAAAAEAAUAAwAJAAIAAAAEAAQAAwAJAAIAAAAEAAMAAwAJAAIAAAAEAAIAAwAJAAIAAAAEAAEAAwAJAAIAAAAEAAAAAwAJAAIAAAADAAAAAwAJAAIAAAACAAAAAwAJAAIAAAABAAAAAwAJAAIAAAABAAEAAwAJAAIAAAABAAIAAwAJAAIAAAABAAMAAwAJAAIAAAABAAQAAwAJAAIAAAABAAUAAwAJAAIAAAABAAYAAwAJAAIAAAABAAcAAwAJAAIAAAABAAgAAwAJAAIAAAADAAgAAwAJAAIAAAADAAEAAwAJAAIAAAADAAIAAwAJAAIAAAADAAMAAwAJAAIAAAADAAQAAwAJAAIAAAADAAUAAwAJAAIAAAADAAYAAwAJAAIAAAADAAcAAwAJAAIAAAACAAEAAwAJAAIAAAACAAIAAwAJAAIAAAACAAMAAwAJAAIAAAACAAQAAwAJAAIAAAACAAUAAwAJAAIAAAACAAYAAwAJAAIAAAACAAcAAwAJAAIAAAACAAgAAwAJAAIAAAAQAAUAAwAJAAIAAAARAAUAAwAJAAIAAAASAAUAAwAJAAIAAAATAAUAAwALAAIAAAA=")
@@ -558,10 +608,10 @@ text = "0"
 horizontal_alignment = 2
 
 [node name="Level spawner" type="Node2D" parent="Level Layers"]
-script = ExtResource("3_rpkvu")
-objects = Array[ExtResource("4_ypolw")]([SubResource("Resource_xy5tn"), SubResource("Resource_7pexs"), SubResource("Resource_7a7nu"), SubResource("Resource_1wken"), SubResource("Resource_ee1ng"), SubResource("Resource_x6g8v"), SubResource("Resource_3kwg8"), SubResource("Resource_1wa13"), SubResource("Resource_wa350")])
+script = ExtResource("3_et181")
+objects = Array[ExtResource("4_5io63")]([SubResource("Resource_xy5tn"), SubResource("Resource_7pexs"), SubResource("Resource_7a7nu"), SubResource("Resource_1wken"), SubResource("Resource_ee1ng"), SubResource("Resource_x6g8v"), SubResource("Resource_3kwg8"), SubResource("Resource_1wa13"), SubResource("Resource_wa350")])
 
-[node name="Data" parent="Level Layers/Level spawner" instance=ExtResource("14_1ghro")]
+[node name="Data" parent="Level Layers/Level spawner" instance=ExtResource("14_wl3ja")]
 position = Vector2(142.5, 127.5)
 texture = SubResource("AtlasTexture_0merw")
 pos = Vector2i(9, 8)
@@ -570,6 +620,67 @@ endDirection = 1
 type = 2
 color = 2
 
+[node name="Data3" parent="Level Layers/Level spawner" instance=ExtResource("14_wl3ja")]
+position = Vector2(142.5, 37.5)
+texture = SubResource("AtlasTexture_4ot8j")
+pos = Vector2i(9, 2)
+startDirection = 2
+color = 3
+
+[node name="Data2" parent="Level Layers/Level spawner" instance=ExtResource("14_wl3ja")]
+position = Vector2(172.5, 37.5)
+texture = SubResource("AtlasTexture_ts3t4")
+pos = Vector2i(11, 2)
+color = 3
+
+[node name="Data4" parent="Level Layers/Level spawner" instance=ExtResource("14_wl3ja")]
+position = Vector2(112.5, 37.5)
+texture = SubResource("AtlasTexture_ybxnh")
+pos = Vector2i(7, 2)
+startDirection = 1
+color = 3
+
+[node name="Data5" parent="Level Layers/Level spawner" instance=ExtResource("14_wl3ja")]
+position = Vector2(112.5, 97.5)
+texture = SubResource("AtlasTexture_igk3g")
+pos = Vector2i(7, 6)
+startDirection = 1
+
+[node name="Data6" parent="Level Layers/Level spawner" instance=ExtResource("14_wl3ja")]
+position = Vector2(172.5, 67.5)
+texture = SubResource("AtlasTexture_xdiee")
+pos = Vector2i(11, 4)
+
+[node name="Data7" parent="Level Layers/Level spawner" instance=ExtResource("14_wl3ja")]
+position = Vector2(112.5, 22.5)
+texture = SubResource("AtlasTexture_uki73")
+pos = Vector2i(7, 1)
+type = 5
+
+[node name="Data8" parent="Level Layers/Level spawner" instance=ExtResource("14_wl3ja")]
+position = Vector2(172.5, 22.5)
+texture = SubResource("AtlasTexture_7xaxo")
+pos = Vector2i(11, 1)
+type = 5
+
+[node name="Data9" parent="Level Layers/Level spawner" instance=ExtResource("14_wl3ja")]
+position = Vector2(127.5, 67.5)
+texture = SubResource("AtlasTexture_ajni7")
+pos = Vector2i(8, 4)
+type = 5
+
+[node name="Data10" parent="Level Layers/Level spawner" instance=ExtResource("14_wl3ja")]
+position = Vector2(157.5, 97.5)
+texture = SubResource("AtlasTexture_6qyqx")
+pos = Vector2i(10, 6)
+type = 5
+
+[node name="Data11" parent="Level Layers/Level spawner" instance=ExtResource("14_wl3ja")]
+position = Vector2(142.5, 82.5)
+texture = SubResource("AtlasTexture_y0njb")
+pos = Vector2i(9, 5)
+type = 5
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(142.5, 81)
 zoom = Vector2(4, 4)
@@ -577,7 +688,7 @@ zoom = Vector2(4, 4)
 [node name="Win Detection" type="Area2D" parent="."]
 collision_layer = 0
 collision_mask = 32
-script = ExtResource("16_km1gu")
+script = ExtResource("16_273l5")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Win Detection"]
 visible = false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=4 uid="uid://cjvn2jl3f8ehu"]
+[gd_scene load_steps=41 format=4 uid="uid://cjvn2jl3f8ehu"]
 
 [ext_resource type="Script" path="res://Objects/New Level Creation/levelData.gd" id="1_t3ph6"]
 [ext_resource type="Texture2D" uid="uid://duoo8bgli8jij" path="res://Assets/Art/Obstacles/Dinker Wallset full.png" id="2_carhy"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://dp8p2mhxgiqkf" path="res://Objects/New Level Creation/data.tscn" id="14_wl3ja"]
 [ext_resource type="Texture2D" uid="uid://dh7omwfesl7nh" path="res://Assets/Art/Dinker Object Tileset.png" id="15_chrf3"]
 [ext_resource type="Script" path="res://Objects/Level Building/win_detection.gd" id="16_273l5"]
+[ext_resource type="PackedScene" uid="uid://8mua7jrp4nif" path="res://Levels/Level Hub.tscn" id="17_hsl01"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e0jge"]
 texture = ExtResource("2_carhy")
@@ -689,6 +690,7 @@ zoom = Vector2(4, 4)
 collision_layer = 0
 collision_mask = 32
 script = ExtResource("16_273l5")
+goTo = ExtResource("17_hsl01")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Win Detection"]
 visible = false

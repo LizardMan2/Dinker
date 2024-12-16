@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://8mua7jrp4nif"]
+
+[ext_resource type="Script" path="res://Objects/level_hub.gd" id="1_s7gup"]
+
+[node name="LevelHub" type="Node2D"]
+script = ExtResource("1_s7gup")
+
+[node name="Tree" type="Tree" parent="."]
+offset_right = 680.0
+offset_bottom = 559.0

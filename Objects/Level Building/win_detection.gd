@@ -1,5 +1,5 @@
 extends Area2D
-
+@export var goTo: PackedScene
 var winObjects: Array[Node2D]
 var timer = 1
 var won = false
@@ -21,4 +21,7 @@ func _on_area_entered(area: Area2D) -> void:
 
 
 func _on_button_button_up() -> void:
-	print("Hello")
+	if goTo:
+		get_tree().change_scene_to_packed(goTo)
+	else:
+		print("No Scene Set!")

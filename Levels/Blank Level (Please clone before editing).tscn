@@ -633,7 +633,7 @@ offset_top = 4.0
 offset_right = 420.0
 offset_bottom = 446.0
 scale = Vector2(0.33, 0.33)
-text = "Use the \"Walls\" tileset to edit the purple walls, terrain 0 will autotile.
+placeholder_text = "Use the \"Walls\" tileset to edit the purple walls, terrain 0 will autotile.
 
 Copy paste the \"Data\" node in the tree and change its values to add objects to the scene. Make sure it is still a child of the \"Level spawner\" node, and not a child of another data node or elsewhere. Order of the data nodes does not matter."
 wrap_mode = 1

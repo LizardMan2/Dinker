@@ -17,11 +17,10 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	if $Tree.get_selected():
-		var select = $Tree.get_selected().get_metadata(0)
-		print(load(select))
-		if select:
-			var b = load(select)
-			get_tree().change_scene_to_packed(b)
+		$Confirm.visible = true
+		$Confirm/Label.text = str($Tree.get_selected().get_metadata(0))
+	else:
+		$Confirm.visible = false
 
 func dir_contents(path, tree, scene_loads = []):
 	#var scene_loads = []	
@@ -32,7 +31,7 @@ func dir_contents(path, tree, scene_loads = []):
 		var file_name = dir.get_next()
 		while file_name != "":
 			print(file_name)
-			if dir.current_is_dir():
+			if dir.current_is_dir() and file_name != "Old":
 				print("Found directory: " + file_name)
 				var item = $Tree.create_item(tree)
 				item.set_text(0, file_name)
@@ -53,3 +52,11 @@ func dir_contents(path, tree, scene_loads = []):
 	else:
 		print("An error occurred when trying to access the path.")
 	return scene_loads
+
+
+func _on_confirm_button_down() -> void:
+	var select = $Tree.get_selected().get_metadata(0)
+	print(load(select))
+	if select:
+		var b = load(select)
+		get_tree().change_scene_to_packed(b)

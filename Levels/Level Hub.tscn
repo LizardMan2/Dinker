@@ -17,6 +17,7 @@ offset_bottom = 635.0
 text = "Load"
 
 [node name="Label" type="Label" parent="Confirm"]
+layout_mode = 0
 offset_left = -344.0
 offset_top = -67.0
 offset_right = 641.0

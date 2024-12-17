@@ -41,8 +41,8 @@ func _process(delta: float) -> void:
 		prevAct = activated
 	
 	
-	$Label.text = str(data.length)
-	$DoorHinge.frame = data.color
+	$Label.text = str(data.color)
+	$DoorHinge.frame = data.color - 1
 	rotation_degrees = data.startDirection * 90
 	timer -= delta
 	if trigger and timer < 0:

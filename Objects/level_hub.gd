@@ -16,7 +16,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if $Tree.get_selected():
+	if $Tree.get_selected() and $Tree.get_selected().get_metadata(0):
 		$Confirm.visible = true
 		$Confirm/Label.text = str($Tree.get_selected().get_metadata(0))
 	else:

@@ -25,3 +25,7 @@ func _on_button_button_up() -> void:
 		get_tree().change_scene_to_packed(goTo)
 	else:
 		print("No Scene Set!")
+
+
+func _on_button_2_button_up() -> void:
+	get_tree().change_scene_to_packed(preload("res://Levels/Level Hub.tscn"))

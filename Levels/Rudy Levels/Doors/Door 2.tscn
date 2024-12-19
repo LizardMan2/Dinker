@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=4 uid="uid://c7uvkg8ohqtjy"]
+[gd_scene load_steps=42 format=4 uid="uid://c7uvkg8ohqtjy"]
 
 [ext_resource type="Script" path="res://Objects/New Level Creation/levelData.gd" id="1_r2why"]
 [ext_resource type="Texture2D" uid="uid://duoo8bgli8jij" path="res://Assets/Art/Obstacles/Dinker Wallset full.png" id="2_io2md"]
@@ -15,8 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://be3xhxdlu7v1a" path="res://Objects/crotator.tscn" id="13_gq5r6"]
 [ext_resource type="PackedScene" uid="uid://dp8p2mhxgiqkf" path="res://Objects/New Level Creation/data.tscn" id="14_6unli"]
 [ext_resource type="Texture2D" uid="uid://dh7omwfesl7nh" path="res://Assets/Art/Dinker Object Tileset.png" id="15_uryjw"]
-[ext_resource type="Script" path="res://Objects/Level Building/win_detection.gd" id="16_0hi5b"]
-[ext_resource type="PackedScene" uid="uid://8mua7jrp4nif" path="res://Levels/Level Hub.tscn" id="17_fb2is"]
+[ext_resource type="PackedScene" uid="uid://be1c2vdmdcpct" path="res://Objects/win_detection.tscn" id="16_u2ux6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e0jge"]
 texture = ExtResource("2_io2md")
@@ -603,9 +602,6 @@ resource_local_to_scene = true
 atlas = ExtResource("15_uryjw")
 region = Rect2(60, 15, 15, 15)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pjhtg"]
-size = Vector2(305, 182)
-
 [node name="EditorCompatableLevel" type="Node2D"]
 
 [node name="Level Layers" type="Node2D" parent="."]
@@ -735,57 +731,7 @@ color = 2
 position = Vector2(142.5, 81)
 zoom = Vector2(4, 4)
 
-[node name="Win Detection" type="Area2D" parent="."]
-collision_layer = 0
-collision_mask = 32
-script = ExtResource("16_0hi5b")
-goTo = ExtResource("17_fb2is")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Win Detection"]
-visible = false
-position = Vector2(142.5, 81)
-shape = SubResource("RectangleShape2D_pjhtg")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="Win Detection"]
-visible = false
-
-[node name="Win Screen" type="Control" parent="Win Detection/CanvasLayer"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 1152.0
-offset_bottom = 648.0
-
-[node name="Label" type="Label" parent="Win Detection/CanvasLayer/Win Screen"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -11.5
-offset_right = 20.0
-offset_bottom = 11.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 40
-text = "Level Completed"
-
-[node name="Button" type="Button" parent="Win Detection/CanvasLayer/Win Screen"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -92.0
-offset_top = 37.5
-offset_right = 92.0
-offset_bottom = 100.5
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_font_sizes/font_size = 40
-text = "Continue"
+[node name="Win Detection" parent="." instance=ExtResource("16_u2ux6")]
 
 [node name="TextEdit" type="TextEdit" parent="."]
 visible = false
@@ -798,6 +744,3 @@ text = "Use the \"Walls\" tileset to edit the purple walls, terrain 0 will autot
 
 Copy paste the \"Data\" node in the tree and change its values to add objects to the scene. Make sure it is still a child of the \"Level spawner\" node, and not a child of another data node or elsewhere. Order of the data nodes does not matter."
 wrap_mode = 1
-
-[connection signal="area_entered" from="Win Detection" to="Win Detection" method="_on_area_entered"]
-[connection signal="button_up" from="Win Detection/CanvasLayer/Win Screen/Button" to="Win Detection" method="_on_button_button_up"]

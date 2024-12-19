@@ -1,0 +1,79 @@
+[gd_scene load_steps=4 format=3 uid="uid://be1c2vdmdcpct"]
+
+[ext_resource type="Script" path="res://Objects/Level Building/win_detection.gd" id="1_78ra2"]
+[ext_resource type="PackedScene" uid="uid://8mua7jrp4nif" path="res://Levels/Level Hub.tscn" id="2_r50jy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pjhtg"]
+size = Vector2(305, 182)
+
+[node name="Win Detection" type="Area2D"]
+collision_layer = 0
+collision_mask = 32
+script = ExtResource("1_78ra2")
+goTo = ExtResource("2_r50jy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(142.5, 81)
+shape = SubResource("RectangleShape2D_pjhtg")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="Win Screen" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+
+[node name="Label" type="Label" parent="CanvasLayer/Win Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "Level Completed"
+
+[node name="Button" type="Button" parent="CanvasLayer/Win Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -92.0
+offset_top = 37.5
+offset_right = 92.0
+offset_bottom = 100.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "Next Level"
+
+[node name="Button2" type="Button" parent="CanvasLayer/Win Screen"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -92.0
+offset_top = 113.0
+offset_right = 92.0
+offset_bottom = 176.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 40
+text = "Level Hub"
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="button_up" from="CanvasLayer/Win Screen/Button" to="." method="_on_button_button_up"]
+[connection signal="button_up" from="CanvasLayer/Win Screen/Button2" to="." method="_on_button_2_button_up"]

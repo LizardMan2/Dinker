@@ -28,12 +28,8 @@ func _process(delta: float) -> void:
 	if data.color == 3:
 		if Input.is_action_just_pressed("ui_right"):
 			dir += 1
-			print("Right")
-			print(dir)
 		if Input.is_action_just_pressed("ui_left"):
 			dir -= 1
-			print("Left")
-			print(dir)
 	else:
 		if activated:
 			dir = data.endDirection

@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://blhuwmvaddph2"]
+[gd_scene load_steps=36 format=4 uid="uid://blhuwmvaddph2"]
 
 [ext_resource type="Script" path="res://Objects/New Level Creation/levelData.gd" id="1_3nwaf"]
 [ext_resource type="Texture2D" uid="uid://duoo8bgli8jij" path="res://Assets/Art/Obstacles/Dinker Wallset full.png" id="2_j6ofl"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://dp8p2mhxgiqkf" path="res://Objects/New Level Creation/data.tscn" id="14_57v3h"]
 [ext_resource type="Texture2D" uid="uid://dh7omwfesl7nh" path="res://Assets/Art/Dinker Object Tileset.png" id="15_8kf3m"]
 [ext_resource type="PackedScene" uid="uid://be1c2vdmdcpct" path="res://Objects/win_detection.tscn" id="16_vt3oq"]
+[ext_resource type="PackedScene" uid="uid://cjvn2jl3f8ehu" path="res://Levels/Rudy Levels/Yellow/Yellow 2.tscn" id="17_4qt7b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e0jge"]
 texture = ExtResource("2_j6ofl")
@@ -638,6 +639,7 @@ position = Vector2(142.5, 81)
 zoom = Vector2(4, 4)
 
 [node name="Win Detection" parent="." instance=ExtResource("16_vt3oq")]
+goTo = ExtResource("17_4qt7b")
 
 [node name="TextEdit" type="TextEdit" parent="."]
 offset_left = 194.0

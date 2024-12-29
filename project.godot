@@ -52,6 +52,7 @@ LE_MB_L={
 2d_physics/layer_6="Win Detect"
 2d_physics/layer_7="Laser Head"
 2d_physics/layer_8="Data"
+2d_physics/layer_9="Loss Detect"
 
 [rendering]
 

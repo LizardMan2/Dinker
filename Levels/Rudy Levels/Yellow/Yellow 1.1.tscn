@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=4 uid="uid://suauok3uiqcw"]
+[gd_scene load_steps=38 format=4 uid="uid://suauok3uiqcw"]
 
 [ext_resource type="Script" path="res://Objects/New Level Creation/levelData.gd" id="1_h6u7s"]
 [ext_resource type="Texture2D" uid="uid://duoo8bgli8jij" path="res://Assets/Art/Obstacles/Dinker Wallset full.png" id="2_hw8p8"]
@@ -407,104 +407,6 @@ terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/3 = SubResource("TileSetAtlasSource_e0jge")
 
-[sub_resource type="Animation" id="Animation_6dfak"]
-resource_name = "Enter"
-length = 4.0
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("LevelContainer:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 1, 3, 4)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("LevelContainer:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0),
-"points": PackedFloat32Array(-180, -0.25, 0, 0.25, 0, -180, -0.25, 0, 1, 0, 0, -0.532552, 26, 0.25, 0, 0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 1, 3, 4)
-}
-
-[sub_resource type="Animation" id="Animation_5moqf"]
-resource_name = "Exit"
-length = 4.0
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("LevelContainer:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 1, 3, 4)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("LevelContainer:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 1, 0, 180, -0.25, 26, 0.25, 0, 180, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 1, 3, 4)
-}
-tracks/2/type = "method"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("LevelContainer/Win Detection")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(4),
-"transitions": PackedFloat32Array(1),
-"values": [{
-"args": [],
-"method": &"deleteSelf"
-}]
-}
-
-[sub_resource type="Animation" id="Animation_deb7p"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("LevelContainer:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("LevelContainer:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-166, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_icltc"]
-_data = {
-"Enter": SubResource("Animation_6dfak"),
-"Exit": SubResource("Animation_5moqf"),
-"RESET": SubResource("Animation_deb7p")
-}
-
 [sub_resource type="Resource" id="Resource_xy5tn"]
 script = ExtResource("4_xx7ru")
 name = "Bumper"
@@ -676,18 +578,17 @@ resource_local_to_scene = true
 atlas = ExtResource("15_1d4bb")
 region = Rect2(15, 90, 15, 15)
 
-[node name="LevelHead" type="Node2D"]
+[node name="EditorCompatableLevel" type="Node2D"]
 
-[node name="LevelContainer" type="Node2D" parent="."]
-position = Vector2(0, -166)
+[node name="Level Layers" type="Node2D" parent="."]
 script = ExtResource("1_h6u7s")
 shots = 1
 
-[node name="Walls" type="TileMapLayer" parent="LevelContainer"]
+[node name="Walls" type="TileMapLayer" parent="Level Layers"]
 tile_map_data = PackedByteArray("AAAGAAAAAwAGAAIAAAAGAAkAAwAGAAEAAAAHAAAAAwAJAAMAAAAHAAkAAwAKAAAAAAAIAAAAAwAJAAMAAAAIAAkAAwAKAAAAAAAJAAAAAwAJAAMAAAAJAAkAAwAKAAAAAAAKAAAAAwAKAAMAAAAKAAkAAwAKAAAAAAALAAAAAwAJAAMAAAALAAkAAwAKAAAAAAAGAAEAAwALAAIAAAAGAAIAAwALAAIAAAAGAAMAAwALAAIAAAAGAAQAAwALAAIAAAAGAAUAAwALAAIAAAAGAAYAAwALAAIAAAAGAAcAAwALAAIAAAAGAAgAAwALAAIAAAAMAAAAAwAFAAIAAAAMAAEAAwAIAAEAAAAMAAIAAwAIAAEAAAAMAAMAAwAIAAEAAAAMAAQAAwAIAAEAAAAMAAUAAwAIAAEAAAAMAAYAAwAIAAEAAAAMAAcAAwAIAAEAAAAMAAgAAwAIAAEAAAAMAAkAAwAFAAEAAAAMAP//AwAKAAAAAAALAP//AwAKAAAAAAAKAP//AwAKAAAAAAAJAP//AwAKAAAAAAAIAP//AwAKAAAAAAAHAP//AwAKAAAAAAAGAP//AwAKAAAAAAAFAP//AwAKAAAAAAAFAAAAAwAJAAIAAAAFAAEAAwAJAAIAAAAFAAIAAwAJAAIAAAAFAAMAAwAJAAIAAAAFAAQAAwAJAAIAAAAFAAUAAwAJAAIAAAAFAAYAAwAJAAIAAAAFAAcAAwAJAAIAAAAFAAgAAwAJAAIAAAAFAAkAAwAJAAIAAAAFAAoAAwAJAAMAAAAGAAoAAwAJAAMAAAAHAAoAAwAJAAMAAAAIAAoAAwAJAAMAAAAJAAoAAwAJAAMAAAAKAAoAAwAJAAMAAAALAAoAAwAJAAMAAAAMAAoAAwAJAAMAAAANAP//AwAKAAAAAAAOAP//AwAKAAAAAAAPAP//AwAKAAAAAAAQAP//AwAKAAAAAAARAP//AwAKAAAAAAASAP//AwAKAAAAAAASAAAAAwAJAAIAAAASAAEAAwAJAAIAAAASAAIAAwAJAAIAAAASAAMAAwAJAAIAAAASAAQAAwAJAAIAAAASAAYAAwAJAAIAAAASAAcAAwAJAAIAAAASAAgAAwAJAAIAAAASAAkAAwAJAAIAAAASAAoAAwAJAAMAAAARAAoAAwAJAAMAAAAQAAoAAwAJAAMAAAAPAAoAAwAJAAMAAAAOAAoAAwAJAAMAAAANAAoAAwAJAAMAAAATAAoAAwALAAMAAAATAAkAAwALAAIAAAATAAgAAwALAAIAAAATAAcAAwALAAIAAAATAAYAAwALAAIAAAATAP//AwALAAAAAAATAAAAAwALAAIAAAATAAEAAwALAAIAAAATAAIAAwALAAIAAAATAAMAAwALAAIAAAATAAQAAwALAAIAAAARAAAAAwAJAAIAAAAQAAAAAwAJAAIAAAAPAAAAAwAJAAIAAAAOAAAAAwAJAAIAAAANAAAAAwAJAAIAAAANAAMAAwAJAAIAAAANAAQAAwAJAAIAAAANAAUAAwAJAAIAAAANAAYAAwAJAAIAAAANAAcAAwAJAAIAAAANAAgAAwAJAAIAAAANAAkAAwAJAAIAAAANAAIAAwAJAAIAAAANAAEAAwAJAAIAAAAOAAQAAwAJAAIAAAAOAAUAAwAJAAIAAAAOAAYAAwAJAAIAAAAOAAcAAwAJAAIAAAAPAAcAAwAJAAIAAAAPAAgAAwAJAAIAAAAPAAkAAwAJAAIAAAAPAAYAAwAJAAIAAAAPAAUAAwAJAAIAAAAPAAQAAwAJAAIAAAAPAAMAAwAJAAIAAAAPAAIAAwAJAAIAAAAPAAEAAwAJAAIAAAAOAAEAAwAJAAIAAAAOAAIAAwAJAAIAAAAOAAMAAwAJAAIAAAAQAAcAAwAJAAIAAAAQAAYAAwAJAAIAAAARAAQAAwAJAAIAAAARAAMAAwAJAAIAAAARAAIAAwAJAAIAAAAQAAEAAwAJAAIAAAAQAAIAAwAJAAIAAAAQAAgAAwAJAAIAAAARAAEAAwAJAAIAAAAQAAMAAwAJAAIAAAAQAAQAAwAJAAIAAAAQAAkAAwAJAAIAAAARAAcAAwAJAAIAAAARAAYAAwAJAAIAAAARAAgAAwAJAAIAAAARAAkAAwAJAAIAAAAOAAgAAwAJAAIAAAAOAAkAAwAJAAIAAAAEAP//AwAKAAAAAAADAP//AwAKAAAAAAACAP//AwAKAAAAAAABAP//AwAKAAAAAAAAAP//AwAKAAAAAAD/////AwAIAAAAAAD//wAAAwAIAAEAAAD//wEAAwAIAAEAAAD//wIAAwAIAAEAAAD//wMAAwAIAAEAAAD//wQAAwAIAAEAAAD//wUAAwAIAAEAAAD//wYAAwAIAAEAAAD//wcAAwAIAAEAAAD//wgAAwAIAAEAAAD//wkAAwAIAAEAAAD//woAAwAIAAMAAAAAAAoAAwAJAAMAAAABAAoAAwAJAAMAAAACAAoAAwAJAAMAAAADAAoAAwAJAAMAAAAEAAoAAwAJAAMAAAAAAAAAAwAJAAIAAAAAAAEAAwAJAAIAAAAAAAIAAwAJAAIAAAAAAAMAAwAJAAIAAAAAAAQAAwAJAAIAAAAAAAUAAwAJAAIAAAAAAAYAAwAJAAIAAAAAAAcAAwAJAAIAAAAAAAgAAwAJAAIAAAAAAAkAAwAJAAIAAAABAAkAAwAJAAIAAAACAAkAAwAJAAIAAAADAAkAAwAJAAIAAAAEAAkAAwAJAAIAAAAEAAgAAwAJAAIAAAAEAAcAAwAJAAIAAAAEAAYAAwAJAAIAAAAEAAUAAwAJAAIAAAAEAAQAAwAJAAIAAAAEAAMAAwAJAAIAAAAEAAIAAwAJAAIAAAAEAAEAAwAJAAIAAAAEAAAAAwAJAAIAAAADAAAAAwAJAAIAAAACAAAAAwAJAAIAAAABAAAAAwAJAAIAAAABAAEAAwAJAAIAAAABAAIAAwAJAAIAAAABAAMAAwAJAAIAAAABAAQAAwAJAAIAAAABAAUAAwAJAAIAAAABAAYAAwAJAAIAAAABAAcAAwAJAAIAAAABAAgAAwAJAAIAAAADAAgAAwAJAAIAAAADAAEAAwAJAAIAAAADAAIAAwAJAAIAAAADAAMAAwAJAAIAAAADAAQAAwAJAAIAAAADAAUAAwAJAAIAAAADAAYAAwAJAAIAAAADAAcAAwAJAAIAAAACAAEAAwAJAAIAAAACAAIAAwAJAAIAAAACAAMAAwAJAAIAAAACAAQAAwAJAAIAAAACAAUAAwAJAAIAAAACAAYAAwAJAAIAAAACAAcAAwAJAAIAAAACAAgAAwAJAAIAAAAQAAUAAwAJAAIAAAARAAUAAwAJAAIAAAASAAUAAwAJAAIAAAATAAUAAwALAAIAAAAKAAEAAwAAAAEAAAAKAAIAAwAAAAIAAAA=")
 tile_set = SubResource("TileSet_m3ytj")
 
-[node name="Label" type="Label" parent="LevelContainer"]
+[node name="Label" type="Label" parent="Level Layers"]
 offset_left = 25.0
 offset_top = 113.0
 offset_right = 100.0
@@ -695,29 +596,11 @@ offset_bottom = 136.0
 text = "0"
 horizontal_alignment = 2
 
-[node name="Win Detection" parent="LevelContainer" instance=ExtResource("16_6gqhs")]
-goTo = ExtResource("17_arjmo")
-
-[node name="TextEdit" type="TextEdit" parent="LevelContainer"]
-offset_left = 194.0
-offset_top = 4.0
-offset_right = 420.0
-offset_bottom = 446.0
-scale = Vector2(0.33, 0.33)
-text = "Edited Yellow 1.0 to prevent a cheese"
-wrap_mode = 1
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="LevelContainer"]
-root_node = NodePath("../..")
-libraries = {
-"": SubResource("AnimationLibrary_icltc")
-}
-
-[node name="Level spawner" type="Node2D" parent="LevelContainer"]
+[node name="Level spawner" type="Node2D" parent="Level Layers"]
 script = ExtResource("3_dxuna")
 objects = Array[ExtResource("4_xx7ru")]([SubResource("Resource_xy5tn"), SubResource("Resource_7pexs"), SubResource("Resource_7a7nu"), SubResource("Resource_1wken"), SubResource("Resource_ee1ng"), SubResource("Resource_x6g8v"), SubResource("Resource_3kwg8"), SubResource("Resource_1wa13"), SubResource("Resource_wa350")])
 
-[node name="Data" parent="LevelContainer/Level spawner" instance=ExtResource("14_h55cj")]
+[node name="Data" parent="Level Layers/Level spawner" instance=ExtResource("14_h55cj")]
 position = Vector2(142.5, 127.5)
 texture = SubResource("AtlasTexture_0merw")
 pos = Vector2i(9, 8)
@@ -726,42 +609,42 @@ endDirection = 1
 type = 2
 color = 2
 
-[node name="Data2" parent="LevelContainer/Level spawner" instance=ExtResource("14_h55cj")]
+[node name="Data2" parent="Level Layers/Level spawner" instance=ExtResource("14_h55cj")]
 position = Vector2(142.5, 67.5)
 texture = SubResource("AtlasTexture_cu8p0")
 pos = Vector2i(9, 4)
 color = 3
 
-[node name="Data3" parent="LevelContainer/Level spawner" instance=ExtResource("14_h55cj")]
+[node name="Data3" parent="Level Layers/Level spawner" instance=ExtResource("14_h55cj")]
 position = Vector2(112.5, 67.5)
 texture = SubResource("AtlasTexture_cdvmx")
 pos = Vector2i(7, 4)
 startDirection = 1
 
-[node name="Data4" parent="LevelContainer/Level spawner" instance=ExtResource("14_h55cj")]
+[node name="Data4" parent="Level Layers/Level spawner" instance=ExtResource("14_h55cj")]
 position = Vector2(112.5, 22.5)
 texture = SubResource("AtlasTexture_o3ftv")
 pos = Vector2i(7, 1)
 startDirection = 2
 
-[node name="Data5" parent="LevelContainer/Level spawner" instance=ExtResource("14_h55cj")]
+[node name="Data5" parent="Level Layers/Level spawner" instance=ExtResource("14_h55cj")]
 position = Vector2(142.5, 22.5)
 texture = SubResource("AtlasTexture_j81n1")
 pos = Vector2i(9, 1)
 startDirection = 3
 
-[node name="Data6" parent="LevelContainer/Level spawner" instance=ExtResource("14_h55cj")]
+[node name="Data6" parent="Level Layers/Level spawner" instance=ExtResource("14_h55cj")]
 position = Vector2(172.5, 67.5)
 texture = SubResource("AtlasTexture_nvy8b")
 pos = Vector2i(11, 4)
 
-[node name="Data7" parent="LevelContainer/Level spawner" instance=ExtResource("14_h55cj")]
+[node name="Data7" parent="Level Layers/Level spawner" instance=ExtResource("14_h55cj")]
 position = Vector2(172.5, 22.5)
 texture = SubResource("AtlasTexture_pw63p")
 pos = Vector2i(11, 1)
 type = 5
 
-[node name="Data8" parent="LevelContainer/Level spawner" instance=ExtResource("14_h55cj")]
+[node name="Data8" parent="Level Layers/Level spawner" instance=ExtResource("14_h55cj")]
 position = Vector2(157.5, 37.5)
 texture = SubResource("AtlasTexture_lg3ah")
 pos = Vector2i(10, 2)
@@ -771,7 +654,7 @@ inverted = true
 type = 1
 color = 2
 
-[node name="Data9" parent="LevelContainer/Level spawner" instance=ExtResource("14_h55cj")]
+[node name="Data9" parent="Level Layers/Level spawner" instance=ExtResource("14_h55cj")]
 position = Vector2(127.5, 22.5)
 texture = SubResource("AtlasTexture_iaqgy")
 pos = Vector2i(8, 1)
@@ -781,3 +664,15 @@ color = 2
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(142.5, 81)
 zoom = Vector2(4, 4)
+
+[node name="Win Detection" parent="." instance=ExtResource("16_6gqhs")]
+goTo = ExtResource("17_arjmo")
+
+[node name="TextEdit" type="TextEdit" parent="."]
+offset_left = 194.0
+offset_top = 4.0
+offset_right = 420.0
+offset_bottom = 446.0
+scale = Vector2(0.33, 0.33)
+text = "Edited Yellow 1.0 to prevent a cheese"
+wrap_mode = 1

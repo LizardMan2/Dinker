@@ -6,11 +6,6 @@ var layers = [false, false]
 
 @onready var shotDisplay: Label = $Label
 
-var entered = false
-
-func _ready() -> void:
-	$AnimationPlayer.play("Enter")
-
 func _process(delta: float) -> void:
 	if shots > -1:
 		shotDisplay.text = str(shots)

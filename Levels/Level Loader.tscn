@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://dps8pxcisenvb"]
+
+[ext_resource type="Script" path="res://Objects/level_loader.gd" id="1_b3rp4"]
+
+[node name="LevelLoader" type="Node2D"]
+script = ExtResource("1_b3rp4")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(142.5, 81)
+zoom = Vector2(4, 4)

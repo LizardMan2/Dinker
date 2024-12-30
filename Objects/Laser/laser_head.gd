@@ -13,7 +13,7 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_redirect_area_entered(area: Area2D) -> void:
-	global_position = area.get_parent().get_parent().position
+	global_position = area.get_parent().get_parent().global_position
 	var bounce = area.get_parent().get_parent().trueDir
 	if bounce == 0:
 		if dir == 2:

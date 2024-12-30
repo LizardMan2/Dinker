@@ -55,5 +55,5 @@ func dir_contents(path, tree, scene_loads = []):
 func _on_confirm_button_down() -> void:
 	var select = $Tree.get_selected().get_metadata(0)
 	if select:
-		var b = load(select)
-		get_tree().change_scene_to_packed(b)
+		Globals.level = select
+		get_tree().change_scene_to_packed(load("res://Levels/Level Loader.tscn"))

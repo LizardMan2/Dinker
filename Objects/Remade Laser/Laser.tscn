@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://ctnuekdmxxa2c"]
+[gd_scene load_steps=10 format=3 uid="uid://ctnuekdmxxa2c"]
 
 [ext_resource type="Script" path="res://Objects/Remade Laser/newLaser.gd" id="1_unrmc"]
 [ext_resource type="Script" path="res://Objects/Remade Laser/laser_redirect.gd" id="2_i3u32"]
@@ -36,10 +36,12 @@ Left = 100
 UpLeft = 100
 rotation = 0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hrt5o"]
+
 [node name="Laser" type="Node2D"]
 script = ExtResource("1_unrmc")
-speed = 500
-length = 50
+speed = 400
+length = 40
 
 [node name="laserPath" type="Path2D" parent="."]
 curve = SubResource("Curve2D_xgt2s")
@@ -69,5 +71,12 @@ bounceDir = SubResource("Resource_wwh0a")
 shape = SubResource("RectangleShape2D_uedje")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Loss Collision" type="Area2D" parent="."]
+collision_layer = 64
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Loss Collision"]
+shape = SubResource("RectangleShape2D_hrt5o")
 
 [connection signal="area_entered" from="laserPath/Sensor Container/Redirect Sensor" to="." method="_on_redirect_sensor_area_entered"]

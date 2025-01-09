@@ -63,8 +63,8 @@ func _physics_process(delta: float) -> void:
 	$"laserPath/Sensor Container".progress_ratio = 1
 	
 	var nextProgress = delta * speed
-	#if nextProgress > Globals.gridSize:
-		#nextProgress = Globals.gridSize
+	if nextProgress > Globals.gridSize:
+		nextProgress = Globals.gridSize
 	progress += nextProgress
 	
 	var j = 0
@@ -77,7 +77,10 @@ func _physics_process(delta: float) -> void:
 		#print(str(currentPos) + "    " + str(nextDir) + "    " +str(nextCollision) + "    " + str(steps))
 		if !nextCollision:
 			steps -= 1
+		#else:
+			#steps = maxSteps
 		nextCollision = false
+		print(steps)
 		
 	elif container[length - 1].progress == $"laserPath/Sensor Container".progress or steps <= 0:
 		queue_free()

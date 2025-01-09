@@ -17,7 +17,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	$Colliders/Bumper.bounceDir.rotation = dir * 2
+	#$Colliders/Bumper.bounceDir.rotation = dir * 2
 	
 	if data.color == 3 and startRot:
 		dir = data.startDirection

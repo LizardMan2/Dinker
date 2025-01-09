@@ -471,7 +471,7 @@ horizontal_alignment = 2
 
 [node name="Level spawner2" parent="Level Layers" instance=ExtResource("3_06jtc")]
 
-[node name="Data" parent="Level Layers" instance=ExtResource("14_qtv7e")]
+[node name="Data" parent="Level Layers/Level spawner2" instance=ExtResource("14_qtv7e")]
 position = Vector2(142.5, 127.5)
 texture = SubResource("AtlasTexture_0merw")
 pos = Vector2i(9, 8)
@@ -480,20 +480,20 @@ endDirection = 1
 type = 2
 color = 2
 
-[node name="Data2" parent="Level Layers" instance=ExtResource("14_qtv7e")]
+[node name="Data2" parent="Level Layers/Level spawner2" instance=ExtResource("14_qtv7e")]
 position = Vector2(142.5, 67.5)
 texture = SubResource("AtlasTexture_d454l")
 pos = Vector2i(9, 4)
 type = 4
 color = 1
 
-[node name="Data3" parent="Level Layers" instance=ExtResource("14_qtv7e")]
+[node name="Data3" parent="Level Layers/Level spawner2" instance=ExtResource("14_qtv7e")]
 position = Vector2(112.5, 127.5)
 texture = SubResource("AtlasTexture_s5cba")
 pos = Vector2i(7, 8)
 startDirection = 1
 
-[node name="Data4" parent="Level Layers" instance=ExtResource("14_qtv7e")]
+[node name="Data4" parent="Level Layers/Level spawner2" instance=ExtResource("14_qtv7e")]
 position = Vector2(112.5, 67.5)
 texture = SubResource("AtlasTexture_capvc")
 pos = Vector2i(7, 4)
@@ -501,30 +501,30 @@ startDirection = 1
 endDirection = 2
 color = 2
 
-[node name="Data5" parent="Level Layers" instance=ExtResource("14_qtv7e")]
+[node name="Data5" parent="Level Layers/Level spawner2" instance=ExtResource("14_qtv7e")]
 position = Vector2(172.5, 37.5)
 texture = SubResource("AtlasTexture_h5xtr")
 pos = Vector2i(11, 2)
 startDirection = 3
 
-[node name="Data6" parent="Level Layers" instance=ExtResource("14_qtv7e")]
+[node name="Data6" parent="Level Layers/Level spawner2" instance=ExtResource("14_qtv7e")]
 position = Vector2(142.5, 97.5)
 texture = SubResource("AtlasTexture_t4amq")
 pos = Vector2i(9, 6)
 type = 3
 color = 2
 
-[node name="Data7" parent="Level Layers" instance=ExtResource("14_qtv7e")]
+[node name="Data7" parent="Level Layers/Level spawner2" instance=ExtResource("14_qtv7e")]
 position = Vector2(157.5, 67.5)
 texture = SubResource("AtlasTexture_p5oq7")
 pos = Vector2i(10, 4)
 
-[node name="Data8" parent="Level Layers" instance=ExtResource("14_qtv7e")]
+[node name="Data8" parent="Level Layers/Level spawner2" instance=ExtResource("14_qtv7e")]
 position = Vector2(172.5, 127.5)
 texture = SubResource("AtlasTexture_ryk66")
 pos = Vector2i(11, 8)
 
-[node name="Data9" parent="Level Layers" instance=ExtResource("14_qtv7e")]
+[node name="Data9" parent="Level Layers/Level spawner2" instance=ExtResource("14_qtv7e")]
 position = Vector2(157.5, 37.5)
 texture = SubResource("AtlasTexture_uyqd3")
 pos = Vector2i(10, 2)
@@ -532,13 +532,13 @@ startDirection = 2
 endDirection = 1
 color = 2
 
-[node name="Data10" parent="Level Layers" instance=ExtResource("14_qtv7e")]
+[node name="Data10" parent="Level Layers/Level spawner2" instance=ExtResource("14_qtv7e")]
 position = Vector2(157.5, 22.5)
 texture = SubResource("AtlasTexture_rlkv7")
 pos = Vector2i(10, 1)
 startDirection = 3
 
-[node name="Data11" parent="Level Layers" instance=ExtResource("14_qtv7e")]
+[node name="Data11" parent="Level Layers/Level spawner2" instance=ExtResource("14_qtv7e")]
 position = Vector2(142.5, 22.5)
 texture = SubResource("AtlasTexture_omqep")
 pos = Vector2i(9, 1)

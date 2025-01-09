@@ -53,6 +53,7 @@ func dir_contents(path, tree, scene_loads = []):
 
 
 func _on_confirm_button_down() -> void:
+	$Camera2D.make_current()
 	var select = $Tree.get_selected().get_metadata(0)
 	if select:
 		Globals.level = select

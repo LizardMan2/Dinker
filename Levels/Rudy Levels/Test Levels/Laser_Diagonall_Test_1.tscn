@@ -1,15 +1,14 @@
-[gd_scene load_steps=17 format=4 uid="uid://cy1p3dxkohn6o"]
+[gd_scene load_steps=24 format=3 uid="uid://bjrc51mrfjsu4"]
 
-[ext_resource type="Script" path="res://Objects/New Level Creation/levelData.gd" id="1_inj87"]
-[ext_resource type="Texture2D" uid="uid://duoo8bgli8jij" path="res://Assets/Art/Obstacles/Dinker Wallset full.png" id="2_lrna7"]
-[ext_resource type="PackedScene" uid="uid://cbhx4gcfejhgo" path="res://Objects/New Level Creation/level_spawner.tscn" id="3_08vks"]
-[ext_resource type="PackedScene" uid="uid://dp8p2mhxgiqkf" path="res://Objects/New Level Creation/data.tscn" id="14_5qghl"]
-[ext_resource type="Texture2D" uid="uid://dh7omwfesl7nh" path="res://Assets/Art/Dinker Object Tileset.png" id="15_gvstr"]
-[ext_resource type="PackedScene" uid="uid://be1c2vdmdcpct" path="res://Objects/win_detection.tscn" id="16_7kktn"]
-[ext_resource type="PackedScene" uid="uid://suauok3uiqcw" path="res://Levels/Rudy Levels/Yellow/Yellow 1.1.tscn" id="17_oj1rh"]
+[ext_resource type="Script" path="res://Objects/New Level Creation/levelData.gd" id="1_f7bps"]
+[ext_resource type="Texture2D" uid="uid://duoo8bgli8jij" path="res://Assets/Art/Obstacles/Dinker Wallset full.png" id="2_3dsle"]
+[ext_resource type="PackedScene" uid="uid://cbhx4gcfejhgo" path="res://Objects/New Level Creation/level_spawner.tscn" id="3_eaihu"]
+[ext_resource type="PackedScene" uid="uid://dp8p2mhxgiqkf" path="res://Objects/New Level Creation/data.tscn" id="15_148h0"]
+[ext_resource type="Texture2D" uid="uid://dh7omwfesl7nh" path="res://Assets/Art/Dinker Object Tileset.png" id="16_7p2o2"]
+[ext_resource type="PackedScene" uid="uid://be1c2vdmdcpct" path="res://Objects/win_detection.tscn" id="17_8t88y"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e0jge"]
-texture = ExtResource("2_lrna7")
+texture = ExtResource("2_3dsle")
 texture_region_size = Vector2i(15, 15)
 0:0/0 = 0
 0:0/0/terrain_set = 0
@@ -399,116 +398,219 @@ sources/3 = SubResource("TileSetAtlasSource_e0jge")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0merw"]
 resource_local_to_scene = true
-atlas = ExtResource("15_gvstr")
+atlas = ExtResource("16_7p2o2")
 region = Rect2(0, 60, 15, 15)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cu8p0"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_88onj"]
 resource_local_to_scene = true
-atlas = ExtResource("15_gvstr")
-region = Rect2(0, 45, 15, 15)
+atlas = ExtResource("16_7p2o2")
+region = Rect2(0, 60, 15, 15)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cdvmx"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_fwokl"]
 resource_local_to_scene = true
-atlas = ExtResource("15_gvstr")
-region = Rect2(15, 0, 15, 15)
+atlas = ExtResource("16_7p2o2")
+region = Rect2(60, 30, 15, 15)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_o3ftv"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_jgpuw"]
 resource_local_to_scene = true
-atlas = ExtResource("15_gvstr")
-region = Rect2(30, 0, 15, 15)
+atlas = ExtResource("16_7p2o2")
+region = Rect2(75, 30, 15, 15)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_j81n1"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_1n6t8"]
 resource_local_to_scene = true
-atlas = ExtResource("15_gvstr")
-region = Rect2(45, 0, 15, 15)
+atlas = ExtResource("16_7p2o2")
+region = Rect2(75, 30, 15, 15)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_nvy8b"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_10g2w"]
 resource_local_to_scene = true
-atlas = ExtResource("15_gvstr")
-region = Rect2(0, 0, 15, 15)
+atlas = ExtResource("16_7p2o2")
+region = Rect2(60, 30, 15, 15)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_pw63p"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_3xt6c"]
 resource_local_to_scene = true
-atlas = ExtResource("15_gvstr")
+atlas = ExtResource("16_7p2o2")
+region = Rect2(75, 30, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ldqh"]
+resource_local_to_scene = true
+atlas = ExtResource("16_7p2o2")
+region = Rect2(60, 30, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fercb"]
+resource_local_to_scene = true
+atlas = ExtResource("16_7p2o2")
+region = Rect2(60, 30, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_arymq"]
+resource_local_to_scene = true
+atlas = ExtResource("16_7p2o2")
+region = Rect2(75, 30, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k5bk4"]
+resource_local_to_scene = true
+atlas = ExtResource("16_7p2o2")
 region = Rect2(15, 105, 15, 15)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_17cvw"]
+resource_local_to_scene = true
+atlas = ExtResource("16_7p2o2")
+region = Rect2(60, 30, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2jvd3"]
+resource_local_to_scene = true
+atlas = ExtResource("16_7p2o2")
+region = Rect2(75, 30, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jsaqx"]
+resource_local_to_scene = true
+atlas = ExtResource("16_7p2o2")
+region = Rect2(60, 30, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fvipn"]
+resource_local_to_scene = true
+atlas = ExtResource("16_7p2o2")
+region = Rect2(75, 30, 15, 15)
+
 [node name="EditorCompatableLevel" type="Node2D"]
+metadata/_edit_vertical_guides_ = [0.0]
+metadata/_edit_horizontal_guides_ = [170.0]
 
 [node name="Level Layers" type="Node2D" parent="."]
-script = ExtResource("1_inj87")
+script = ExtResource("1_f7bps")
 
 [node name="Walls" type="TileMapLayer" parent="Level Layers"]
-tile_map_data = PackedByteArray("AAAGAAAAAwAGAAIAAAAGAAkAAwAGAAEAAAAHAAAAAwAJAAMAAAAHAAkAAwAKAAAAAAAIAAAAAwAJAAMAAAAIAAkAAwAKAAAAAAAJAAAAAwAJAAMAAAAJAAkAAwAKAAAAAAAKAAAAAwAJAAMAAAAKAAkAAwAKAAAAAAALAAAAAwAJAAMAAAALAAkAAwAKAAAAAAAGAAEAAwALAAIAAAAGAAIAAwALAAIAAAAGAAMAAwALAAIAAAAGAAQAAwALAAIAAAAGAAUAAwALAAIAAAAGAAYAAwALAAIAAAAGAAcAAwALAAIAAAAGAAgAAwALAAIAAAAMAAAAAwAFAAIAAAAMAAEAAwAIAAEAAAAMAAIAAwAIAAEAAAAMAAMAAwAIAAEAAAAMAAQAAwAIAAEAAAAMAAUAAwAIAAEAAAAMAAYAAwAIAAEAAAAMAAcAAwAIAAEAAAAMAAgAAwAIAAEAAAAMAAkAAwAFAAEAAAAMAP//AwAKAAAAAAALAP//AwAKAAAAAAAKAP//AwAKAAAAAAAJAP//AwAKAAAAAAAIAP//AwAKAAAAAAAHAP//AwAKAAAAAAAGAP//AwAKAAAAAAAFAP//AwAKAAAAAAAFAAAAAwAJAAIAAAAFAAEAAwAJAAIAAAAFAAIAAwAJAAIAAAAFAAMAAwAJAAIAAAAFAAQAAwAJAAIAAAAFAAUAAwAJAAIAAAAFAAYAAwAJAAIAAAAFAAcAAwAJAAIAAAAFAAgAAwAJAAIAAAAFAAkAAwAJAAIAAAAFAAoAAwAJAAMAAAAGAAoAAwAJAAMAAAAHAAoAAwAJAAMAAAAIAAoAAwAJAAMAAAAJAAoAAwAJAAMAAAAKAAoAAwAJAAMAAAALAAoAAwAJAAMAAAAMAAoAAwAJAAMAAAANAP//AwAKAAAAAAAOAP//AwAKAAAAAAAPAP//AwAKAAAAAAAQAP//AwAKAAAAAAARAP//AwAKAAAAAAASAP//AwAKAAAAAAASAAAAAwAJAAIAAAASAAEAAwAJAAIAAAASAAIAAwAJAAIAAAASAAMAAwAJAAIAAAASAAQAAwAJAAIAAAASAAYAAwAJAAIAAAASAAcAAwAJAAIAAAASAAgAAwAJAAIAAAASAAkAAwAJAAIAAAASAAoAAwAJAAMAAAARAAoAAwAJAAMAAAAQAAoAAwAJAAMAAAAPAAoAAwAJAAMAAAAOAAoAAwAJAAMAAAANAAoAAwAJAAMAAAATAAoAAwALAAMAAAATAAkAAwALAAIAAAATAAgAAwALAAIAAAATAAcAAwALAAIAAAATAAYAAwALAAIAAAATAP//AwALAAAAAAATAAAAAwALAAIAAAATAAEAAwALAAIAAAATAAIAAwALAAIAAAATAAMAAwALAAIAAAATAAQAAwALAAIAAAARAAAAAwAJAAIAAAAQAAAAAwAJAAIAAAAPAAAAAwAJAAIAAAAOAAAAAwAJAAIAAAANAAAAAwAJAAIAAAANAAMAAwAJAAIAAAANAAQAAwAJAAIAAAANAAUAAwAJAAIAAAANAAYAAwAJAAIAAAANAAcAAwAJAAIAAAANAAgAAwAJAAIAAAANAAkAAwAJAAIAAAANAAIAAwAJAAIAAAANAAEAAwAJAAIAAAAOAAQAAwAJAAIAAAAOAAUAAwAJAAIAAAAOAAYAAwAJAAIAAAAOAAcAAwAJAAIAAAAPAAcAAwAJAAIAAAAPAAgAAwAJAAIAAAAPAAkAAwAJAAIAAAAPAAYAAwAJAAIAAAAPAAUAAwAJAAIAAAAPAAQAAwAJAAIAAAAPAAMAAwAJAAIAAAAPAAIAAwAJAAIAAAAPAAEAAwAJAAIAAAAOAAEAAwAJAAIAAAAOAAIAAwAJAAIAAAAOAAMAAwAJAAIAAAAQAAcAAwAJAAIAAAAQAAYAAwAJAAIAAAARAAQAAwAJAAIAAAARAAMAAwAJAAIAAAARAAIAAwAJAAIAAAAQAAEAAwAJAAIAAAAQAAIAAwAJAAIAAAAQAAgAAwAJAAIAAAARAAEAAwAJAAIAAAAQAAMAAwAJAAIAAAAQAAQAAwAJAAIAAAAQAAkAAwAJAAIAAAARAAcAAwAJAAIAAAARAAYAAwAJAAIAAAARAAgAAwAJAAIAAAARAAkAAwAJAAIAAAAOAAgAAwAJAAIAAAAOAAkAAwAJAAIAAAAEAP//AwAKAAAAAAADAP//AwAKAAAAAAACAP//AwAKAAAAAAABAP//AwAKAAAAAAAAAP//AwAKAAAAAAD/////AwAIAAAAAAD//wAAAwAIAAEAAAD//wEAAwAIAAEAAAD//wIAAwAIAAEAAAD//wMAAwAIAAEAAAD//wQAAwAIAAEAAAD//wUAAwAIAAEAAAD//wYAAwAIAAEAAAD//wcAAwAIAAEAAAD//wgAAwAIAAEAAAD//wkAAwAIAAEAAAD//woAAwAIAAMAAAAAAAoAAwAJAAMAAAABAAoAAwAJAAMAAAACAAoAAwAJAAMAAAADAAoAAwAJAAMAAAAEAAoAAwAJAAMAAAAAAAAAAwAJAAIAAAAAAAEAAwAJAAIAAAAAAAIAAwAJAAIAAAAAAAMAAwAJAAIAAAAAAAQAAwAJAAIAAAAAAAUAAwAJAAIAAAAAAAYAAwAJAAIAAAAAAAcAAwAJAAIAAAAAAAgAAwAJAAIAAAAAAAkAAwAJAAIAAAABAAkAAwAJAAIAAAACAAkAAwAJAAIAAAADAAkAAwAJAAIAAAAEAAkAAwAJAAIAAAAEAAgAAwAJAAIAAAAEAAcAAwAJAAIAAAAEAAYAAwAJAAIAAAAEAAUAAwAJAAIAAAAEAAQAAwAJAAIAAAAEAAMAAwAJAAIAAAAEAAIAAwAJAAIAAAAEAAEAAwAJAAIAAAAEAAAAAwAJAAIAAAADAAAAAwAJAAIAAAACAAAAAwAJAAIAAAABAAAAAwAJAAIAAAABAAEAAwAJAAIAAAABAAIAAwAJAAIAAAABAAMAAwAJAAIAAAABAAQAAwAJAAIAAAABAAUAAwAJAAIAAAABAAYAAwAJAAIAAAABAAcAAwAJAAIAAAABAAgAAwAJAAIAAAADAAgAAwAJAAIAAAADAAEAAwAJAAIAAAADAAIAAwAJAAIAAAADAAMAAwAJAAIAAAADAAQAAwAJAAIAAAADAAUAAwAJAAIAAAADAAYAAwAJAAIAAAADAAcAAwAJAAIAAAACAAEAAwAJAAIAAAACAAIAAwAJAAIAAAACAAMAAwAJAAIAAAACAAQAAwAJAAIAAAACAAUAAwAJAAIAAAACAAYAAwAJAAIAAAACAAcAAwAJAAIAAAACAAgAAwAJAAIAAAAQAAUAAwAJAAIAAAARAAUAAwAJAAIAAAASAAUAAwAJAAIAAAATAAUAAwALAAIAAAA=")
 tile_set = SubResource("TileSet_m3ytj")
 
 [node name="Label" type="Label" parent="Level Layers"]
-offset_left = 25.0
-offset_top = 113.0
-offset_right = 100.0
-offset_bottom = 136.0
+offset_left = -62.0
+offset_top = 140.0
+offset_right = 13.0
+offset_bottom = 163.0
 text = "0"
 horizontal_alignment = 2
 
-[node name="Level spawner2" parent="Level Layers" instance=ExtResource("3_08vks")]
+[node name="Level spawner2" parent="Level Layers" instance=ExtResource("3_eaihu")]
 
-[node name="Data" parent="Level Layers/Level spawner2" instance=ExtResource("14_5qghl")]
-position = Vector2(142.5, 127.5)
+[node name="Data" parent="Level Layers/Level spawner2" instance=ExtResource("15_148h0")]
+position = Vector2(67.5, 67.5)
 texture = SubResource("AtlasTexture_0merw")
-pos = Vector2i(9, 8)
+pos = Vector2i(4, 4)
 startDirection = 2
 endDirection = 1
 type = 2
 color = 2
 
-[node name="Data2" parent="Level Layers/Level spawner2" instance=ExtResource("14_5qghl")]
-position = Vector2(142.5, 67.5)
-texture = SubResource("AtlasTexture_cu8p0")
-pos = Vector2i(9, 4)
-color = 3
-
-[node name="Data3" parent="Level Layers/Level spawner2" instance=ExtResource("14_5qghl")]
-position = Vector2(112.5, 67.5)
-texture = SubResource("AtlasTexture_cdvmx")
-pos = Vector2i(7, 4)
-startDirection = 1
-
-[node name="Data4" parent="Level Layers/Level spawner2" instance=ExtResource("14_5qghl")]
-position = Vector2(112.5, 22.5)
-texture = SubResource("AtlasTexture_o3ftv")
-pos = Vector2i(7, 1)
+[node name="Data2" parent="Level Layers/Level spawner2" instance=ExtResource("15_148h0")]
+position = Vector2(217.5, 82.5)
+texture = SubResource("AtlasTexture_88onj")
+pos = Vector2i(14, 5)
 startDirection = 2
+endDirection = 1
+type = 2
+color = 2
 
-[node name="Data5" parent="Level Layers/Level spawner2" instance=ExtResource("14_5qghl")]
-position = Vector2(142.5, 22.5)
-texture = SubResource("AtlasTexture_j81n1")
-pos = Vector2i(9, 1)
+[node name="Data3" parent="Level Layers/Level spawner2" instance=ExtResource("15_148h0")]
+position = Vector2(67.5, 7.5)
+texture = SubResource("AtlasTexture_fwokl")
+pos = Vector2i(4, 0)
+startDirection = 2
+type = 9
+
+[node name="Data4" parent="Level Layers/Level spawner2" instance=ExtResource("15_148h0")]
+position = Vector2(127.5, 67.5)
+texture = SubResource("AtlasTexture_jgpuw")
+pos = Vector2i(8, 4)
 startDirection = 3
+type = 9
 
-[node name="Data6" parent="Level Layers/Level spawner2" instance=ExtResource("14_5qghl")]
-position = Vector2(172.5, 67.5)
-texture = SubResource("AtlasTexture_nvy8b")
-pos = Vector2i(11, 4)
+[node name="Data5" parent="Level Layers/Level spawner2" instance=ExtResource("15_148h0")]
+position = Vector2(7.5, 67.5)
+texture = SubResource("AtlasTexture_1n6t8")
+pos = Vector2i(0, 4)
+startDirection = 1
+type = 9
 
-[node name="Data7" parent="Level Layers/Level spawner2" instance=ExtResource("14_5qghl")]
-position = Vector2(172.5, 22.5)
-texture = SubResource("AtlasTexture_pw63p")
-pos = Vector2i(11, 1)
+[node name="Data6" parent="Level Layers/Level spawner2" instance=ExtResource("15_148h0")]
+position = Vector2(67.5, 127.5)
+texture = SubResource("AtlasTexture_10g2w")
+pos = Vector2i(4, 8)
+type = 9
+
+[node name="Data7" parent="Level Layers/Level spawner2" instance=ExtResource("15_148h0")]
+position = Vector2(217.5, 22.5)
+texture = SubResource("AtlasTexture_3xt6c")
+pos = Vector2i(14, 1)
+startDirection = 3
+type = 9
+
+[node name="Data8" parent="Level Layers/Level spawner2" instance=ExtResource("15_148h0")]
+position = Vector2(157.5, 82.5)
+texture = SubResource("AtlasTexture_2ldqh")
+pos = Vector2i(10, 5)
+startDirection = 2
+type = 9
+
+[node name="Data9" parent="Level Layers/Level spawner2" instance=ExtResource("15_148h0")]
+position = Vector2(277.5, 82.5)
+texture = SubResource("AtlasTexture_fercb")
+pos = Vector2i(18, 5)
+type = 9
+
+[node name="Data10" parent="Level Layers/Level spawner2" instance=ExtResource("15_148h0")]
+position = Vector2(217.5, 142.5)
+texture = SubResource("AtlasTexture_arymq")
+pos = Vector2i(14, 9)
+startDirection = 1
+type = 9
+
+[node name="Data11" parent="Level Layers/Level spawner2" instance=ExtResource("15_148h0")]
+position = Vector2(7.5, 97.5)
+texture = SubResource("AtlasTexture_k5bk4")
+pos = Vector2i(0, 6)
 type = 5
+
+[node name="Data12" parent="Level Layers/Level spawner2" instance=ExtResource("15_148h0")]
+position = Vector2(187.5, 52.5)
+texture = SubResource("AtlasTexture_17cvw")
+pos = Vector2i(12, 3)
+startDirection = 2
+type = 9
+
+[node name="Data13" parent="Level Layers/Level spawner2" instance=ExtResource("15_148h0")]
+position = Vector2(247.5, 52.5)
+texture = SubResource("AtlasTexture_2jvd3")
+pos = Vector2i(16, 3)
+startDirection = 3
+type = 9
+
+[node name="Data14" parent="Level Layers/Level spawner2" instance=ExtResource("15_148h0")]
+position = Vector2(97.5, 97.5)
+texture = SubResource("AtlasTexture_jsaqx")
+pos = Vector2i(6, 6)
+type = 9
+
+[node name="Data15" parent="Level Layers/Level spawner2" instance=ExtResource("15_148h0")]
+position = Vector2(37.5, 97.5)
+texture = SubResource("AtlasTexture_fvipn")
+pos = Vector2i(2, 6)
+startDirection = 1
+type = 9
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(142.5, 81)
 zoom = Vector2(4, 4)
 
-[node name="Win Detection" parent="." instance=ExtResource("16_7kktn")]
-goTo = ExtResource("17_oj1rh")
+[node name="Win Detection" parent="." instance=ExtResource("17_8t88y")]
+goTo = null
 
 [node name="TextEdit" type="TextEdit" parent="."]
+visible = false
 offset_left = 194.0
 offset_top = 4.0
 offset_right = 420.0
 offset_bottom = 446.0
 scale = Vector2(0.33, 0.33)
-text = "Use the \"Walls\" tileset to edit the purple walls, terrain 0 will autotile.
+placeholder_text = "Use the \"Walls\" tileset to edit the purple walls, terrain 0 will autotile.
 
 Copy paste the \"Data\" node in the tree and change its values to add objects to the scene. Make sure it is still a child of the \"Level spawner\" node, and not a child of another data node or elsewhere. Order of the data nodes does not matter."
 wrap_mode = 1

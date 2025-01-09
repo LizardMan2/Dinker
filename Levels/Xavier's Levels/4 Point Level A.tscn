@@ -1,18 +1,8 @@
-[gd_scene load_steps=40 format=4 uid="uid://cjqd7rwsiv5hk"]
+[gd_scene load_steps=21 format=4 uid="uid://cjqd7rwsiv5hk"]
 
 [ext_resource type="Script" path="res://Objects/New Level Creation/levelData.gd" id="1_1wnv5"]
 [ext_resource type="Texture2D" uid="uid://duoo8bgli8jij" path="res://Assets/Art/Obstacles/Dinker Wallset full.png" id="2_6ftoe"]
-[ext_resource type="Script" path="res://Objects/New Level Creation/level_spawner_from_data.gd" id="3_p0pvx"]
-[ext_resource type="Script" path="res://Objects/New Level Creation/object_spawner.gd" id="4_6xyiu"]
-[ext_resource type="PackedScene" uid="uid://c05cdko4pf5i1" path="res://Objects/bumper.tscn" id="5_mgv0c"]
-[ext_resource type="PackedScene" uid="uid://dk6egibmgpx5w" path="res://Objects/door.tscn" id="6_oanc2"]
-[ext_resource type="PackedScene" uid="uid://bp75whmfa4006" path="res://Objects/Player/player.tscn" id="7_aaaxu"]
-[ext_resource type="PackedScene" uid="uid://b1u4rok5q2dgu" path="res://Objects/button.tscn" id="8_7bjjr"]
-[ext_resource type="PackedScene" uid="uid://wboynvwymknx" path="res://Objects/four_point.tscn" id="9_0mia2"]
-[ext_resource type="PackedScene" uid="uid://clqxj4xof5i48" path="res://Objects/hitAll.tscn" id="10_xycqd"]
-[ext_resource type="PackedScene" uid="uid://dyq8wcu4dgk55" path="res://Objects/lock.tscn" id="11_cci8p"]
-[ext_resource type="PackedScene" uid="uid://w1f4ijrsqbrj" path="res://Objects/key.tscn" id="12_kt8o3"]
-[ext_resource type="PackedScene" uid="uid://be3xhxdlu7v1a" path="res://Objects/crotator.tscn" id="13_opxm1"]
+[ext_resource type="PackedScene" uid="uid://cbhx4gcfejhgo" path="res://Objects/New Level Creation/level_spawner.tscn" id="3_06jtc"]
 [ext_resource type="PackedScene" uid="uid://dp8p2mhxgiqkf" path="res://Objects/New Level Creation/data.tscn" id="14_qtv7e"]
 [ext_resource type="Texture2D" uid="uid://dh7omwfesl7nh" path="res://Assets/Art/Dinker Object Tileset.png" id="15_xl8pq"]
 [ext_resource type="PackedScene" uid="uid://be1c2vdmdcpct" path="res://Objects/win_detection.tscn" id="16_im6v0"]
@@ -407,132 +397,6 @@ terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/3 = SubResource("TileSetAtlasSource_e0jge")
 
-[sub_resource type="Resource" id="Resource_xy5tn"]
-script = ExtResource("4_6xyiu")
-name = "Bumper"
-object = ExtResource("5_mgv0c")
-corner1 = Vector2i(0, 0)
-corner2 = Vector2i(3, 3)
-startDirection = true
-endDirection = true
-speed = false
-length = false
-inverted = false
-instructions = false
-color = true
-
-[sub_resource type="Resource" id="Resource_7pexs"]
-script = ExtResource("4_6xyiu")
-name = "Door"
-object = ExtResource("6_oanc2")
-corner1 = Vector2i(4, 0)
-corner2 = Vector2i(7, 1)
-startDirection = true
-endDirection = false
-speed = true
-length = true
-inverted = true
-instructions = false
-color = true
-
-[sub_resource type="Resource" id="Resource_7a7nu"]
-script = ExtResource("4_6xyiu")
-name = "Player"
-object = ExtResource("7_aaaxu")
-corner1 = Vector2i(0, 4)
-corner2 = Vector2i(0, 4)
-startDirection = true
-endDirection = false
-speed = false
-length = false
-inverted = false
-instructions = false
-color = false
-
-[sub_resource type="Resource" id="Resource_1wken"]
-script = ExtResource("4_6xyiu")
-name = "Button"
-object = ExtResource("8_7bjjr")
-corner1 = Vector2i(0, 6)
-corner2 = Vector2i(1, 6)
-startDirection = false
-endDirection = false
-speed = false
-length = false
-inverted = false
-instructions = false
-color = true
-
-[sub_resource type="Resource" id="Resource_ee1ng"]
-script = ExtResource("4_6xyiu")
-name = "Four Point"
-object = ExtResource("9_0mia2")
-corner1 = Vector2i(0, 7)
-corner2 = Vector2i(0, 7)
-startDirection = false
-endDirection = false
-speed = false
-length = false
-inverted = false
-instructions = false
-color = false
-
-[sub_resource type="Resource" id="Resource_x6g8v"]
-script = ExtResource("4_6xyiu")
-name = "CollectAll"
-object = ExtResource("10_xycqd")
-corner1 = Vector2i(1, 7)
-corner2 = Vector2i(1, 7)
-startDirection = false
-endDirection = false
-speed = false
-length = false
-inverted = false
-instructions = false
-color = false
-
-[sub_resource type="Resource" id="Resource_3kwg8"]
-script = ExtResource("4_6xyiu")
-name = "Lock"
-object = ExtResource("11_cci8p")
-corner1 = Vector2i(2, 7)
-corner2 = Vector2i(2, 7)
-startDirection = false
-endDirection = false
-speed = false
-length = false
-inverted = false
-instructions = false
-color = false
-
-[sub_resource type="Resource" id="Resource_1wa13"]
-script = ExtResource("4_6xyiu")
-name = "Key"
-object = ExtResource("12_kt8o3")
-corner1 = Vector2i(3, 7)
-corner2 = Vector2i(3, 7)
-startDirection = false
-endDirection = false
-speed = false
-length = false
-inverted = false
-instructions = false
-color = false
-
-[sub_resource type="Resource" id="Resource_wa350"]
-script = ExtResource("4_6xyiu")
-name = "Crotator"
-object = ExtResource("13_opxm1")
-corner1 = Vector2i(4, 7)
-corner2 = Vector2i(7, 7)
-startDirection = true
-endDirection = false
-speed = false
-length = false
-inverted = false
-instructions = false
-color = false
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_0merw"]
 resource_local_to_scene = true
 atlas = ExtResource("15_xl8pq")
@@ -605,11 +469,9 @@ offset_bottom = 136.0
 text = "0"
 horizontal_alignment = 2
 
-[node name="Level spawner" type="Node2D" parent="Level Layers"]
-script = ExtResource("3_p0pvx")
-objects = Array[ExtResource("4_6xyiu")]([SubResource("Resource_xy5tn"), SubResource("Resource_7pexs"), SubResource("Resource_7a7nu"), SubResource("Resource_1wken"), SubResource("Resource_ee1ng"), SubResource("Resource_x6g8v"), SubResource("Resource_3kwg8"), SubResource("Resource_1wa13"), SubResource("Resource_wa350")])
+[node name="Level spawner2" parent="Level Layers" instance=ExtResource("3_06jtc")]
 
-[node name="Data" parent="Level Layers/Level spawner" instance=ExtResource("14_qtv7e")]
+[node name="Data" parent="Level Layers" instance=ExtResource("14_qtv7e")]
 position = Vector2(142.5, 127.5)
 texture = SubResource("AtlasTexture_0merw")
 pos = Vector2i(9, 8)
@@ -618,19 +480,20 @@ endDirection = 1
 type = 2
 color = 2
 
-[node name="Data2" parent="Level Layers/Level spawner" instance=ExtResource("14_qtv7e")]
+[node name="Data2" parent="Level Layers" instance=ExtResource("14_qtv7e")]
 position = Vector2(142.5, 67.5)
 texture = SubResource("AtlasTexture_d454l")
 pos = Vector2i(9, 4)
 type = 4
+color = 1
 
-[node name="Data3" parent="Level Layers/Level spawner" instance=ExtResource("14_qtv7e")]
+[node name="Data3" parent="Level Layers" instance=ExtResource("14_qtv7e")]
 position = Vector2(112.5, 127.5)
 texture = SubResource("AtlasTexture_s5cba")
 pos = Vector2i(7, 8)
 startDirection = 1
 
-[node name="Data4" parent="Level Layers/Level spawner" instance=ExtResource("14_qtv7e")]
+[node name="Data4" parent="Level Layers" instance=ExtResource("14_qtv7e")]
 position = Vector2(112.5, 67.5)
 texture = SubResource("AtlasTexture_capvc")
 pos = Vector2i(7, 4)
@@ -638,30 +501,30 @@ startDirection = 1
 endDirection = 2
 color = 2
 
-[node name="Data5" parent="Level Layers/Level spawner" instance=ExtResource("14_qtv7e")]
+[node name="Data5" parent="Level Layers" instance=ExtResource("14_qtv7e")]
 position = Vector2(172.5, 37.5)
 texture = SubResource("AtlasTexture_h5xtr")
 pos = Vector2i(11, 2)
 startDirection = 3
 
-[node name="Data6" parent="Level Layers/Level spawner" instance=ExtResource("14_qtv7e")]
+[node name="Data6" parent="Level Layers" instance=ExtResource("14_qtv7e")]
 position = Vector2(142.5, 97.5)
 texture = SubResource("AtlasTexture_t4amq")
 pos = Vector2i(9, 6)
 type = 3
 color = 2
 
-[node name="Data7" parent="Level Layers/Level spawner" instance=ExtResource("14_qtv7e")]
+[node name="Data7" parent="Level Layers" instance=ExtResource("14_qtv7e")]
 position = Vector2(157.5, 67.5)
 texture = SubResource("AtlasTexture_p5oq7")
 pos = Vector2i(10, 4)
 
-[node name="Data8" parent="Level Layers/Level spawner" instance=ExtResource("14_qtv7e")]
+[node name="Data8" parent="Level Layers" instance=ExtResource("14_qtv7e")]
 position = Vector2(172.5, 127.5)
 texture = SubResource("AtlasTexture_ryk66")
 pos = Vector2i(11, 8)
 
-[node name="Data9" parent="Level Layers/Level spawner" instance=ExtResource("14_qtv7e")]
+[node name="Data9" parent="Level Layers" instance=ExtResource("14_qtv7e")]
 position = Vector2(157.5, 37.5)
 texture = SubResource("AtlasTexture_uyqd3")
 pos = Vector2i(10, 2)
@@ -669,13 +532,13 @@ startDirection = 2
 endDirection = 1
 color = 2
 
-[node name="Data10" parent="Level Layers/Level spawner" instance=ExtResource("14_qtv7e")]
+[node name="Data10" parent="Level Layers" instance=ExtResource("14_qtv7e")]
 position = Vector2(157.5, 22.5)
 texture = SubResource("AtlasTexture_rlkv7")
 pos = Vector2i(10, 1)
 startDirection = 3
 
-[node name="Data11" parent="Level Layers/Level spawner" instance=ExtResource("14_qtv7e")]
+[node name="Data11" parent="Level Layers" instance=ExtResource("14_qtv7e")]
 position = Vector2(142.5, 22.5)
 texture = SubResource("AtlasTexture_omqep")
 pos = Vector2i(9, 1)

@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://rbxi2ip5c6sm"]
+
+[ext_resource type="Script" path="res://Objects/Remade Laser/laser_point.gd" id="1_eiahu"]
+[ext_resource type="Texture2D" uid="uid://8nh4ooiwd3ip" path="res://Assets/Art/Puzzle Elements/laser.png" id="1_pecmh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tx3ld"]
+size = Vector2(1, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0rocn"]
+size = Vector2(1, 1)
+
+[node name="LaserPoint" type="PathFollow2D"]
+rotates = false
+loop = false
+script = ExtResource("1_eiahu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+texture = ExtResource("1_pecmh")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_tx3ld")
+
+[node name="Area2D2" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+shape = SubResource("RectangleShape2D_0rocn")
+
+[connection signal="area_entered" from="Area2D2" to="." method="_on_area_2d_2_area_entered"]
+[connection signal="body_entered" from="Area2D2" to="." method="_on_area_2d_2_body_entered"]

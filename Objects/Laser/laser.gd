@@ -4,8 +4,8 @@ extends Node2D
 
 @export var laser: Array[Node2D]
 var defaultDir = 0
-var length = 10
-var speed = .02
+var length = 15
+var speed = .002
 var timer = 0
 var firstRun = true
 var pieces = 0

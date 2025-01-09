@@ -10,4 +10,4 @@ func _process(delta: float) -> void:
 	if shots > -1:
 		shotDisplay.text = str(shots)
 	else:
-		shotDisplay.text = "∞"
+		shotDisplay.text = "∞"  

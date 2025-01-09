@@ -1,41 +1,40 @@
-[gd_scene load_steps=15 format=3 uid="uid://c05cdko4pf5i1"]
+[gd_scene load_steps=14 format=3 uid="uid://hr5l5wsx8gg8"]
 
-[ext_resource type="Script" path="res://Objects/bumper.gd" id="1_ns73x"]
-[ext_resource type="Texture2D" uid="uid://43pyj4by5c42" path="res://Assets/Art/Dinker Tileset.png" id="2_147ac"]
-[ext_resource type="Texture2D" uid="uid://bp4vog8p20e02" path="res://Assets/Art/Obstacles/Yellow Bumper.png" id="3_wg240"]
-[ext_resource type="Script" path="res://Objects/Remade Laser/laser_redirect.gd" id="4_wyr0a"]
-[ext_resource type="Script" path="res://Objects/DirectionResource.gd" id="5_fn2d0"]
+[ext_resource type="Script" path="res://Objects/bumper.gd" id="1_ubiai"]
+[ext_resource type="Texture2D" uid="uid://dh7omwfesl7nh" path="res://Assets/Art/Dinker Object Tileset.png" id="2_713gj"]
+[ext_resource type="Script" path="res://Objects/Remade Laser/laser_redirect.gd" id="4_gcbwc"]
+[ext_resource type="Script" path="res://Objects/DirectionResource.gd" id="5_ux7qj"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_v20ev"]
-atlas = ExtResource("2_147ac")
-region = Rect2(60, 0, 15, 15)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_n5pbc"]
-atlas = ExtResource("2_147ac")
-region = Rect2(60, 15, 15, 15)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_x6ou8"]
-atlas = ExtResource("2_147ac")
+[sub_resource type="AtlasTexture" id="AtlasTexture_tybj1"]
+atlas = ExtResource("2_713gj")
 region = Rect2(60, 30, 15, 15)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gen86"]
-atlas = ExtResource("3_wg240")
-region = Rect2(0, 0, 15, 15)
+[sub_resource type="AtlasTexture" id="AtlasTexture_f56xs"]
+atlas = ExtResource("2_713gj")
+region = Rect2(60, 45, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_77aom"]
+atlas = ExtResource("2_713gj")
+region = Rect2(60, 60, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gvhv7"]
+atlas = ExtResource("2_713gj")
+region = Rect2(60, 75, 15, 15)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_j4x5e"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_v20ev")
+"texture": SubResource("AtlasTexture_tybj1")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_n5pbc")
+"texture": SubResource("AtlasTexture_f56xs")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_x6ou8")
+"texture": SubResource("AtlasTexture_77aom")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gen86")
+"texture": SubResource("AtlasTexture_gvhv7")
 }],
 "loop": true,
 "name": &"Colors",
@@ -45,17 +44,17 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b1ano"]
 size = Vector2(0.75, 15)
 
-[sub_resource type="Resource" id="Resource_rostl"]
+[sub_resource type="Resource" id="Resource_x6gnx"]
 resource_local_to_scene = true
-script = ExtResource("5_fn2d0")
-Up = 6
-UpRight = 100
-Right = 100
-DownRight = 100
+script = ExtResource("5_ux7qj")
+Up = 100
+UpRight = 3
+Right = 2
+DownRight = 1
 Down = 100
-DownLeft = 100
-Left = 0
-UpLeft = 7
+DownLeft = 7
+Left = 6
+UpLeft = 5
 rotation = 0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fem34"]
@@ -64,8 +63,8 @@ size = Vector2(13, 13)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_p0uy1"]
 size = Vector2(5, 5)
 
-[node name="Bumper" type="Node2D"]
-script = ExtResource("1_ns73x")
+[node name="Diagonall" type="Node2D"]
+script = ExtResource("1_ubiai")
 
 [node name="spr" type="Node2D" parent="."]
 
@@ -98,8 +97,8 @@ monitorable = false
 polygon = PackedVector2Array(6, -4, 6, 6, -4, 6, 3, 3)
 
 [node name="Bumper" type="Area2D" parent="Colliders"]
-script = ExtResource("4_wyr0a")
-bounceDir = SubResource("Resource_rostl")
+script = ExtResource("4_gcbwc")
+bounceDir = SubResource("Resource_x6gnx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Colliders/Bumper"]
 shape = SubResource("RectangleShape2D_fem34")

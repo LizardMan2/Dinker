@@ -1,18 +1,8 @@
-[gd_scene load_steps=29 format=4 uid="uid://ch4qcyjfd6c02"]
+[gd_scene load_steps=10 format=4 uid="uid://ch4qcyjfd6c02"]
 
 [ext_resource type="Script" path="res://Objects/New Level Creation/levelData.gd" id="1_yk5ih"]
 [ext_resource type="Texture2D" uid="uid://duoo8bgli8jij" path="res://Assets/Art/Obstacles/Dinker Wallset full.png" id="2_r17y4"]
-[ext_resource type="Script" path="res://Objects/New Level Creation/level_spawner_from_data.gd" id="3_rpkvu"]
-[ext_resource type="Script" path="res://Objects/New Level Creation/object_spawner.gd" id="4_ypolw"]
-[ext_resource type="PackedScene" uid="uid://c05cdko4pf5i1" path="res://Objects/bumper.tscn" id="5_b4ipw"]
-[ext_resource type="PackedScene" uid="uid://dk6egibmgpx5w" path="res://Objects/door.tscn" id="6_622gq"]
-[ext_resource type="PackedScene" uid="uid://bp75whmfa4006" path="res://Objects/Player/player.tscn" id="7_3ylaj"]
-[ext_resource type="PackedScene" uid="uid://b1u4rok5q2dgu" path="res://Objects/button.tscn" id="8_vrgs7"]
-[ext_resource type="PackedScene" uid="uid://wboynvwymknx" path="res://Objects/four_point.tscn" id="9_edkl2"]
-[ext_resource type="PackedScene" uid="uid://clqxj4xof5i48" path="res://Objects/hitAll.tscn" id="10_qacbx"]
-[ext_resource type="PackedScene" uid="uid://dyq8wcu4dgk55" path="res://Objects/lock.tscn" id="11_mf5ml"]
-[ext_resource type="PackedScene" uid="uid://w1f4ijrsqbrj" path="res://Objects/key.tscn" id="12_yewdt"]
-[ext_resource type="PackedScene" uid="uid://be3xhxdlu7v1a" path="res://Objects/crotator.tscn" id="13_4e3jj"]
+[ext_resource type="PackedScene" uid="uid://cbhx4gcfejhgo" path="res://Objects/New Level Creation/level_spawner.tscn" id="3_go0xk"]
 [ext_resource type="PackedScene" uid="uid://dp8p2mhxgiqkf" path="res://Objects/New Level Creation/data.tscn" id="14_1ghro"]
 [ext_resource type="Texture2D" uid="uid://dh7omwfesl7nh" path="res://Assets/Art/Dinker Object Tileset.png" id="15_fbl7g"]
 [ext_resource type="PackedScene" uid="uid://be1c2vdmdcpct" path="res://Objects/win_detection.tscn" id="16_73p0g"]
@@ -406,132 +396,6 @@ terrain_set_0/terrain_0/name = "Terrain 0"
 terrain_set_0/terrain_0/color = Color(0.5, 0.34375, 0.25, 1)
 sources/3 = SubResource("TileSetAtlasSource_e0jge")
 
-[sub_resource type="Resource" id="Resource_xy5tn"]
-script = ExtResource("4_ypolw")
-name = "Bumper"
-object = ExtResource("5_b4ipw")
-corner1 = Vector2i(0, 0)
-corner2 = Vector2i(3, 3)
-startDirection = true
-endDirection = true
-speed = false
-length = false
-inverted = false
-instructions = false
-color = true
-
-[sub_resource type="Resource" id="Resource_7pexs"]
-script = ExtResource("4_ypolw")
-name = "Door"
-object = ExtResource("6_622gq")
-corner1 = Vector2i(4, 0)
-corner2 = Vector2i(7, 1)
-startDirection = true
-endDirection = false
-speed = true
-length = true
-inverted = true
-instructions = false
-color = true
-
-[sub_resource type="Resource" id="Resource_7a7nu"]
-script = ExtResource("4_ypolw")
-name = "Player"
-object = ExtResource("7_3ylaj")
-corner1 = Vector2i(0, 4)
-corner2 = Vector2i(0, 4)
-startDirection = true
-endDirection = false
-speed = false
-length = false
-inverted = false
-instructions = false
-color = false
-
-[sub_resource type="Resource" id="Resource_1wken"]
-script = ExtResource("4_ypolw")
-name = "Button"
-object = ExtResource("8_vrgs7")
-corner1 = Vector2i(0, 6)
-corner2 = Vector2i(1, 6)
-startDirection = false
-endDirection = false
-speed = false
-length = false
-inverted = false
-instructions = false
-color = true
-
-[sub_resource type="Resource" id="Resource_ee1ng"]
-script = ExtResource("4_ypolw")
-name = "Four Point"
-object = ExtResource("9_edkl2")
-corner1 = Vector2i(0, 7)
-corner2 = Vector2i(0, 7)
-startDirection = false
-endDirection = false
-speed = false
-length = false
-inverted = false
-instructions = false
-color = false
-
-[sub_resource type="Resource" id="Resource_x6g8v"]
-script = ExtResource("4_ypolw")
-name = "CollectAll"
-object = ExtResource("10_qacbx")
-corner1 = Vector2i(1, 7)
-corner2 = Vector2i(1, 7)
-startDirection = false
-endDirection = false
-speed = false
-length = false
-inverted = false
-instructions = false
-color = false
-
-[sub_resource type="Resource" id="Resource_3kwg8"]
-script = ExtResource("4_ypolw")
-name = "Lock"
-object = ExtResource("11_mf5ml")
-corner1 = Vector2i(2, 7)
-corner2 = Vector2i(2, 7)
-startDirection = false
-endDirection = false
-speed = false
-length = false
-inverted = false
-instructions = false
-color = false
-
-[sub_resource type="Resource" id="Resource_1wa13"]
-script = ExtResource("4_ypolw")
-name = "Key"
-object = ExtResource("12_yewdt")
-corner1 = Vector2i(3, 7)
-corner2 = Vector2i(3, 7)
-startDirection = false
-endDirection = false
-speed = false
-length = false
-inverted = false
-instructions = false
-color = false
-
-[sub_resource type="Resource" id="Resource_wa350"]
-script = ExtResource("4_ypolw")
-name = "Crotator"
-object = ExtResource("13_4e3jj")
-corner1 = Vector2i(4, 7)
-corner2 = Vector2i(7, 7)
-startDirection = true
-endDirection = false
-speed = false
-length = false
-inverted = false
-instructions = false
-color = false
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_0merw"]
 resource_local_to_scene = true
 atlas = ExtResource("15_fbl7g")
@@ -556,18 +420,14 @@ offset_bottom = 136.0
 text = "0"
 horizontal_alignment = 2
 
-[node name="Level spawner" type="Node2D" parent="Level Layers"]
-script = ExtResource("3_rpkvu")
-objects = Array[ExtResource("4_ypolw")]([SubResource("Resource_xy5tn"), SubResource("Resource_7pexs"), SubResource("Resource_7a7nu"), SubResource("Resource_1wken"), SubResource("Resource_ee1ng"), SubResource("Resource_x6g8v"), SubResource("Resource_3kwg8"), SubResource("Resource_1wa13"), SubResource("Resource_wa350")])
+[node name="Level spawner" parent="Level Layers" instance=ExtResource("3_go0xk")]
 
 [node name="Data" parent="Level Layers/Level spawner" instance=ExtResource("14_1ghro")]
 position = Vector2(142.5, 127.5)
 texture = SubResource("AtlasTexture_0merw")
 pos = Vector2i(9, 8)
-startDirection = 2
-endDirection = 1
 type = 2
-color = 2
+color = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(142.5, 81)

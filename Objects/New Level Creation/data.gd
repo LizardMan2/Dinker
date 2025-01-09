@@ -6,7 +6,7 @@ class_name puzzleDataNode
 @export var inEditor = true
 
 @export_category("In Editor")
-enum types{Bumper, Door, Player, Btn, FourPoint, hitAll, Lock, Key, Crotator}
+enum types{Bumper, Door, Player, Btn, FourPoint, hitAll, Lock, Key, Crotator, Diagonall}
 enum direction{Up, Right, Down, Left}
 enum col{Purple, Blue, Red, Yellow}
 
@@ -66,4 +66,6 @@ func _process(delta: float) -> void:
 				8: #"Crotator"
 					var nums = Vector2(startDirection * 15 + 60, 105)
 					texture.region = Rect2(nums.x, nums.y, 15, 15)
-		
+				9: #Diagonall
+					var nums = Vector2((startDirection % 2) * 15 + 60, color * 15 + 30)
+					texture.region = Rect2(nums.x, nums.y, 15, 15)		

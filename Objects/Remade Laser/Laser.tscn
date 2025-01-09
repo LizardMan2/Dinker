@@ -1,0 +1,73 @@
+[gd_scene load_steps=9 format=3 uid="uid://ctnuekdmxxa2c"]
+
+[ext_resource type="Script" path="res://Objects/Remade Laser/newLaser.gd" id="1_unrmc"]
+[ext_resource type="Script" path="res://Objects/Remade Laser/laser_redirect.gd" id="2_i3u32"]
+[ext_resource type="Script" path="res://Objects/DirectionResource.gd" id="3_843c2"]
+
+[sub_resource type="Curve2D" id="Curve2D_xgt2s"]
+resource_local_to_scene = true
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_biibt"]
+radius = 5.0
+
+[sub_resource type="Resource" id="Resource_x6gnx"]
+script = ExtResource("3_843c2")
+Up = 100
+UpRight = 3
+Right = 2
+DownRight = 1
+Down = 100
+DownLeft = 7
+Left = 6
+UpLeft = 5
+rotation = 0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uedje"]
+
+[sub_resource type="Resource" id="Resource_wwh0a"]
+script = ExtResource("3_843c2")
+Up = 2
+UpRight = 1
+Right = 0
+DownRight = 100
+Down = 100
+DownLeft = 100
+Left = 100
+UpLeft = 100
+rotation = 0
+
+[node name="Laser" type="Node2D"]
+script = ExtResource("1_unrmc")
+speed = 500
+length = 50
+
+[node name="laserPath" type="Path2D" parent="."]
+curve = SubResource("Curve2D_xgt2s")
+
+[node name="Sensor Container" type="PathFollow2D" parent="laserPath"]
+
+[node name="Redirect Sensor" type="Area2D" parent="laserPath/Sensor Container"]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="laserPath/Sensor Container/Redirect Sensor"]
+shape = SubResource("CircleShape2D_biibt")
+
+[node name="Diagonall" type="Area2D" parent="."]
+position = Vector2(30, 924)
+script = ExtResource("2_i3u32")
+bounceDir = SubResource("Resource_x6gnx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Diagonall"]
+shape = SubResource("RectangleShape2D_uedje")
+
+[node name="Bumper" type="Area2D" parent="."]
+position = Vector2(-48, 920)
+script = ExtResource("2_i3u32")
+bounceDir = SubResource("Resource_wwh0a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bumper"]
+shape = SubResource("RectangleShape2D_uedje")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[connection signal="area_entered" from="laserPath/Sensor Container/Redirect Sensor" to="." method="_on_redirect_sensor_area_entered"]

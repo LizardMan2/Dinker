@@ -17,6 +17,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	$Colliders/Bumper.bounceDir.rotation = dir * 2
+	
 	if data.color == 3 and startRot:
 		dir = data.startDirection
 		startRot = false
@@ -58,6 +60,9 @@ func _process(delta: float) -> void:
 		$spr/sprite.position = Vector2(1, 1)
 	else:
 		$spr/sprite.position = Vector2(0, 0)
+	
+	$Colliders/Bumper.bounceDir.rotation = dir * 2
+	#print($Colliders/Bumper.bounceDir.rotation)
 
 
 func _on_angled_collider_area_entered(area: Area2D) -> void:

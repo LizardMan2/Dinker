@@ -62,7 +62,7 @@ func _physics_process(delta: float) -> void:
 	
 	$"laserPath/Sensor Container".progress_ratio = 1
 	
-	var nextProgress = delta * speed
+	var nextProgress = delta * speed * Globals.timeScale
 	if nextProgress > Globals.gridSize:
 		nextProgress = Globals.gridSize
 	progress += nextProgress

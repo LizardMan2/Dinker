@@ -11,7 +11,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	$Sprite2D.global_position = floor(global_position + Vector2(.5, .5))
+	#$Sprite2D.global_position = floor(global_position + Vector2(.5, .5))
+	pass
 
 func deactivate():
 	if !deactivated:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://bjrc51mrfjsu4"]
+[gd_scene load_steps=26 format=3 uid="uid://bjrc51mrfjsu4"]
 
 [ext_resource type="Script" path="res://Objects/New Level Creation/levelData.gd" id="1_f7bps"]
 [ext_resource type="Texture2D" uid="uid://duoo8bgli8jij" path="res://Assets/Art/Obstacles/Dinker Wallset full.png" id="2_3dsle"]
@@ -409,12 +409,12 @@ region = Rect2(0, 60, 15, 15)
 [sub_resource type="AtlasTexture" id="AtlasTexture_fwokl"]
 resource_local_to_scene = true
 atlas = ExtResource("16_7p2o2")
-region = Rect2(60, 30, 15, 15)
+region = Rect2(60, 75, 15, 15)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jgpuw"]
 resource_local_to_scene = true
 atlas = ExtResource("16_7p2o2")
-region = Rect2(75, 30, 15, 15)
+region = Rect2(75, 60, 15, 15)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1n6t8"]
 resource_local_to_scene = true
@@ -464,12 +464,22 @@ region = Rect2(75, 30, 15, 15)
 [sub_resource type="AtlasTexture" id="AtlasTexture_jsaqx"]
 resource_local_to_scene = true
 atlas = ExtResource("16_7p2o2")
-region = Rect2(60, 30, 15, 15)
+region = Rect2(60, 45, 15, 15)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fvipn"]
 resource_local_to_scene = true
 atlas = ExtResource("16_7p2o2")
 region = Rect2(75, 30, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w1jfl"]
+resource_local_to_scene = true
+atlas = ExtResource("16_7p2o2")
+region = Rect2(0, 90, 15, 15)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mwxid"]
+resource_local_to_scene = true
+atlas = ExtResource("16_7p2o2")
+region = Rect2(15, 90, 15, 15)
 
 [node name="EditorCompatableLevel" type="Node2D"]
 metadata/_edit_vertical_guides_ = [0.0]
@@ -515,6 +525,7 @@ texture = SubResource("AtlasTexture_fwokl")
 pos = Vector2i(4, 0)
 startDirection = 2
 type = 9
+color = 3
 
 [node name="Data4" parent="Level Layers/Level spawner2" instance=ExtResource("15_148h0")]
 position = Vector2(127.5, 67.5)
@@ -522,6 +533,7 @@ texture = SubResource("AtlasTexture_jgpuw")
 pos = Vector2i(8, 4)
 startDirection = 3
 type = 9
+color = 2
 
 [node name="Data5" parent="Level Layers/Level spawner2" instance=ExtResource("15_148h0")]
 position = Vector2(7.5, 67.5)
@@ -587,7 +599,9 @@ type = 9
 position = Vector2(97.5, 97.5)
 texture = SubResource("AtlasTexture_jsaqx")
 pos = Vector2i(6, 6)
+endDirection = 1
 type = 9
+color = 1
 
 [node name="Data15" parent="Level Layers/Level spawner2" instance=ExtResource("15_148h0")]
 position = Vector2(37.5, 97.5)
@@ -595,6 +609,20 @@ texture = SubResource("AtlasTexture_fvipn")
 pos = Vector2i(2, 6)
 startDirection = 1
 type = 9
+
+[node name="Data16" parent="Level Layers/Level spawner2" instance=ExtResource("15_148h0")]
+position = Vector2(97.5, 67.5)
+texture = SubResource("AtlasTexture_w1jfl")
+pos = Vector2i(6, 4)
+type = 3
+color = 1
+
+[node name="Data17" parent="Level Layers/Level spawner2" instance=ExtResource("15_148h0")]
+position = Vector2(67.5, 97.5)
+texture = SubResource("AtlasTexture_mwxid")
+pos = Vector2i(4, 6)
+type = 3
+color = 2
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(142.5, 81)

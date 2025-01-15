@@ -16,9 +16,9 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	turnCooldown -= delta
-	cooldown -= delta
+	cooldown -= delta * Globals.timeScale
 	
 	if Input.is_action_pressed("ui_right") and turnCooldown <= 0:
 		dir += 1
@@ -36,9 +36,9 @@ func _process(delta: float) -> void:
 	targetDeg = 45 * dir
 	if targetDeg != currentDeg:
 		if currentDeg < targetDeg:
-			currentDeg += 5
+			currentDeg += 5# * Globals.timeScale
 		if currentDeg > targetDeg:
-			currentDeg -= 5
+			currentDeg -= 5# * Globals.timeScale
 		$Sprite2D.rotation_degrees = currentDeg
 	
 	if Input.is_action_pressed("ui_accept") and cooldown <= 0 and get_parent().shots != 0:
@@ -46,6 +46,6 @@ func _process(delta: float) -> void:
 		get_parent().add_child(b)
 		b.position = position
 		b.nextDir = direction
-		cooldown = .8
+		cooldown = .2
 		get_parent().shots -= 1
 		

@@ -45,9 +45,9 @@ func _process(delta: float) -> void:
 	targetDeg = 90 * dir
 	if targetDeg != currentDeg:
 		if currentDeg < targetDeg:
-			currentDeg += 5
+			currentDeg += 5 * Globals.timeScale
 		if currentDeg > targetDeg:
-			currentDeg -= 5
+			currentDeg -= 5 * Globals.timeScale
 		$spr.rotation_degrees = currentDeg
 		$Colliders.rotation_degrees = dir * 90
 		trueDir = dir

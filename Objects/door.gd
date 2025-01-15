@@ -21,7 +21,7 @@ func _ready() -> void:
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	if first:
 		if data.inverted:
 			rectLen = data.length * 15 + 2
@@ -48,22 +48,24 @@ func _process(delta: float) -> void:
 	if trigger and timer < 0:
 		if open: #If open, close
 			if rectLen < data.length * 15 + 2:
-				rectLen += 1
+				rectLen += 4
 				$Door.region_rect = Rect2(0,1,rectLen,9)
 				$Door.position.y = rectLen / -2.0 - 6.5
 				$"Laser Collide/CollisionShape2D".position.y = rectLen / -2.0 - 6.5
 				$"Laser Collide/CollisionShape2D".scale.y = rectLen
 			elif rectLen >= data.length * 15 + 2:
+				rectLen -= int(rectLen) % Globals.gridSize
 				trigger = false
 				open = false
 		else: #If closed, open
 			if rectLen > 1:
-				rectLen -= 1
+				rectLen -= 4
 				$Door.region_rect = Rect2(0,1,rectLen,9)
 				$Door.position.y = rectLen / -2.0 - 6.5
 				$"Laser Collide/CollisionShape2D".position.y = rectLen / -2.0 - 6.5
 				$"Laser Collide/CollisionShape2D".scale.y = rectLen
 			elif rectLen <= 1:
+				rectLen = 1
 				trigger = false
 				open = true
 	if timer < 0:

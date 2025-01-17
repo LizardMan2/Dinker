@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bjjmlojem3yde"]
+[gd_scene load_steps=16 format=3 uid="uid://bjjmlojem3yde"]
 
 [ext_resource type="Script" path="res://Objects/New Level Creation/levelData.gd" id="1_dxivi"]
 [ext_resource type="Texture2D" uid="uid://duoo8bgli8jij" path="res://Assets/Art/Obstacles/Dinker Wallset full.png" id="2_v3pu5"]
@@ -426,6 +426,11 @@ resource_local_to_scene = true
 atlas = ExtResource("5_xvlu6")
 region = Rect2(15, 105, 15, 15)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_lwya1"]
+resource_local_to_scene = true
+atlas = ExtResource("5_xvlu6")
+region = Rect2(0, 90, 15, 15)
+
 [node name="EditorCompatableLevel" type="Node2D"]
 metadata/_edit_vertical_guides_ = [0.0]
 metadata/_edit_horizontal_guides_ = [170.0]
@@ -458,6 +463,7 @@ position = Vector2(97.5, 52.5)
 texture = SubResource("AtlasTexture_i5tjp")
 pos = Vector2i(6, 3)
 startDirection = 1
+speed = 2.0
 length = 5
 inverted = true
 type = 1
@@ -468,6 +474,7 @@ position = Vector2(187.5, 52.5)
 texture = SubResource("AtlasTexture_vpphv")
 pos = Vector2i(12, 3)
 startDirection = 2
+speed = 4.0
 length = 3
 inverted = true
 type = 1
@@ -478,6 +485,7 @@ position = Vector2(277.5, 127.5)
 texture = SubResource("AtlasTexture_vao31")
 pos = Vector2i(18, 8)
 startDirection = 3
+speed = 8.0
 length = 15
 inverted = true
 type = 1
@@ -495,6 +503,13 @@ color = 1
 [node name="Data6" parent="Level Layers/Level spawner" instance=ExtResource("4_ql2q5")]
 texture = SubResource("AtlasTexture_qqpun")
 type = 5
+
+[node name="Data7" parent="Level Layers/Level spawner" instance=ExtResource("4_ql2q5")]
+position = Vector2(157.5, 82.5)
+texture = SubResource("AtlasTexture_lwya1")
+pos = Vector2i(10, 5)
+type = 3
+color = 1
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(142.5, 81)

@@ -34,6 +34,7 @@ size = Vector2(5, 5)
 
 [node name="Door" type="Node2D"]
 script = ExtResource("1_mhh8u")
+doorType = 1
 
 [node name="DoorHinge" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_kmuy4")

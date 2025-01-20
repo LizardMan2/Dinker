@@ -44,6 +44,9 @@ func _process(delta: float) -> void:
 	#Properly rotate the bumper's sprite in accordance with dir
 	targetDeg = 90 * dir
 	if targetDeg != currentDeg:
+		
+		currentDeg = targetDeg #Temporary workaround
+		
 		if currentDeg < targetDeg:
 			currentDeg += 5 * Globals.timeScale
 		if currentDeg > targetDeg:

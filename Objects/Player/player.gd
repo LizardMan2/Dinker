@@ -46,6 +46,6 @@ func _physics_process(delta: float) -> void:
 		get_parent().add_child(b)
 		b.position = position
 		b.nextDir = direction
-		cooldown = .2
+		cooldown = .1
 		get_parent().shots -= 1
 		

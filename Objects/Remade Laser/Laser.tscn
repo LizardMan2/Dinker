@@ -41,7 +41,7 @@ rotation = 0
 [node name="Laser" type="Node2D"]
 script = ExtResource("1_unrmc")
 speed = 400
-length = 40
+length = 20
 
 [node name="laserPath" type="Path2D" parent="."]
 curve = SubResource("Curve2D_xgt2s")
